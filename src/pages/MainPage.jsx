@@ -10,40 +10,39 @@ import "../components/channel_rack.css";
 const sounds = [
   {
     key: "Q",
-    sample:
-      "https://freesound.orghttps://cdn.freesound.org/previews/46/46025_159012-lq.mp3",
+    sampleUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
   },
   {
     key: "W",
-    sample: "https://freesound.org/people/LIM/sounds/46025/",
+    sampleUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
   },
   {
     key: "E",
-    sample: "https://freesound.org/people/LIM/sounds/46025/",
+    sampleUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
   },
   {
     key: "A",
-    sample: "https://freesound.org/people/LIM/sounds/46025/",
+    sampleUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
   },
   {
     key: "S",
-    sample: "https://freesound.org/people/LIM/sounds/46025/",
+    sampleUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
   },
   {
     key: "D",
-    sample: "https://freesound.org/people/LIM/sounds/46025/",
+    sampleUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
   },
   {
     key: "Z",
-    sample: "https://freesound.org/people/LIM/sounds/46025/",
+    sampleUrl: "https://freesound.org/people/LIM/sounds/46025/",
   },
   {
     key: "X",
-    sample: "https://freesound.org/people/LIM/sounds/46025/",
+    sampleUrl: "https://freesound.org/people/LIM/sounds/46025/",
   },
   {
     key: "C",
-    sample: "https://freesound.org/people/LIM/sounds/46025/",
+    sampleUrl: "https://freesound.org/people/LIM/sounds/46025/",
   },
 ];
 
