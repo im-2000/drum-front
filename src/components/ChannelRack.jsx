@@ -10,14 +10,14 @@ export const ChannelRack = (props) => {
     </div>
   );
 };
-this.audio = React.createRef;
+// this.audio = React.createRef;
 
-const playSound = (props) => {
-  this.audio.current.play();
-};
+// const playSound = (props) => {
+//   this.audio.current.play();
+// };
 
 export const Box = (props) => (
-  <div className="box" onClick={playSound}>
+  <div className="box">
     {props.text}
     <audio src={props.audio} className="clip" id={props.text} />
   </div>
