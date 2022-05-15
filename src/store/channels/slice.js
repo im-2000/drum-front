@@ -34,11 +34,15 @@ const initialState = {
 export const channels = createSlice({
   name: "channels",
   initialState,
-  reducers: {},
+  reducers: {
+    toggleDrums: (state, action) => {
+      state.drums[action.payload] = !state.drums[action.payload];
+    },
+  },
 });
 
 // Action creators are generated for each case reducer function
 // as we add cases to our reducer we will also export the corresponding actions
-export const {} = channels.actions;
+export const { toggleDrums } = channels.actions;
 
 export default channels.reducer;

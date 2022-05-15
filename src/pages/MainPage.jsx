@@ -4,45 +4,85 @@ import { Box } from "../components/Channels";
 import "../components/channel_rack.css";
 import background from "../image/circle.jpeg";
 
-// const keys = ["Q", "W", "E", "A", "S", "D", "Z", "X", "C"];
-// const sounds = [
-//   "https://freesound.org/people/gis_sweden/sounds/633989/",
-//   "https://freesound.org/people/LIM/sounds/46025/",
-// ];
-const sounds = [
+const drums = [
   {
-    key: "KICK",
-    sampleUrl: "https://reckhorn.com/media/music/7a/6f/e8/Test-2.mp3",
+    name: "DRUMS",
+    type: "drums",
+    url: "https://audio.jukehost.co.uk/xqNwk2md2a1jsox3vFRWT2DY6zhh30Vf",
+    tone: "",
+    bpm: 120,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   {
-    key: "W",
-    sampleUrl: "https://reckhorn.com/media/music/25/4d/02/Doppelbass-2.mp3",
+    name: "DRUMS",
+    type: "drums",
+    url: "https://audio.jukehost.co.uk/xIsbWpYjQDfxLTFhQFvdidRNMaL6IFvo",
+    tone: "",
+    bpm: 120,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   {
-    key: "E",
-    sampleUrl: "https://reckhorn.com/media/music/08/bb/8a/Doppelbass-1.mp3",
+    name: "DRUMS",
+    type: "drums",
+    url: "https://audio.jukehost.co.uk/lNcBjlvyb5TOPJxnHLK50GT2J74uWoc2",
+    tone: "",
+    bpm: 120,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   {
-    key: "A",
-    sampleUrl:
-      "https://mega.nz/fm/K9JnGaAb/dmth2_bass_loop_bouncid_120_Amin.wav",
+    name: "DRUMS",
+    type: "drums",
+    url: "https://audio.jukehost.co.uk/6PcUvlFYE2aGMxxifJDo05scSJs88Lx6",
+    tone: "",
+    bpm: 120,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  },
+];
+
+const bass = [
+  {
+    name: "BASS",
+    type: "bass",
+    url: "https://audio.jukehost.co.uk/SQ0LAIEqdWGlQELeTxj8MMHvIzoXzg1l",
+    tone: "",
+    bpm: 120,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   {
-    key: "S",
-    sampleUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+    name: "BASS",
+    type: "bass",
+    url: "https://audio.jukehost.co.uk/u1e4lBnvptkaAMGkrD37UsKTtDkUSM7X",
+    tone: "",
+    bpm: 120,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   {
-    key: "D",
-    sampleUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+    name: "BASS",
+    type: "bass",
+    url: "https://audio.jukehost.co.uk/TLPX9CjVq9gcS3KtJhZAYPm2Wp900csI",
+    tone: "",
+    bpm: 120,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
   {
-    key: "Z",
-    sampleUrl: "https://audio.jukehost.co.uk/ohd3zIpCy5Po0HJbavFhkVQpp25Sbbxe",
+    name: "BASS",
+    type: "bass",
+    url: "https://audio.jukehost.co.uk/SQ0LAIEqdWGlQELeTxj8MMHvIzoXzg1l",
+    tone: "",
+    bpm: 120,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   },
-  {
-    key: "X",
-    sampleUrl: "https://audio.jukehost.co.uk/jPHODKLYuKwoqRzfR40arobIVdCoSHfM",
-  },
+];
+
+const other = [
   {
     key: "C",
     sampleUrl: "https://audio.jukehost.co.uk/ZGqVgGkmKL7DRgLvetYfgfqnHLTfv8nq",
@@ -117,9 +157,9 @@ export const MainPage = () => {
         className="container"
         style={{ backgroundImage: `url(${background})` }}
       >
-        <Channels sounds={sounds} />
+        <Channels drums={drums} bass={bass} />
       </div>
-      <Analyser sounds={sounds} />
+      <Analyser sounds={drums} />
     </div>
   );
 };

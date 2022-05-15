@@ -35,3 +35,9 @@
   font-size: 30px;
   color: rgb(255, 240, 255);
 }
+.active {
+  background-color: green;
+}
+.box:hover {
+  color: red;
+}

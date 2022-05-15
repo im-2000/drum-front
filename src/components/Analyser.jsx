@@ -4,8 +4,8 @@ import "./analyser.css";
 
 const defaultProps = {
   barColor: [
-    { offset: 0, color: "#833ab4" },
-    { offset: 0.5, color: "#fd411d" },
+    { offset: 0, color: "#34eba8" },
+    { offset: 0.5, color: "#3437eb" },
     { offset: 1, color: "#ffa321" },
   ],
   barColorLinearGradient: [0, 0, 0, 600],
