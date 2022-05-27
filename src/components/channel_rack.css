@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  flex-flow: row wrap;
 }
 
 .display {
@@ -9,7 +10,7 @@
   flex-wrap: wrap;
   height: 100;
   width: 600px;
-  /* background-color: blueviolet; */
+  background-color: blueviolet;
   padding: 50px;
   margin: 0px 0px 0px 0px;
   border: 5px solid #333;

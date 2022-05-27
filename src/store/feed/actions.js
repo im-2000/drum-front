@@ -8,6 +8,7 @@ export async function fetchAllSamples(dispatch, getState) {
   try {
     const response = await axios.get(`${API_URL}/samples`);
 
+    console.log("response", response);
     dispatch(allSamplesFetched(response.data));
   } catch (e) {
     // setDownLoading

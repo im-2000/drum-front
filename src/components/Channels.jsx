@@ -22,7 +22,12 @@ export const Channels = (props) => {
     <div>
       <div id="display" className="display">
         {samplesState.samples.map((sample, idx) => (
-          <Box text={sample.name} key={idx} audio={sample.url} />
+          <Box
+            text={sample.name}
+            key={idx}
+            audio={sample.url}
+            className="box"
+          />
         ))}
       </div>
       {/* <div id="display" className="display">

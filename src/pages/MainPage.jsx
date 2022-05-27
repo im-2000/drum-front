@@ -17,9 +17,9 @@ export const MainPage = () => {
       <div>
         <Channels />
       </div>
-      {/* <div>
+      <div>
         <Analyser />
-      </div> */}
+      </div>
     </div>
   );
 };

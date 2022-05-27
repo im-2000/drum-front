@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectDrums } from "../store/channels/selectors";
 import { toggleDrums } from "../store/channels/slice";
+import { BsPlayCircle } from "react-icons/bs";
+import { Analyser } from "./Analyser";
 
 export const Box = (props) => {
   const audioRef = useRef(null);
@@ -33,10 +35,12 @@ export const Box = (props) => {
       audioRef.current.currentTime = 0;
     }
   }, [isPlaying]);
-  const { text, audio } = props;
+  const { text, audio, className } = props;
 
   return (
-    <div className="box" onClick={playStop}>
+    <div className={className} onClick={playStop}>
+      {className === "sample" && <BsPlayCircle onClick={playStop} />}
+      &nbsp;
       {text}
       <audio ref={audioRef} src={audio} className="clip" id={text} />
     </div>
