@@ -159,11 +159,3 @@ export function Analyser() {
     </div>
   );
 }
-
-// className="analyser"
-//       style={{
-//         display: "flex",
-//         flexDirection: "column",
-//         alignItems: "center",
-//         justifyContent: "center",
-//       }}

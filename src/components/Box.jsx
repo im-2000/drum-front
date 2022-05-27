@@ -1,34 +1,44 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { selectDrums } from "../store/channels/selectors";
+import { toggleDrums } from "../store/channels/slice";
 
-export class Box extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.audio = React.createRef();
-  }
-
-  componentDidMount() {
-    this.audio.current.addEventListener("ended", (e) => {
-      const parent = e.target.parentNode;
-      parent.classList.remove("active");
-    });
-  }
-
-  playSound = () => {
-    this.audio.current.play();
-
-    const parent = this.audio.current.parentNode;
-    parent.classList.add("active");
+export const Box = (props) => {
+  const audioRef = useRef(null);
+  const [isPlaying, setPlaying] = useState(false);
+  const playStop = (e) => {
+    setPlaying(!isPlaying);
+    !isPlaying
+      ? e.target.classList.add("active")
+      : e.target.classList.remove("active");
   };
+  useEffect(() => {
+    audioRef.current.addEventListener("timeupdate", function () {
+      let buffer = 0.13;
+      if (audioRef.current.currentTime > audioRef.current.duration - buffer) {
+        audioRef.current.currentTime = 0;
+        audioRef.current.play();
+      }
+    });
 
-  render() {
-    const { text, audio } = this.props;
+    // audioRef.current.addEventListener("ended", (e) => {
+    //   audioRef.current.play();
+    // });
+  });
+  useEffect(() => {
+    if (isPlaying) {
+      audioRef.current.play();
+    } else {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
+  }, [isPlaying]);
+  const { text, audio } = props;
 
-    return (
-      <div className="box" onClick={this.playSound}>
-        {text}
-        <audio ref={this.audio} src={audio} className="clip" id={text} />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="box" onClick={playStop}>
+      {text}
+      <audio ref={audioRef} src={audio} className="clip" id={text} />
+    </div>
+  );
+};
