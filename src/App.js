@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./App.css";
 import { MainPage } from "./pages/MainPage";
 import { Navigation } from "./components/Navigation/index";
+import background from "../src/image/circle.jpeg";
 
 import { Routes, Route } from "react-router-dom";
 
@@ -22,7 +23,13 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: 2000,
+      }}
+    >
       <Navigation />
       <MessageBox />
       {isLoading ? <Loading /> : null}

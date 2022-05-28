@@ -16,31 +16,32 @@ export function Navigation() {
   const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
 
   return (
-    <Navbar
-    // style={{
-    //   display: "flex",
-    //   alignItems: "center",
-    //   justifyContent: "center",
-    // }}
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+      }}
     >
-      <Navbar.Brand as={NavLink} to="/">
-        APP NAME
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav
-          style={{
-            width: "100%",
-          }}
-          fill
-        >
-          <NavbarItem path="/" linkText="Home" />
-          {token && <NavbarItem path="/myspace" linkText="My space" />}
+      <Navbar>
+        <Navbar.Brand as={NavLink} to="/">
+          APP NAME
+        </Navbar.Brand>
+        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav
+            style={{
+              width: "100%",
+            }}
+            fill
+          >
+            <NavbarItem path="/" linkText="Home" />
+            {<NavbarItem path="/myspace" linkText="My space" />}
 
-          {loginLogoutControls}
-        </Nav>
-        <SliderSizes />
-      </Navbar.Collapse>
-    </Navbar>
+            {loginLogoutControls}
+          </Nav>
+          <SliderSizes />
+        </Navbar.Collapse>
+      </Navbar>
+    </div>
   );
 }

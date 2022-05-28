@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectDrums } from "../store/channels/selectors";
 import { toggleDrums } from "../store/channels/slice";
-import { BsPlayCircle } from "react-icons/bs";
+import { BsPlayCircle, BsPauseCircle } from "react-icons/bs";
 import { Analyser } from "./Analyser";
+import * as Tone from "tone";
 
 export const Box = (props) => {
   const audioRef = useRef(null);
@@ -38,11 +39,15 @@ export const Box = (props) => {
   const { text, audio, className } = props;
 
   return (
-    <div className={className} onClick={playStop}>
-      {className === "sample" && <BsPlayCircle onClick={playStop} />}
-      &nbsp;
-      {text}
-      <audio ref={audioRef} src={audio} className="clip" id={text} />
-    </div>
+    <>
+      <div className={className} onClick={playStop}>
+        {className === "sample" && audio.length > 1 && (
+          <BsPlayCircle className="playIcon" onClick={playStop} />
+        )}
+        &nbsp;
+        {text}
+        <audio ref={audioRef} src={audio} className="clip" id={text} />
+      </div>
+    </>
   );
 };

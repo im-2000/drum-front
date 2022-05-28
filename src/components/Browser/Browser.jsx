@@ -16,9 +16,8 @@ export const Browser = () => {
     <div
       className="browser"
       style={{
-        color: "white",
-        backgroundColor: "grey",
-        marginTop: 0,
+        color: "blueviolet",
+        marginTop: 60,
         width: 200,
         height: 1000,
       }}
@@ -26,12 +25,14 @@ export const Browser = () => {
       <ul>
         {samplesState.samples.map((sample, idx) => {
           return (
-            <Box
-              text={sample.name}
-              key={idx}
-              audio={sample.url}
-              className="sample"
-            />
+            <>
+              <Box
+                text={sample.name}
+                key={idx}
+                audio={sample.url}
+                className="sample"
+              />
+            </>
           );
         })}
       </ul>
