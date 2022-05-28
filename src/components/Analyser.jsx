@@ -146,7 +146,7 @@ export function Analyser() {
   });
 
   return (
-    <div className="analyser" style={{}}>
+    <div className="analyser">
       <canvas ref={canvasRef} />
       <br />
       <audio

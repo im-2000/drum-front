@@ -20,9 +20,11 @@ export const Browser = () => {
         marginTop: 60,
         width: 200,
         height: 1000,
+        color: "white",
       }}
     >
       <ul>
+        <h3 style={{ color: "#42f5c8" }}>Browser</h3>
         {samplesState.samples.map((sample, idx) => {
           return (
             <>

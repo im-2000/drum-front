@@ -9,14 +9,16 @@ import { Routes, Route } from "react-router-dom";
 import Loading from "./components/Loading/index";
 import MessageBox from "./components/MessageBox";
 import SignUp from "./pages/SignUp/SignUp";
-import Login from "./pages/Login/index";
+import Login from "./pages/Login/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
+import { selectToken } from "./store/user/selectors";
 
 function App() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectAppLoading);
+  const token = useSelector(selectToken);
 
   useEffect(() => {
     dispatch(getUserWithStoredToken());
@@ -34,9 +36,9 @@ function App() {
       <MessageBox />
       {isLoading ? <Loading /> : null}
       <Routes>
-        <Route exact path="/" element={<MainPage />} />
+        {token && <Route exact path="/main" element={<MainPage />} />}
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
       </Routes>
     </div>
   );

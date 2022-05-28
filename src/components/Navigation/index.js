@@ -23,7 +23,7 @@ export function Navigation() {
       }}
     >
       <Navbar>
-        <Navbar.Brand as={NavLink} to="/">
+        <Navbar.Brand as={NavLink} to="/main">
           APP NAME
         </Navbar.Brand>
         {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
@@ -34,7 +34,7 @@ export function Navigation() {
             }}
             fill
           >
-            <NavbarItem path="/" linkText="Home" />
+            <NavbarItem path="/main" linkText="Main" />
             {<NavbarItem path="/myspace" linkText="My space" />}
 
             {loginLogoutControls}
