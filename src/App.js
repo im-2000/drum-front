@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { MainPage } from "./pages/MainPage";
-import { Navigation } from "./components/Navigation/Navigation";
+import { Navigation } from "./components/Navigation/index";
 import background from "../src/image/circle.jpeg";
 
 import { Routes, Route } from "react-router-dom";
@@ -46,7 +46,8 @@ function App() {
       <MessageBox />
       {isLoading ? <Loading /> : null}
       <Routes>
-        {token && <Route exact path="/main" element={<MainPage />} />}
+        <Route exact path="/main" element={<MainPage token={token} />} />
+
         <Route path="/signup" element={<SignUp />} />
         <Route path="/" element={<Login />} />
       </Routes>

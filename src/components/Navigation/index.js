@@ -19,7 +19,8 @@ export function Navigation() {
     <div
       style={{
         display: "flex",
-        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
       <Navbar>
@@ -34,16 +35,12 @@ export function Navigation() {
             }}
             fill
           >
-            {token && (
-              <>
-                <NavbarItem path="/main" linkText="Main" />
-                {<NavbarItem path="/myspace" linkText="My space" />}
+            <NavbarItem path="/main" linkText="Main" />
+            {<NavbarItem path="/myspace" linkText="My space" />}
 
-                {loginLogoutControls}
-              </>
-            )}
+            {loginLogoutControls}
           </Nav>
-          <SliderSizes />
+          {/* <SliderSizes /> */}
         </Navbar.Collapse>
       </Navbar>
     </div>

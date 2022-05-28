@@ -16,7 +16,7 @@ export const Navigation = () => {
     >
       <Navbar>
         <Container style={{ fontSize: 60 }}>
-          <Navbar.Brand href="#home">TWEAK PEAK</Navbar.Brand>
+          <Navbar.Brand href="/main">TWEAK PEAK</Navbar.Brand>
         </Container>
       </Navbar>
 
@@ -38,7 +38,7 @@ export const Navigation = () => {
       <Navbar bg="primary" variant="dark">
         <Container>
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="/">Login</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
