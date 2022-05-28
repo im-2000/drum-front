@@ -1,3 +1,13 @@
+@import url("https://fonts.google.com/specimen/Pacifico");
+
+body,
+html {
+  font-family: "Inspiration", cursive;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Palette Mosaic", cursive;
+  font-family: "PT Sans", sans-serif;
+}
+
 /* .App {
   background-color: blueviolet;
 } */

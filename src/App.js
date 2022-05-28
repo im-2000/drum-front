@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { MainPage } from "./pages/MainPage";
-import { Navigation } from "./components/Navigation/index";
+import { Navigation } from "./components/Navigation/Navigation";
 import background from "../src/image/circle.jpeg";
 
 import { Routes, Route } from "react-router-dom";
@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
 import { selectToken } from "./store/user/selectors";
+import { SliderBpm } from "./components/Slider/Slider";
 
 function App() {
   const dispatch = useDispatch();
@@ -32,7 +33,16 @@ function App() {
         backgroundSize: 2000,
       }}
     >
-      <Navigation />
+      <Navigation token={token} />
+      <div
+        style={{
+          display: "flex",
+          alignIems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <SliderBpm />
+      </div>
       <MessageBox />
       {isLoading ? <Loading /> : null}
       <Routes>

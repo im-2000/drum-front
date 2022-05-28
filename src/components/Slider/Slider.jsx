@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import { flexbox } from "@mui/system";
 
-export default function SliderSizes() {
+export function SliderBpm() {
   return (
     <Box width={300}>
       {/* <Slider

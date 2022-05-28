@@ -18,6 +18,7 @@ export const Browser = () => {
       style={{
         color: "blueviolet",
         marginTop: 60,
+        marginLeft: 30,
         width: 200,
         height: 1000,
         color: "white",

@@ -34,10 +34,14 @@ export function Navigation() {
             }}
             fill
           >
-            <NavbarItem path="/main" linkText="Main" />
-            {<NavbarItem path="/myspace" linkText="My space" />}
+            {token && (
+              <>
+                <NavbarItem path="/main" linkText="Main" />
+                {<NavbarItem path="/myspace" linkText="My space" />}
 
-            {loginLogoutControls}
+                {loginLogoutControls}
+              </>
+            )}
           </Nav>
           <SliderSizes />
         </Navbar.Collapse>
