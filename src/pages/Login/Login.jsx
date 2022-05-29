@@ -72,27 +72,34 @@ export default function SignIn() {
 
   return (
     <div
-      style={{
-        color: "white",
-        // backgroundColor: "white",
-        marginLeft: 700,
-        marginRight: 700,
-        borderBlockColor: "white",
-        maxHeight: 500,
-        alignItems: "center",
-        justifyContent: "center",
-      }}
+      className="login"
+      // style={{
+      //   backgroundColor: "grey",
+      //   borderBlockColor: "white",
+      //   color: "white",
+      //   // backgroundColor: "white",
+      //   marginLeft: 400,
+      //   marginRight: 400,
+      //   maxrginTop: 0,
+      //   marginBottom: 400,
+      //   alignItems: "center",
+      //   justifyContent: "center",
+      //   boxShadow: 10,
+      //   paddingTop: 60,
+      // }}
     >
       <ThemeProvider style={{ color: "white" }} theme={theme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <Box
-            sx={{
-              marginTop: 8,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
+            sx={
+              {
+                // marginTop: 8,
+                // display: "flex",
+                // flexDirection: "column",
+                // alignItems: "center",
+              }
+            }
           >
             {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
@@ -133,10 +140,10 @@ export default function SignIn() {
                 onChange={(event) => setPassword(event.target.value)}
                 placeholder="Password"
               />
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
-              />
+              /> */}
               <Button
                 onClick={submitForm}
                 type="submit"
@@ -160,7 +167,7 @@ export default function SignIn() {
               </Grid>
             </Box>
           </Box>
-          <Copyright sx={{ mt: 8, mb: 4 }} />
+          {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
         </Container>
       </ThemeProvider>
     </div>

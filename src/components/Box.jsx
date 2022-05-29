@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import Recorder from "mic-recorder-to-mp3";
 import { BsPlayCircle, BsPauseCircle } from "react-icons/bs";
+import { CgAdd } from "react-icons/cg";
+import { addSample } from "../store/channels/slice";
+import { useDispatch } from "react-redux";
 
 export const Box = (props) => {
   const audioRef = useRef(null);
   const [isPlaying, setPlaying] = useState(false);
   const [record, setRecord] = useState(null);
   const Mp3Recorder = new Recorder({ bitRate: 122 });
+  const dispatch = useDispatch();
 
   const playStop = (e) => {
     setPlaying(!isPlaying);
@@ -39,11 +43,27 @@ export const Box = (props) => {
 
   return (
     <>
-      <div className={className} onClick={playStop}>
+      <div className={className}>
         {className === "sample" && (
           <BsPlayCircle className="playIcon" onClick={playStop} />
         )}
-        &nbsp;
+        &nbsp; &nbsp;
+        {className === "sample" && (
+          <CgAdd
+            className="playIcon"
+            id={props.sample.id}
+            onClick={(event) => {
+              dispatch(
+                addSample(
+                  props.samplesState.find(
+                    (sample) => sample.id === parseInt(event.target.id)
+                  )
+                )
+              );
+            }}
+          />
+        )}
+        &nbsp; &nbsp;
         {text}
         <audio ref={audioRef} src={audio} className="clip" id={text} />
       </div>

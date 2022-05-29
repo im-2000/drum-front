@@ -5,6 +5,7 @@ import { fetchAllSamples, fetchAllStyles } from "../../store/feed/actions";
 import { Box } from "../Box";
 import { Form } from "react-bootstrap";
 import { addSample } from "../../store/channels/slice";
+import { CgAdd } from "react-icons/cg";
 
 export const Browser = () => {
   const dispatch = useDispatch();
@@ -32,24 +33,22 @@ export const Browser = () => {
   return (
     <div
       className="browser"
-      style={{
-        color: "blueviolet",
-        marginTop: 60,
-        marginLeft: 30,
-        width: 200,
-        height: 1000,
-        color: "white",
-      }}
+      style={
+        {
+          // color: "blueviolet",
+          // color: "white",
+          // borderRadius: 15,
+          // borderStyle: "solid",
+          // borderWidth: 1,
+          // borderColor: "red",
+        }
+      }
     >
       <ul>
-        <h3 style={{ color: "#42f5c8" }}>Browser</h3>
-        <div
-          Style={{
-            display: "flex",
-            justifyContent: "row",
-          }}
-        >
-          <p>Style</p>
+        <h2 style={{ color: "#42f5c8" }}>Browser</h2>
+        &nbsp;
+        <div>
+          <p style={{ color: "violet" }}>Style</p>
           <Form.Select
             aria-label="Default select example"
             onChange={(event) => setStyle(parseInt(event.target.value))}
@@ -66,7 +65,7 @@ export const Browser = () => {
             justifyContent: "row",
           }}
         >
-          <p>Sample Type</p>
+          <p style={{ color: "violet" }}>Sample Type</p>
           <Form.Select
             aria-label="Default select example"
             onChange={(event) => setType(event.target.value)}
@@ -79,32 +78,36 @@ export const Browser = () => {
           </Form.Select>
         </div>
         &nbsp; &nbsp; &nbsp;
-        {filteredSamples.map((sample, idx) => {
-          return (
-            <>
-              <Box
-                text={sample.name}
-                key={idx}
-                audio={sample.url}
-                className="sample"
-              />
-              <p
-                id={sample.id}
-                onClick={(event) => {
-                  dispatch(
-                    addSample(
-                      samplesState.find(
-                        (sample) => sample.id === parseInt(event.target.id)
+        <div>
+          {filteredSamples.map((sample, idx) => {
+            return (
+              <>
+                <Box
+                  text={sample.name}
+                  key={idx}
+                  audio={sample.url}
+                  className="sample"
+                  sample={sample}
+                  sampleState={samplesState}
+                />
+                <p
+                  id={sample.id}
+                  onClick={(event) => {
+                    dispatch(
+                      addSample(
+                        samplesState.find(
+                          (sample) => sample.id === parseInt(event.target.id)
+                        )
                       )
-                    )
-                  );
-                }}
-              >
-                select
-              </p>
-            </>
-          );
-        })}
+                    );
+                  }}
+                >
+                  Select
+                </p>
+              </>
+            );
+          })}
+        </div>
       </ul>
     </div>
   );
