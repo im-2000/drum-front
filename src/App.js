@@ -33,16 +33,16 @@ function App() {
         backgroundSize: 2000,
       }}
     >
-      <Navigation token={token} />
+      <div>
+        <Navigation />
+      </div>
       <div
         style={{
           display: "flex",
           alignIems: "center",
           justifyContent: "center",
         }}
-      >
-        <SliderBpm />
-      </div>
+      ></div>
       <MessageBox />
       {isLoading ? <Loading /> : null}
       <Routes>

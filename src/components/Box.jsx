@@ -43,7 +43,7 @@ export const Box = (props) => {
 
   return (
     <>
-      <div className={className}>
+      <div className={className} onClick={playStop}>
         {className === "sample" && (
           <BsPlayCircle className="playIcon" onClick={playStop} />
         )}
