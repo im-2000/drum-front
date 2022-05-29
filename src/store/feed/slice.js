@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   loading: false,
   samples: [],
-  details: null,
+  styles: [],
 };
 
 export const feedSlice = createSlice({
@@ -15,9 +15,14 @@ export const feedSlice = createSlice({
       state.samples = [...samples];
       state.loading = false;
     },
+    allStylesFetched: (state, action) => {
+      const styles = action.payload;
+      state.styles = [...styles];
+      state.loading = false;
+    },
   },
 });
 
-export const { allSamplesFetched } = feedSlice.actions;
+export const { allSamplesFetched, allStylesFetched } = feedSlice.actions;
 
 export default feedSlice.reducer;

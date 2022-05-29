@@ -1,14 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectDrums } from "../store/channels/selectors";
-import { toggleDrums } from "../store/channels/slice";
+import Recorder from "mic-recorder-to-mp3";
 import { BsPlayCircle, BsPauseCircle } from "react-icons/bs";
-import { Analyser } from "./Analyser";
-import * as Tone from "tone";
 
 export const Box = (props) => {
   const audioRef = useRef(null);
   const [isPlaying, setPlaying] = useState(false);
+  const [record, setRecord] = useState(null);
+  const Mp3Recorder = new Recorder({ bitRate: 122 });
+
   const playStop = (e) => {
     setPlaying(!isPlaying);
     !isPlaying
@@ -41,7 +40,7 @@ export const Box = (props) => {
   return (
     <>
       <div className={className} onClick={playStop}>
-        {className === "sample" && audio.length > 1 && (
+        {className === "sample" && (
           <BsPlayCircle className="playIcon" onClick={playStop} />
         )}
         &nbsp;

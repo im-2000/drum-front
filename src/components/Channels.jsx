@@ -5,27 +5,105 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectAllSamples } from "../store/feed/selectors";
 import { fetchAllSamples } from "../store/feed/actions";
 import { Link } from "react-router-dom";
-import { selectDrums } from "../store/channels/selectors";
-import { toggleDrums } from "../store/channels/slice";
+import { removeSample, toggleDrums } from "../store/channels/slice";
 import { Box } from "./Box";
+import { BsPlayCircle, BsPauseCircle } from "react-icons/bs";
+import {
+  selectDrums,
+  selectMelody,
+  selectBass,
+  selectPad,
+} from "../store/channels/selectors";
 
 export const Channels = (props) => {
   const dispatch = useDispatch();
-  const samplesState = useSelector(selectAllSamples);
-  console.log("samplesState", samplesState);
-
-  useEffect(() => {
-    dispatch(fetchAllSamples);
-  }, []);
+  const drums = useSelector(selectDrums);
+  const bass = useSelector(selectBass);
+  const melody = useSelector(selectMelody);
+  const pad = useSelector(selectPad);
 
   return (
-    <div>
-      <div id="display" className="display">
-        {samplesState.samples.map((sample, idx) => (
+    <div id="display" className="display">
+      <div>
+        <p
+          style={{
+            color: "#42f5c8",
+            fontSize: 20,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          DRUMS
+        </p>
+        {drums.map((sample, idx) => (
           <Box
-            text={sample.name}
+            text={sample ? sample.name : ""}
             key={idx}
-            audio={sample.url}
+            audio={sample ? sample.url : ""}
+            className="box"
+          />
+        ))}
+      </div>
+      <div>
+        <p
+          style={{
+            color: "#42f5c8",
+            fontSize: 20,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          BASS
+        </p>
+        {bass.map((sample, idx) => (
+          <Box
+            text={sample ? sample.name : ""}
+            key={idx}
+            audio={sample ? sample.url : ""}
+            className="box"
+          />
+        ))}
+      </div>
+      <div>
+        <p
+          style={{
+            color: "#42f5c8",
+            fontSize: 20,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          MELODY
+        </p>
+        {melody.map((sample, idx) => (
+          <Box
+            text={sample ? sample.name : ""}
+            key={idx}
+            audio={sample ? sample.url : ""}
+            className="box"
+          />
+        ))}
+      </div>
+      <div>
+        <p
+          style={{
+            color: "#42f5c8",
+            fontSize: 20,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          PAD
+        </p>
+        {pad.map((sample, idx) => (
+          <Box
+            text={sample ? sample.name : ""}
+            key={idx}
+            audio={sample ? sample.url : ""}
             className="box"
           />
         ))}

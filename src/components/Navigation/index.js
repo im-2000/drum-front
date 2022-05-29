@@ -18,30 +18,29 @@ export function Navigation() {
   return (
     <div
       style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
+        backgroundColor: "red",
+        width: 1600,
+        // display: "flex",
+        // alignItems: "center",
+        justifyContent: "space-between",
       }}
     >
       <Navbar>
-        <Navbar.Brand as={NavLink} to="/main">
-          APP NAME
-        </Navbar.Brand>
-        {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav
-            style={{
-              width: "100%",
-            }}
-            fill
-          >
-            <NavbarItem path="/main" linkText="Main" />
-            {<NavbarItem path="/myspace" linkText="My space" />}
+        <div>
+          <Navbar.Brand as={NavLink} to="/main">
+            APP NAME
+          </Navbar.Brand>
+        </div>
 
-            {loginLogoutControls}
-          </Nav>
-          {/* <SliderSizes /> */}
-        </Navbar.Collapse>
+        <Nav>
+          <div>
+            <NavbarItem path="/main" linkText="Main" />
+          </div>
+          <div>{<NavbarItem path="/myspace" linkText="My space" />}</div>
+
+          {loginLogoutControls}
+        </Nav>
+        {/* <SliderSizes /> */}
       </Navbar>
     </div>
   );

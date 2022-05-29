@@ -1,6 +1,7 @@
 export const selectAllSamples = (reduxState) => {
-  const samples = reduxState.feedReducer.samples;
-  const loading = reduxState.feedReducer.loading;
+  return reduxState.feedReducer.samples;
+};
 
-  return { samples, loading };
+export const selectAllStyles = (reduxState) => {
+  return reduxState.feedReducer.styles;
 };

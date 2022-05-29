@@ -1,4 +1,4 @@
-import { allSamplesFetched } from "./slice";
+import { allSamplesFetched, allStylesFetched } from "./slice";
 
 import axios from "axios";
 
@@ -10,6 +10,33 @@ export async function fetchAllSamples(dispatch, getState) {
 
     console.log("response", response);
     dispatch(allSamplesFetched(response.data));
+  } catch (e) {
+    // setDownLoading
+    // setError
+    console.log(e.message);
+  }
+}
+
+export const fetchFilteredSamples =
+  (style, type) => async (dispatch, getState) => {
+    try {
+      const response = await axios.get(`${API_URL}/samples/${style}/${type}`);
+
+      console.log("response", response);
+      dispatch(allSamplesFetched(response.data));
+    } catch (e) {
+      // setDownLoading
+      // setError
+      console.log(e.message);
+    }
+  };
+
+export async function fetchAllStyles(dispatch, getState) {
+  try {
+    const response = await axios.get(`${API_URL}/styles`);
+
+    console.log("response", response);
+    dispatch(allStylesFetched(response.data));
   } catch (e) {
     // setDownLoading
     // setError
