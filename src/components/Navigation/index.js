@@ -7,8 +7,7 @@ import { selectToken } from "../../store/user/selectors";
 import NavbarItem from "./NavbarItem";
 import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
-import SliderSizes from "../Slider/Slider";
-import { flexbox } from "@mui/system";
+import { Link } from "react-router-dom";
 
 export function Navigation() {
   const token = useSelector(selectToken);
@@ -17,31 +16,84 @@ export function Navigation() {
 
   return (
     <div
-      style={{
-        backgroundColor: "red",
-        width: 1600,
-        // display: "flex",
-        // alignItems: "center",
-        justifyContent: "space-between",
-      }}
+      className="navigation"
+      style={
+        {
+          // backgroundColor: "grey",
+          // width: 1375,
+          // color: "white",
+          // display: "flex",
+          // alignItems: "center",
+          // justifyContent: "center",
+          // flexDirection: "row",
+        }
+      }
     >
-      <Navbar>
-        <div>
-          <Navbar.Brand as={NavLink} to="/main">
-            APP NAME
-          </Navbar.Brand>
-        </div>
+      <div>
+        <Link
+          style={{
+            color: "#42f5c8",
+            fontSize: 50,
+          }}
+          to="/main"
+        >
+          TWEAK PEAK
+        </Link>
+      </div>
+      <div>
+        <Link
+          style={{
+            color: "white",
+          }}
+          to="/main"
+        >
+          Main
+        </Link>
+      </div>
+      <div>
+        {" "}
+        <Link
+          style={{
+            color: "white",
+          }}
+          to="/myspace"
+        >
+          Loop
+        </Link>
+      </div>
 
-        <Nav>
-          <div>
-            <NavbarItem path="/main" linkText="Main" />
-          </div>
-          <div>{<NavbarItem path="/myspace" linkText="My space" />}</div>
-
-          {loginLogoutControls}
-        </Nav>
-        {/* <SliderSizes /> */}
-      </Navbar>
+      {loginLogoutControls}
     </div>
   );
 }
+
+{
+  /* <div
+style={{
+  backgroundColor: "black",
+  width: 1375,
+  color: "white",
+  // display: "flex",
+  // alignItems: "center",
+  justifyContent: "space-between",
+}}
+>
+<Navbar>
+  <div>
+    <Navbar.Brand as={NavLink} to="/main">
+      APP NAME
+    </Navbar.Brand>
+  </div>
+
+  <Nav>
+    <div>
+      <NavbarItem path="/main" linkText="Main" />
+    </div>
+    <div>{<NavbarItem path="/myspace" linkText="My space" />}</div>
+
+    {loginLogoutControls}
+  </Nav>
+  {/* <SliderSizes /> */
+}
+// </Navbar>
+// </div> */}

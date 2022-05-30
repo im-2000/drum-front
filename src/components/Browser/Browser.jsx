@@ -31,19 +31,7 @@ export const Browser = () => {
     setFilteredSamples(filterSamples(style, type));
   }, [style, type, samplesState]);
   return (
-    <div
-      className="browser"
-      style={
-        {
-          // color: "blueviolet",
-          // color: "white",
-          // borderRadius: 15,
-          // borderStyle: "solid",
-          // borderWidth: 1,
-          // borderColor: "red",
-        }
-      }
-    >
+    <div className="browser">
       <ul>
         <h2 style={{ color: "#42f5c8" }}>Browser</h2>
         &nbsp;
@@ -90,7 +78,9 @@ export const Browser = () => {
                   sample={sample}
                   sampleState={samplesState}
                 />
-                <p
+                <CgAdd
+                  className="playIcon"
+                  style={{ fontSize: "17" }}
                   id={sample.id}
                   onClick={(event) => {
                     dispatch(
@@ -102,8 +92,8 @@ export const Browser = () => {
                     );
                   }}
                 >
-                  Select
-                </p>
+                  {" "}
+                </CgAdd>
               </>
             );
           })}

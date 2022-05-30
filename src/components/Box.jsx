@@ -8,8 +8,7 @@ import { useDispatch } from "react-redux";
 export const Box = (props) => {
   const audioRef = useRef(null);
   const [isPlaying, setPlaying] = useState(false);
-  const [record, setRecord] = useState(null);
-  const Mp3Recorder = new Recorder({ bitRate: 122 });
+
   const dispatch = useDispatch();
 
   const playStop = (e) => {
@@ -61,7 +60,9 @@ export const Box = (props) => {
                 )
               );
             }}
-          />
+          >
+            {" "}
+          </CgAdd>
         )}
         &nbsp; &nbsp;
         {text}

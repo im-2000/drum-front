@@ -24,7 +24,7 @@ export const Channels = (props) => {
 
   return (
     <div id="display" className="display">
-      <div>
+      <div className="drums">
         <p
           style={{
             color: "#42f5c8",
