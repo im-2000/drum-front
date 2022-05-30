@@ -5,3 +5,7 @@ export const selectAllSamples = (reduxState) => {
 export const selectAllStyles = (reduxState) => {
   return reduxState.feedReducer.styles;
 };
+
+export const selectOneShotSamples = (reduxState) => {
+  return reduxState.feedReducer.omeShotSamples;
+};

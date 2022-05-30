@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import background from "../../image/background2.webp";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -77,19 +77,28 @@ export default function SignUp() {
 
   return (
     <div
+      className="login"
       style={{
-        color: "white",
-        // backgroundColor: "white",
-        marginLeft: 700,
-        marginRight: 700,
-        color: "white",
-
-        maxHeight: 500,
-        alignItems: "center",
-        justifyContent: "center",
+        backgroundImage: `url(${background})`,
+        backgroundSize: 2000,
       }}
+      // style={{
+      //   color: "white",
+      //   // backgroundColor: "white",
+      //   marginLeft: 700,
+      //   marginRight: 700,
+      //   color: "white",
+
+      //   maxHeight: 500,
+      //   alignItems: "center",
+      //   justifyContent: "center",
+      // }}
     >
-      <ThemeProvider style={{ color: "white" }} theme={theme}>
+      <ThemeProvider
+        style={{ color: "white" }}
+        theme={theme}
+        className="login-body"
+      >
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <Box

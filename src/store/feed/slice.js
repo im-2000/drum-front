@@ -4,6 +4,7 @@ const initialState = {
   loading: false,
   samples: [],
   styles: [],
+  oneShotSamples: [],
 };
 
 export const feedSlice = createSlice({
@@ -20,9 +21,15 @@ export const feedSlice = createSlice({
       state.styles = [...styles];
       state.loading = false;
     },
+    oneShotSamplesFetched: (state, action) => {
+      const oneShotSamples = action.payload;
+      state.styles = [...oneShotSamples];
+      state.loading = false;
+    },
   },
 });
 
-export const { allSamplesFetched, allStylesFetched } = feedSlice.actions;
+export const { allSamplesFetched, allStylesFetched, oneShotSamplesFetched } =
+  feedSlice.actions;
 
 export default feedSlice.reducer;

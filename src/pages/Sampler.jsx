@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-export const MainPage = () => {
+export const Sampler = () => {
   return (
     <div
       className="container"

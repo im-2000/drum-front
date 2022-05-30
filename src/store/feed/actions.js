@@ -43,3 +43,16 @@ export async function fetchAllStyles(dispatch, getState) {
     console.log(e.message);
   }
 }
+
+export async function fetchOneShotSamples(dispatch, getState) {
+  try {
+    const response = await axios.get(`${API_URL}/samples/oneshot`);
+
+    console.log("response", response);
+    dispatch(allStylesFetched(response.data));
+  } catch (e) {
+    // setDownLoading
+    // setError
+    console.log(e.message);
+  }
+}

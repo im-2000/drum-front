@@ -23,11 +23,11 @@ export const Channels = (props) => {
   const pad = useSelector(selectPad);
 
   return (
-    <div id="display" className="display">
+    <div id="display" className="sampler">
       <div className="drums">
         <p
           style={{
-            color: "#42f5c8",
+            color: "red",
             fontSize: 20,
             display: "flex",
             alignItems: "center",
@@ -69,7 +69,7 @@ export const Channels = (props) => {
       <div>
         <p
           style={{
-            color: "#42f5c8",
+            color: "orange",
             fontSize: 20,
             display: "flex",
             alignItems: "center",
@@ -90,7 +90,7 @@ export const Channels = (props) => {
       <div>
         <p
           style={{
-            color: "#42f5c8",
+            color: "yellow",
             fontSize: 20,
             display: "flex",
             alignItems: "center",

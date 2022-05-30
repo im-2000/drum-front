@@ -32,10 +32,10 @@ export function Navigation() {
       <div>
         <Link
           style={{
-            color: "#42f5c8",
+            color: "violet",
             fontSize: 50,
           }}
-          to="/main"
+          to="/sampler"
         >
           TWEAK PEAK
         </Link>
@@ -45,9 +45,9 @@ export function Navigation() {
           style={{
             color: "white",
           }}
-          to="/main"
+          to="/sampler"
         >
-          Main
+          Sampler
         </Link>
       </div>
       <div>
@@ -56,9 +56,31 @@ export function Navigation() {
           style={{
             color: "white",
           }}
-          to="/myspace"
+          to="/looper"
         >
-          Loop
+          Looper
+        </Link>
+      </div>
+      <div>
+        {" "}
+        <Link
+          style={{
+            color: "white",
+          }}
+          to="/tracks"
+        >
+          MyTracks
+        </Link>
+      </div>
+      <div>
+        {" "}
+        <Link
+          style={{
+            color: "white",
+          }}
+          to="/tutorial"
+        >
+          Tutorial
         </Link>
       </div>
 

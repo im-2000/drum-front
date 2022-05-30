@@ -3,6 +3,7 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
+import background from "../../image/background2.webp";
 
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
@@ -17,23 +18,23 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+// function Copyright(props) {
+//   return (
+//     <Typography
+//       variant="body2"
+//       color="text.secondary"
+//       align="center"
+//       {...props}
+//     >
+//       {"Copyright © "}
+//       <Link color="inherit" href="https://mui.com/">
+//         Your Website
+//       </Link>{" "}
+//       {new Date().getFullYear()}
+//       {"."}
+//     </Typography>
+//   );
+// }
 
 const theme = createTheme();
 
@@ -72,7 +73,10 @@ export default function SignIn() {
   return (
     <div
       className="login"
-
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: 2000,
+      }}
       // style={{
       //   backgroundColor: "grey",
       //   borderBlockColor: "white",
@@ -88,8 +92,8 @@ export default function SignIn() {
       //   paddingTop: 60,
       // }}
     >
-      <ThemeProvider style={{ color: "white" }} theme={theme}>
-        <Container component="main" maxWidth="xs">
+      <ThemeProvider theme={theme}>
+        <Container component="main" maxWidth="xs" className="login-body">
           <CssBaseline />
           <Box
             sx={
@@ -104,9 +108,7 @@ export default function SignIn() {
             {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar> */}
-            <Typography component="h1" variant="h5">
-              Login
-            </Typography>
+            <Typography>Login</Typography>
             <Box
               component="form"
               onSubmit={handleSubmit}
@@ -154,11 +156,11 @@ export default function SignIn() {
                 Login
               </Button>
               <Grid container>
-                <Grid item xs>
+                {/* <Grid item xs>
                   <Link href="#" variant="body2">
                     Forgot password?
                   </Link>
-                </Grid>
+                </Grid> */}
                 <Grid item>
                   <Link href="/signup" variant="body2">
                     {"Don't have an account? Sign Up"}

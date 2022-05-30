@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import { MainPage } from "./pages/MainPage";
+import { Sampler } from "./pages/Sampler";
+import { Looper } from "./pages/Looper/Looper";
 import { Navigation } from "./components/Navigation/index";
 import background from "../src/image/circle.jpeg";
 
@@ -28,7 +29,7 @@ function App() {
     <div
       className="App"
       style={{
-        backgroundImage: `url(${background})`,
+        // backgroundImage: `url(${background})`,
         backgroundSize: 2000,
       }}
     >
@@ -45,7 +46,8 @@ function App() {
       <MessageBox />
       {isLoading ? <Loading /> : null}
       <Routes>
-        <Route exact path="/main" element={<MainPage token={token} />} />
+        <Route exact path="/sampler" element={<Sampler token={token} />} />
+        <Route exact path="/looper" element={<Looper />} />
 
         <Route path="/signup" element={<SignUp />} />
         <Route path="/" element={<Login />} />
