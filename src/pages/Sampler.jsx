@@ -15,8 +15,9 @@ export const Sampler = () => {
   return (
     <div
       className="container"
-      style={{ backgroundImage: `url(${background})` }}
-      // style={{ backgroundImage: `url(${background})` }}
+      style={{
+        backgroundImage: `url(${background})`,
+      }}
     >
       <div>
         <Browser />

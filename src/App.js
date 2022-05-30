@@ -11,6 +11,7 @@ import Loading from "./components/Loading/index";
 import MessageBox from "./components/MessageBox";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
+import Intro from "./pages/Intro/Intro";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
@@ -33,9 +34,7 @@ function App() {
         backgroundSize: 2000,
       }}
     >
-      <div>
-        <Navigation />
-      </div>
+      <div>{token && <Navigation token={token} />}</div>
       <div
         style={{
           display: "flex",
@@ -46,11 +45,14 @@ function App() {
       <MessageBox />
       {isLoading ? <Loading /> : null}
       <Routes>
-        <Route exact path="/sampler" element={<Sampler token={token} />} />
+        <Route exact path="/" element={<Intro token={token} />} />
+        <Route exact path="/login" element={<Login />} />
+        {token && (
+          <Route exact path="/sampler" element={<Sampler token={token} />} />
+        )}
         <Route exact path="/looper" element={<Looper />} />
 
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/" element={<Login />} />
       </Routes>
     </div>
   );

@@ -3,6 +3,7 @@ import channelsReducer from "./channels/slice";
 import feedReducer from "./feed/slice";
 import userReducer from "./user/slice";
 import appStateReducer from "./appState/slice";
+import looperReducer from "./looper/slice";
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     userReducer,
     channelsReducer,
     feedReducer,
+    looperReducer,
   },
 });
 

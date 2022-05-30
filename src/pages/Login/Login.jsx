@@ -3,7 +3,7 @@ import * as React from "react";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import background from "../../image/background2.webp";
+import background from "../../image/Animation.gif";
 
 import Link from "@mui/material/Link";
 import Grid from "@mui/material/Grid";
@@ -47,7 +47,7 @@ export default function SignIn() {
 
   useEffect(() => {
     if (token !== null) {
-      navigate("/main");
+      navigate("/sampler");
     }
   }, [token, navigate]);
 
@@ -75,22 +75,10 @@ export default function SignIn() {
       className="login"
       style={{
         backgroundImage: `url(${background})`,
-        backgroundSize: 2000,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
       }}
-      // style={{
-      //   backgroundColor: "grey",
-      //   borderBlockColor: "white",
-      //   color: "white",
-      //   // backgroundColor: "white",
-      //   marginLeft: 400,
-      //   marginRight: 400,
-      //   maxrginTop: 0,
-      //   marginBottom: 400,
-      //   alignItems: "center",
-      //   justifyContent: "center",
-      //   boxShadow: 10,
-      //   paddingTop: 60,
-      // }}
     >
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs" className="login-body">

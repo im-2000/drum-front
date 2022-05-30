@@ -5,7 +5,7 @@ import { CgAdd } from "react-icons/cg";
 import { addSample } from "../store/channels/slice";
 import { useDispatch } from "react-redux";
 
-export const Box = (props) => {
+export const Box2 = (props) => {
   const audioRef = useRef(null);
   const [isPlaying, setPlaying] = useState(false);
 
@@ -41,33 +41,31 @@ export const Box = (props) => {
   const { text, audio, className } = props;
 
   return (
-    <>
-      <div className={className} onClick={playStop}>
-        {className === "sample" && (
-          <BsPlayCircle className="playIcon" onClick={playStop} />
-        )}
-        &nbsp; &nbsp;
-        {className === "sample" && (
-          <CgAdd
-            className="playIcon"
-            id={props.sample.id}
-            onClick={(event) => {
-              dispatch(
-                addSample(
-                  props.samplesState.find(
-                    (sample) => sample.id === parseInt(event.target.id)
-                  )
+    <div className="box2" onClick={playStop}>
+      {className === "sample" && (
+        <BsPlayCircle className="playIcon" onClick={playStop} />
+      )}
+      &nbsp; &nbsp;
+      {className === "sample" && (
+        <CgAdd
+          className="playIcon"
+          id={props.sample.id}
+          onClick={(event) => {
+            dispatch(
+              addSample(
+                props.samplesState.find(
+                  (sample) => sample.id === parseInt(event.target.id)
                 )
-              );
-            }}
-          >
-            {" "}
-          </CgAdd>
-        )}
-        &nbsp; &nbsp;
-        {text}
-        <audio ref={audioRef} src={audio} className="clip" id={text} />
-      </div>
-    </>
+              )
+            );
+          }}
+        >
+          {" "}
+        </CgAdd>
+      )}
+      &nbsp; &nbsp;
+      {text}
+      <audio ref={audioRef} src={audio} className="clip" id={text} />
+    </div>
   );
 };

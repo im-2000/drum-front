@@ -40,49 +40,55 @@ export function Navigation() {
           TWEAK PEAK
         </Link>
       </div>
-      <div>
-        <Link
-          style={{
-            color: "white",
-          }}
-          to="/sampler"
-        >
-          Sampler
-        </Link>
-      </div>
-      <div>
-        {" "}
-        <Link
-          style={{
-            color: "white",
-          }}
-          to="/looper"
-        >
-          Looper
-        </Link>
-      </div>
-      <div>
-        {" "}
-        <Link
-          style={{
-            color: "white",
-          }}
-          to="/tracks"
-        >
-          MyTracks
-        </Link>
-      </div>
-      <div>
-        {" "}
-        <Link
-          style={{
-            color: "white",
-          }}
-          to="/tutorial"
-        >
-          Tutorial
-        </Link>
-      </div>
+      {token && (
+        <>
+          <div>
+            <Link
+              style={{
+                color: "white",
+              }}
+              to="/sampler"
+            >
+              Sampler
+            </Link>
+          </div>
+          <div>
+            {" "}
+            (
+            <Link
+              style={{
+                color: "white",
+              }}
+              to="/looper"
+            >
+              Looper
+            </Link>
+            )
+          </div>
+          <div>
+            {" "}
+            <Link
+              style={{
+                color: "white",
+              }}
+              to="/tracks"
+            >
+              MyTracks
+            </Link>
+          </div>
+          <div>
+            {" "}
+            <Link
+              style={{
+                color: "white",
+              }}
+              to="/tutorial"
+            >
+              Tutorial
+            </Link>
+          </div>
+        </>
+      )}
 
       {loginLogoutControls}
     </div>

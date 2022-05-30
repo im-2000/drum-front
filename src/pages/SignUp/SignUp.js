@@ -1,5 +1,5 @@
 import * as React from "react";
-import background from "../../image/background2.webp";
+import background from "../../image/Animation.gif";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
@@ -49,7 +49,7 @@ export default function SignUp() {
 
   useEffect(() => {
     if (token !== null) {
-      navigate("/main");
+      navigate("/sampler");
     }
   }, [token, navigate]);
 
@@ -77,45 +77,33 @@ export default function SignUp() {
 
   return (
     <div
-      className="login"
+      className="signup"
       style={{
         backgroundImage: `url(${background})`,
-        backgroundSize: 2000,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
       }}
-      // style={{
-      //   color: "white",
-      //   // backgroundColor: "white",
-      //   marginLeft: 700,
-      //   marginRight: 700,
-      //   color: "white",
-
-      //   maxHeight: 500,
-      //   alignItems: "center",
-      //   justifyContent: "center",
-      // }}
     >
-      <ThemeProvider
-        style={{ color: "white" }}
-        theme={theme}
-        className="login-body"
-      >
+      <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <Box
+            className="signup-body"
             sx={{
+              backgroundColor: "white",
+              borderRadius: 7,
+              padding: 5,
               marginTop: 8,
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              color: "white",
             }}
           >
             {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar> */}
-            <Typography component="h1" variant="h5">
-              Sign up
-            </Typography>
+            <Typography>Sign up</Typography>
             <Box
               component="form"
               onSubmit={submitForm}
