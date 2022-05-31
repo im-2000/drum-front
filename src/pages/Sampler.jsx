@@ -17,6 +17,9 @@ export const Sampler = () => {
       className="container"
       style={{
         backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
       }}
     >
       <div>

@@ -6,6 +6,7 @@
   border-style: solid;
   border-width: 1px;
   border-color: red;
+
   /* font-family: "Audiowide", monospace; */
 }
 
@@ -22,34 +23,44 @@
   margin: 0px 0px 0px 0px;
   padding-top: 0px;
   border: 5px solid #333;
-  column-gap: 20px;
+  column-gap: 10px;
   color: "#42f5c8";
+}
+
+.row {
+  color: red;
+  font-size: 20;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .looper {
   display: flex;
   align-items: center;
-
+  height: 1000px;
   justify-content: center;
 
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .box {
   font-family: "Audiowide", monospace;
 
-  background-color: rgb(139, 139, 139);
+  /* background-color: rgb(139, 139, 139); */
   cursor: pointer;
   border: 4px solid rgb(255, 255, 255);
   border-radius: 10px;
   box-shadow: 0px 15px 15px 15px rgba(0, 0, 0, 0.75);
-
-  margin: 25px 5px 5px 5px;
-  height: 75px;
-  width: 75px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  margin: 25px 5px 5px 5px;
+
+  height: 75px;
+  width: 75px;
 
   font-size: 16px;
   color: white;
@@ -57,7 +68,7 @@
   background: #000;
 
   color: #fff;
-  padding: 8px 12px 8px 8px;
+  padding: 8px 12px 12px 12px;
 }
 
 .box.active {
@@ -182,25 +193,44 @@
 }
 .browser {
   font-family: "Audiowide", monospace;
-  float: right;
+  /* float: right; */
   height: 700px;
   width: 300px;
-  overflow-y: scroll;
-  margin-top: 50px;
-  margin-left: 30px;
+  /* overflow-y: scroll; */
+  margin-top: 20px;
+  margin-left: 60px;
   color: white;
 }
 
-.browser::-webkit-scrollbar {
+.sampleList {
+  font-family: "Audiowide", monospace;
+
+  float: right;
+  height: 700px;
+  width: 260px;
+  overflow-y: scroll;
+  margin-top: 40px;
+  padding-left: 40px;
+  margin-left: 50px;
+  color: white;
+}
+
+.sampleList::-webkit-scrollbar {
   width: 4px;
 }
 
-.browser::-webkit-scrollbar-thumb {
+.sampleList::-webkit-scrollbar-thumb {
   background: grey;
   border-radius: 8px;
 }
-.browser::-webkit-scrollbar-track {
+.sampleList::-webkit-scrollbar-track {
   background: #030303;
+}
+
+.filters {
+  display: flex;
+  /* align-items: flex-start; */
+  /* justify-content: space-around; */
 }
 
 .navigation {
@@ -232,4 +262,8 @@
 }
 .drums:hover {
   color: rgb(0, 255, 55);
+}
+
+.channel-name {
+  filter: brightness(150%);
 }

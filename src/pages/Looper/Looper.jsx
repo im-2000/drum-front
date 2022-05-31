@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
+import background from "../../image/drums.jpeg";
 import { useDispatch, useSelector } from "react-redux";
 import { Box2 } from "../../components/Box2";
+import { Browser } from "../../components/Browser/Browser";
 import {
   selectCh,
   selectClap,
@@ -21,19 +23,17 @@ export const Looper = () => {
   const crash = useSelector(selectCrash);
 
   return (
-    <div id="display" className="looper">
-      <div>
-        <p
-          style={{
-            color: "red",
-            fontSize: 20,
-            // display: "flex",
-            // alignItems: "center",
-            // justifyContent: "center",
-          }}
-        >
-          KICK
-        </p>
+    <div
+      id="looper"
+      className="looper"
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="row">
         {kick.map((sample, idx) => (
           <Box2
             text={sample ? sample.name : ""}
@@ -43,18 +43,27 @@ export const Looper = () => {
           />
         ))}
       </div>
-      <div>
-        <p
-          style={{
-            color: "#42f5c8",
-            fontSize: 20,
-            // display: "flex",
-            // alignItems: "center",
-            // justifyContent: "center",
-          }}
-        >
-          SNARE
-        </p>
+      <div className="row">
+        {snare.map((sample, idx) => (
+          <Box2
+            text={sample ? sample.name : ""}
+            key={idx}
+            audio={sample ? sample.url : ""}
+            className="box2"
+          />
+        ))}
+      </div>
+      <div className="row">
+        {snare.map((sample, idx) => (
+          <Box2
+            text={sample ? sample.name : ""}
+            key={idx}
+            audio={sample ? sample.url : ""}
+            className="box2"
+          />
+        ))}
+      </div>
+      <div className="row">
         {snare.map((sample, idx) => (
           <Box2
             text={sample ? sample.name : ""}

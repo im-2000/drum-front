@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import Recorder from "mic-recorder-to-mp3";
 import { BsPlayCircle } from "react-icons/bs";
+import { RiStarSLine } from "react-icons/ri";
 import { CgAdd } from "react-icons/cg";
 import { addSample } from "../store/channels/slice";
 import { useDispatch } from "react-redux";
@@ -19,16 +19,16 @@ export const Box = (props) => {
   };
   useEffect(() => {
     audioRef.current.addEventListener("timeupdate", function () {
-      let buffer = 0.13;
+      let buffer = 0.01;
       if (audioRef.current.currentTime > audioRef.current.duration - buffer) {
         audioRef.current.currentTime = 0;
         audioRef.current.play();
       }
     });
 
-    // audioRef.current.addEventListener("ended", (e) => {
-    //   audioRef.current.play();
-    // });
+    //   audioRef.current.addEventListener("ended", (e) => {
+    //     audioRef.current.play();
+    //   });
   });
   useEffect(() => {
     if (isPlaying) {
@@ -42,11 +42,23 @@ export const Box = (props) => {
 
   return (
     <>
-      <div className={className} onClick={playStop}>
+      <div
+        style={{
+          display: "flex",
+        }}
+      >
+        <div>
+          {className === "sample" && (
+            <button>
+              <RiStarSLine className="playIcon" />
+            </button>
+          )}
+        </div>
+        &nbsp;
         {className === "sample" && (
           <BsPlayCircle className="playIcon" onClick={playStop} />
         )}
-        &nbsp; &nbsp;
+        &nbsp;
         {className === "sample" && (
           <CgAdd
             className="playIcon"
@@ -64,9 +76,12 @@ export const Box = (props) => {
             {" "}
           </CgAdd>
         )}
-        &nbsp; &nbsp;
-        {text}
-        <audio ref={audioRef} src={audio} className="clip" id={text} />
+        &nbsp;
+        <div className={className} onClick={playStop}>
+          {text}
+          <audio ref={audioRef} src={audio} className="clip" id={text} />
+        </div>
+        &nbsp;
       </div>
     </>
   );

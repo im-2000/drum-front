@@ -30,43 +30,49 @@ export const Browser = () => {
     };
     setFilteredSamples(filterSamples(style, type));
   }, [style, type, samplesState]);
+
   return (
     <div className="browser">
       <ul>
         <h2 style={{ color: "#42f5c8" }}>Browser</h2>
-        &nbsp;
-        <div>
-          <p style={{ color: "violet" }}>Style</p>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={(event) => setStyle(parseInt(event.target.value))}
+
+        <div className="filters">
+          <div>
+            <p style={{ color: "violet" }}>Style</p>
+            <Form.Select
+              aria-label="Default select example"
+              onChange={(event) => setStyle(parseInt(event.target.value))}
+            >
+              <option value="0">All</option>
+              {stylesState.map((style) => (
+                <option value={style.id}>{style.name}</option>
+              ))}
+            </Form.Select>
+          </div>
+          &nbsp; &nbsp; &nbsp;
+          <div
+            Style={
+              {
+                // display: "flex",
+                // justifyContent: "row",
+              }
+            }
           >
-            <option value="0">All</option>
-            {stylesState.map((style) => (
-              <option value={style.id}>{style.name}</option>
-            ))}
-          </Form.Select>
+            <p style={{ color: "violet" }}>Type</p>
+            <Form.Select
+              aria-label="Default select example"
+              onChange={(event) => setType(event.target.value)}
+            >
+              <option value="">All</option>
+              <option value="drums">Drums</option>
+              <option value="bass">Bass</option>
+              <option value="melody">Melody</option>
+              <option value="pad">Pad</option>
+            </Form.Select>
+          </div>
         </div>
-        <div
-          Style={{
-            display: "flex",
-            justifyContent: "row",
-          }}
-        >
-          <p style={{ color: "violet" }}>Sample Type</p>
-          <Form.Select
-            aria-label="Default select example"
-            onChange={(event) => setType(event.target.value)}
-          >
-            <option value="">All</option>
-            <option value="drums">Drums</option>
-            <option value="bass">Bass</option>
-            <option value="melody">Melody</option>
-            <option value="pad">Pad</option>
-          </Form.Select>
-        </div>
-        &nbsp; &nbsp; &nbsp;
-        <div>
+
+        <div className="sampleList">
           {filteredSamples.map((sample, idx) => {
             return (
               <>

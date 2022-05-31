@@ -47,6 +47,7 @@ export const Channels = (props) => {
       </div>
       <div>
         <p
+          className="channel-name"
           style={{
             color: "#42f5c8",
             fontSize: 20,
