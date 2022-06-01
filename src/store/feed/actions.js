@@ -1,4 +1,8 @@
-import { allSamplesFetched, allStylesFetched } from "./slice";
+import {
+  allSamplesFetched,
+  allStylesFetched,
+  oneShotSamplesFetched,
+} from "./slice";
 
 import axios from "axios";
 
@@ -49,7 +53,7 @@ export async function fetchOneShotSamples(dispatch, getState) {
     const response = await axios.get(`${API_URL}/samples/oneshot`);
 
     console.log("response", response);
-    dispatch(allStylesFetched(response.data));
+    dispatch(oneShotSamplesFetched(response.data));
   } catch (e) {
     // setDownLoading
     // setError

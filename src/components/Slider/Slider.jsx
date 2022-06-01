@@ -1,26 +1,29 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
-import { flexbox } from "@mui/system";
 
 export function SliderBpm() {
   return (
-    <Box width={300}>
-      {/* <Slider
-        size="small"
-        defaultValue={70}
-        aria-label="Small"
-        valueLabelDisplay="auto"
-      /> */}
-      <Slider
-        defaultValue={50}
-        aria-label="Default"
-        valueLabelDisplay="auto"
-        style={{
-          color: "red",
-          width: 600,
-        }}
-      />
-    </Box>
+    <div className="control-panel">
+      <div>
+        <button>Upload sample</button>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <button>Clear channels</button>
+      </div>
+
+      <div>
+        <Box width={300}>
+          <Slider
+            defaultValue={50}
+            aria-label="Default"
+            valueLabelDisplay="auto"
+            style={{
+              color: "red",
+              width: 650,
+            }}
+          />
+        </Box>
+      </div>
+    </div>
   );
 }

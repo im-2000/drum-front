@@ -16,45 +16,57 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
 import { selectToken } from "./store/user/selectors";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
+import { SliderBpm } from "./components/Slider/Slider";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selectAppLoading);
   const token = useSelector(selectToken);
+  // const navigate = useNavigate();
+
+  // if (token === null) {
+  //   navigate("/");
+  // }
 
   useEffect(() => {
     dispatch(getUserWithStoredToken());
   }, [dispatch]);
 
   return (
-    <div
-      className="App"
-      style={{
-        // backgroundImage: `url(${background})`,
-        backgroundSize: 2000,
-      }}
-    >
-      <div>{token && <Navigation token={token} />}</div>
+    <DndProvider backend={HTML5Backend}>
       <div
+        className="App"
         style={{
-          display: "flex",
-          alignIems: "center",
-          justifyContent: "center",
+          // backgroundImage: `url(${background})`,
+          backgroundSize: 2000,
         }}
-      ></div>
-      <MessageBox />
-      {isLoading ? <Loading /> : null}
-      <Routes>
-        <Route exact path="/" element={<Intro token={token} />} />
-        <Route exact path="/login" element={<Login />} />
-        {token && (
-          <Route exact path="/sampler" element={<Sampler token={token} />} />
-        )}
-        <Route exact path="/looper" element={<Looper />} />
+      >
+        <div>{token && <Navigation token={token} />}</div>
+        <div
+          style={{
+            display: "flex",
+            alignIems: "center",
+            justifyContent: "center",
+          }}
+        ></div>
+        <MessageBox />
+        {isLoading ? <Loading /> : null}
+        {token && <SliderBpm />}
+        <Routes>
+          <Route exact path="/" element={<Intro token={token} />} />
+          <Route exact path="/login" element={<Login />} />
+          {token && (
+            <Route exact path="/sampler" element={<Sampler token={token} />} />
+          )}
+          <Route exact path="/looper" element={<Looper />} />
 
-        <Route path="/signup" element={<SignUp />} />
-      </Routes>
-    </div>
+          <Route path="/signup" element={<SignUp />} />
+        </Routes>
+      </div>
+    </DndProvider>
   );
 }
 

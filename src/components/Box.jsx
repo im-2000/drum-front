@@ -1,15 +1,28 @@
 import React, { useState, useEffect, useRef } from "react";
 import { BsPlayCircle } from "react-icons/bs";
-import { RiStarSLine } from "react-icons/ri";
+import { AiOutlineStar } from "react-icons/ai";
 import { CgAdd } from "react-icons/cg";
 import { addSample } from "../store/channels/slice";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useDrag, useDrop } from "react-dnd";
+import { toggleFavorites } from "../store/user/slice";
+import { selectUser } from "../store/user/selectors";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
 
 export const Box = (props) => {
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: "sample",
+    collect: (monitor) => ({
+      isDragging: !!monitor.isDragging(),
+    }),
+  }));
+
   const audioRef = useRef(null);
   const [isPlaying, setPlaying] = useState(false);
 
   const dispatch = useDispatch();
+  const user = useSelector(selectUser);
 
   const playStop = (e) => {
     setPlaying(!isPlaying);
@@ -48,11 +61,15 @@ export const Box = (props) => {
         }}
       >
         <div>
+          {/* <Tooltip title="Add to favorites">
+            <IconButton> */}
           {className === "sample" && (
-            <button>
-              <RiStarSLine className="playIcon" />
-            </button>
+            <AiOutlineStar
+              onClick={() => dispatch(toggleFavorites(props.sample.id))}
+            ></AiOutlineStar>
           )}
+          {/* </IconButton>
+          </Tooltip> */}
         </div>
         &nbsp;
         {className === "sample" && (
@@ -64,20 +81,14 @@ export const Box = (props) => {
             className="playIcon"
             id={props.sample.id}
             onClick={(event) => {
-              dispatch(
-                addSample(
-                  props.samplesState.find(
-                    (sample) => sample.id === parseInt(event.target.id)
-                  )
-                )
-              );
+              dispatch(addSample(props.sample));
             }}
           >
             {" "}
           </CgAdd>
         )}
         &nbsp;
-        <div className={className} onClick={playStop}>
+        <div className={className} onClick={playStop} ref={drag}>
           {text}
           <audio ref={audioRef} src={audio} className="clip" id={text} />
         </div>

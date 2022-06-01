@@ -3,6 +3,8 @@ import background from "../../image/drums.jpeg";
 import { useDispatch, useSelector } from "react-redux";
 import { Box2 } from "../../components/Box2";
 import { Browser } from "../../components/Browser/Browser";
+import { fetchOneShotSamples } from "../../store/feed/actions";
+import { selectOneShotSamples } from "../../store/feed/selectors";
 import {
   selectCh,
   selectClap,
@@ -22,6 +24,15 @@ export const Looper = () => {
   const oh = useSelector(selectOh);
   const crash = useSelector(selectCrash);
 
+  const dispatch = useDispatch();
+  const oneShotSamples = useSelector(selectOneShotSamples);
+
+  useEffect(() => {
+    dispatch(fetchOneShotSamples);
+  }, []);
+
+  console.log("samples", oneShotSamples);
+
   return (
     <div
       id="looper"
@@ -34,11 +45,11 @@ export const Looper = () => {
       }}
     >
       <div className="row">
-        {kick.map((sample, idx) => (
+        {new Array(16).fill().map((_, idx) => (
           <Box2
-            text={sample ? sample.name : ""}
+            text={oneShotSamples ? oneShotSamples[0].name : ""}
             key={idx}
-            audio={sample ? sample.url : ""}
+            audio={oneShotSamples ? oneShotSamples[0].url : ""}
             className="box"
           />
         ))}

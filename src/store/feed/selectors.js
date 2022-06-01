@@ -7,5 +7,5 @@ export const selectAllStyles = (reduxState) => {
 };
 
 export const selectOneShotSamples = (reduxState) => {
-  return reduxState.feedReducer.omeShotSamples;
+  return reduxState.feedReducer.oneShotSamples;
 };

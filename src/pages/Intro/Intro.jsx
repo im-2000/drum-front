@@ -1,17 +1,9 @@
 import * as React from "react";
 import { Label } from "../../components/Label/Label";
-
 import background from "../../image/Animation.gif";
-import { selectToken } from "../../store/user/selectors";
-import { useSelector } from "react-redux";
-// import LoggedIn from "./LoggedIn";
-// import LoggedOut from "./LoggedOut";
 import { Link } from "react-router-dom";
 
 export default function Intro(props) {
-  const token = useSelector(selectToken);
-  //   const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
-
   return (
     <div
       className="intro"
@@ -42,7 +34,6 @@ export default function Intro(props) {
           LOGIN
         </Link>
       </div>
-      {/* {loginLogoutControls} */}
     </div>
   );
 }

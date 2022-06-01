@@ -1,5 +1,5 @@
 import "./channel_rack.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import background from "../image/circle.jpeg";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAllSamples } from "../store/feed/selectors";
@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import { removeSample, toggleDrums } from "../store/channels/slice";
 import { Box } from "./Box";
 import { BsPlayCircle, BsPauseCircle } from "react-icons/bs";
+import { useDrag, useDrop } from "react-dnd";
+import { Recorder } from "./Recorder/Recorder";
 import {
   selectDrums,
   selectMelody,
@@ -22,16 +24,33 @@ export const Channels = (props) => {
   const melody = useSelector(selectMelody);
   const pad = useSelector(selectPad);
 
+  const [board, setBoard] = useState([]);
+
+  const [{ isOver }, drop] = useDrop(() => ({
+    accept: "sample",
+    drop: (item) => addSampleToBoard(item.id),
+    collect: (monitor) => ({
+      isOver: !!monitor.isOver(),
+    }),
+  }));
+
+  const addSampleToBoard = (id) => {
+    console.log("id", id);
+  };
+
   return (
     <div id="display" className="sampler">
-      <div className="drums">
+      <div>
         <p
+          className="channel-name"
           style={{
             color: "red",
             fontSize: 20,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            backgroundColor: "black",
+            borderRadius: 20,
           }}
         >
           DRUMS
@@ -49,11 +68,13 @@ export const Channels = (props) => {
         <p
           className="channel-name"
           style={{
-            color: "#42f5c8",
+            color: "violet",
             fontSize: 20,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            backgroundColor: "black",
+            borderRadius: 20,
           }}
         >
           BASS
@@ -69,12 +90,15 @@ export const Channels = (props) => {
       </div>
       <div>
         <p
+          className="channel-name"
           style={{
-            color: "orange",
+            color: "#13D6A7",
             fontSize: 20,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            backgroundColor: "black",
+            borderRadius: 20,
           }}
         >
           MELODY
@@ -90,12 +114,15 @@ export const Channels = (props) => {
       </div>
       <div>
         <p
+          className="channel-name"
           style={{
             color: "yellow",
             fontSize: 20,
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            backgroundColor: "black",
+            borderRadius: 20,
           }}
         >
           PAD

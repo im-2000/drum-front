@@ -19,7 +19,7 @@ export default function SignUp() {
 
   useEffect(() => {
     if (token !== null) {
-      navigate("/main");
+      navigate("/sampler");
     }
   }, [token, navigate]);
 

@@ -1,6 +1,7 @@
 import { Channels } from "../components/Channels";
 import { Analyser } from "../components/Analyser";
 import { Browser } from "../components/Browser/Browser";
+import { Recorder } from "../components/Recorder/Recorder";
 import { Navigation } from "../components/Navigation";
 import { SliderBpm } from "../components/Slider/Slider";
 import "../components/channel_rack.css";
@@ -12,6 +13,13 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 export const Sampler = () => {
+  const token = useSelector(selectToken);
+  const navigate = useNavigate();
+
+  if (token === null) {
+    navigate("/");
+  }
+
   return (
     <div
       className="container"
@@ -25,7 +33,6 @@ export const Sampler = () => {
       <div>
         <Browser />
       </div>
-
       <div>
         <Channels />
       </div>
