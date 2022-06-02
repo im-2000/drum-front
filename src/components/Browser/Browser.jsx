@@ -85,7 +85,7 @@ export const Browser = () => {
     <div className="browser">
       <ul>
         <div>
-          <button onClick={() => dispatch(clearSamples(null))}>
+          <button onClick={() => dispatch(clearSamples())}>
             Clear channels
           </button>
           &nbsp; &nbsp; &nbsp;
@@ -100,14 +100,16 @@ export const Browser = () => {
               onChange={(event) => setStyle(parseInt(event.target.value))}
             >
               <option value="0">All</option>
-              {stylesState.map((style) => (
-                <option value={style.id}>{style.name}</option>
+              {stylesState.map((style, idx) => (
+                <option key={idx} value={style.id}>
+                  {style.name}
+                </option>
               ))}
             </Form.Select>
           </div>
           &nbsp; &nbsp; &nbsp;
           <div
-            Style={
+            style={
               {
                 // display: "flex",
                 // justifyContent: "row",
@@ -132,18 +134,19 @@ export const Browser = () => {
           {filteredSamples.map((sample, idx) => {
             return (
               <div
+                key={idx}
 
-              // style={{ border: isDragging ? "5px solid pink" : "0px" }}
-              // onDragStart={(e) => dragStart(e, idx)}
-              // onDragEnter={(e) => dragEnter(e, idx)}
-              // onDragEnd={drop}
-              // onDragOver={(e) => e.preventDefault()}
-              // key={idx}
-              // draggable
+                // style={{ border: isDragging ? "5px solid pink" : "0px" }}
+                // onDragStart={(e) => dragStart(e, idx)}
+                // onDragEnter={(e) => dragEnter(e, idx)}
+                // onDragEnd={drop}
+                // onDragOver={(e) => e.preventDefault()}
+                // key={idx}
+                // draggable
               >
                 {/* {sample} */}
                 <Box
-                  ref={drop}
+                  // ref={drop}
                   text={sample.name}
                   key={idx}
                   audio={sample.url}

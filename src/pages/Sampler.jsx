@@ -21,23 +21,28 @@ export const Sampler = () => {
   }
 
   return (
-    <div
-      className="container"
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}
-    >
+    <div>
       <div>
-        <Browser />
+        <Navigation />
       </div>
-      <div>
-        <Channels />
-      </div>
-      <div>
-        <Analyser />
+      <div
+        className="container"
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      >
+        <div>
+          <Browser />
+        </div>
+        <div>
+          <Channels />
+        </div>
+        <div>
+          <Analyser />
+        </div>
       </div>
     </div>
   );

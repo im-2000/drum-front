@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { BsPlayCircle } from "react-icons/bs";
 import { AiOutlineStar } from "react-icons/ai";
 import { CgAdd } from "react-icons/cg";
-import { addSample } from "../store/channels/slice";
+import { addSample, removeSample } from "../store/channels/slice";
 import { useDispatch, useSelector } from "react-redux";
 import { useDrag, useDrop } from "react-dnd";
 import { toggleFavorites } from "../store/user/slice";
@@ -88,7 +88,7 @@ export const Box = (props) => {
           </CgAdd>
         )}
         &nbsp;
-        <div className={className} onClick={playStop} ref={drag}>
+        <div className={className} onClick={playStop}>
           {text}
           <audio ref={audioRef} src={audio} className="clip" id={text} />
         </div>

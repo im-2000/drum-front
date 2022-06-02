@@ -16,19 +16,19 @@ export const Box2 = (props) => {
       ? e.target.classList.add("active")
       : e.target.classList.remove("active");
   };
-  useEffect(() => {
-    audioRef.current.addEventListener("timeupdate", function () {
-      let buffer = 0.13;
-      if (audioRef.current.currentTime > audioRef.current.duration - buffer) {
-        audioRef.current.currentTime = 0;
-        audioRef.current.play();
-      }
-    });
+  // useEffect(() => {
+  //   audioRef.current.addEventListener("timeupdate", function () {
+  //     let buffer = 0.13;
+  //     if (audioRef.current.currentTime > audioRef.current.duration - buffer) {
+  //       // audioRef.current.currentTime = 0;
+  //       // audioRef.current.play();
+  //     }
+  //   });
 
-    // audioRef.current.addEventListener("ended", (e) => {
-    //   audioRef.current.play();
-    // });
-  });
+  //   audioRef.current.addEventListener("ended", (e) => {
+  //     audioRef.current.play();
+  //   });
+  // });
   useEffect(() => {
     if (isPlaying) {
       audioRef.current.play();

@@ -61,7 +61,7 @@ export function Navigation() {
               }}
               to="/looper"
             >
-              Looper
+              Drums
             </Link>
             )
           </div>
@@ -94,34 +94,3 @@ export function Navigation() {
     </div>
   );
 }
-
-{
-  /* <div
-style={{
-  backgroundColor: "black",
-  width: 1375,
-  color: "white",
-  // display: "flex",
-  // alignItems: "center",
-  justifyContent: "space-between",
-}}
->
-<Navbar>
-  <div>
-    <Navbar.Brand as={NavLink} to="/main">
-      APP NAME
-    </Navbar.Brand>
-  </div>
-
-  <Nav>
-    <div>
-      <NavbarItem path="/main" linkText="Main" />
-    </div>
-    <div>{<NavbarItem path="/myspace" linkText="My space" />}</div>
-
-    {loginLogoutControls}
-  </Nav>
-  {/* <SliderSizes /> */
-}
-// </Navbar>
-// </div> */}

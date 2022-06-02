@@ -1,3 +1,7 @@
+.App {
+  background-color: black;
+}
+
 .container {
   display: flex;
   background-size: 100%;
@@ -5,25 +9,29 @@
   border-radius: 15px;
   border-style: solid;
   border-width: 1px;
-  border-color: red;
+  border-color: rgb(37, 196, 162);
+  flex-flow: flex-direction;
+  flex-flow: flex-wrap;
 
   /* font-family: "Audiowide", monospace; */
 }
 
-.sampler {
+.channels {
   font-family: "Audiowide", monospace;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  height: 700px;
-  width: 700px;
+  /* flex-wrap: wrap; */
+  /* flex-flow: flex-direction;
+  flex-flow: flex-wrap; */
+  height: 600px;
+  width: 600px;
   /* background-color: blueviolet; */
   /* padding: 50px; */
   margin: 0px 0px 0px 0px;
   padding-top: 0px;
   border: 5px solid #333;
-  column-gap: 10px;
+  /* column-gap: 10px; */
   color: "#42f5c8";
 }
 
@@ -40,9 +48,9 @@
   display: flex;
   align-items: center;
   height: 1000px;
-  justify-content: center;
-
+  justify-content: start;
   flex-direction: column;
+  padding-top: 40px;
 }
 
 .box {
@@ -56,19 +64,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
   margin: 25px 5px 5px 5px;
-
-  height: 75px;
-  width: 75px;
-
+  height: 50px;
+  width: 50px;
   font-size: 16px;
   color: white;
-
   background: #000;
-
   color: rgb(204, 213, 36);
-  padding: 8px 12px 12px 12px;
+  padding: 12px 12px 12px 12px;
 }
 
 .box.active {
@@ -103,6 +106,12 @@
 
   color: #fff;
   padding: 8px 12px 8px 8px;
+}
+.box2:nth-child(4n + 1) {
+  background-color: rgb(117, 114, 114);
+}
+.box2.active {
+  background-color: rgb(164, 67, 255);
 }
 
 .sample {
@@ -145,7 +154,9 @@
 
 .login-body {
   background-color: rgb(255, 255, 255);
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 10%;
   border-width: 1px;
   border-color: red;
@@ -179,7 +190,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 1000px;
+  height: 844px;
+  width: 390px;
   border-radius: 15px;
   border-style: solid;
   border-width: 1px;
@@ -240,13 +252,59 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  padding: 40px 160px 40px 100px;
+  padding: 40px 160px 40px 50px;
   border-radius: 15px;
   border-style: solid;
   border-width: 1px;
-  border-color: red;
+  border-color: rgb(37, 196, 162);
   font-family: "Audiowide", monospace;
+  /* position: fixed; */
+  /* z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: auto; */
 }
+/* .navigation .header {
+  min-height: 8vh;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.navigation .nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  max-width: 1300px;
+  padding: 0 10px;
+}
+
+.navigation .nav-list ul {
+  list-style: none;
+  position: absolute;
+  background-color: rgb(31, 30, 30);
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow-x: hidden;
+}
+
+.navigation .nav-list ul a {
+  font-size: 2.5rem;
+  font-weight: 500;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  padding: 20px;
+  display: block;
+} */
 
 .navButton {
   padding: 10px 10px 10px 10px;
@@ -259,4 +317,13 @@
   justify-content: space-between;
   padding-left: 40px;
   padding-right: 800px;
+}
+
+.channel-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: brightness(30%);
+  margin: 0px 0px 0px -5px;
+  padding: 0px 0px 0px 20px;
 }

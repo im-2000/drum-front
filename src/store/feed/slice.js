@@ -23,7 +23,7 @@ export const feedSlice = createSlice({
     },
     oneShotSamplesFetched: (state, action) => {
       const oneShotSamples = action.payload;
-      state.styles = [...oneShotSamples];
+      state.oneShotSamples = [...oneShotSamples];
       state.loading = false;
     },
   },

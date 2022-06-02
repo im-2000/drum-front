@@ -19,7 +19,8 @@ import { selectToken } from "./store/user/selectors";
 import { DndProvider } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import { SliderBpm } from "./components/Slider/Slider";
-import { useNavigate } from "react-router-dom";
+// import { Recorder } from "./components/Recorder/Recorder";
+// import { useNavigate } from "react-router-dom";
 
 function App() {
   const dispatch = useDispatch();
@@ -44,7 +45,7 @@ function App() {
           backgroundSize: 2000,
         }}
       >
-        <div>{token && <Navigation token={token} />}</div>
+        {/* <div>{token && <Navigation token={token} />}</div> */}
         <div
           style={{
             display: "flex",
@@ -54,13 +55,12 @@ function App() {
         ></div>
         <MessageBox />
         {isLoading ? <Loading /> : null}
-        {token && <SliderBpm />}
+        {/* {token && <SliderBpm />} */}
+        {/* <Recorder /> */}
         <Routes>
-          <Route exact path="/" element={<Intro token={token} />} />
+          <Route exact path="/" element={<Intro />} />
           <Route exact path="/login" element={<Login />} />
-          {token && (
-            <Route exact path="/sampler" element={<Sampler token={token} />} />
-          )}
+          {<Route exact path="/sampler" element={<Sampler />} />}
           <Route exact path="/looper" element={<Looper />} />
 
           <Route path="/signup" element={<SignUp />} />

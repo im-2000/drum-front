@@ -18,7 +18,7 @@ export function SliderBpm() {
             aria-label="Default"
             valueLabelDisplay="auto"
             style={{
-              color: "red",
+              color: "white",
               width: 650,
             }}
           />

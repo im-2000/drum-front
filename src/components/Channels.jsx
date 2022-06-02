@@ -24,33 +24,39 @@ export const Channels = (props) => {
   const melody = useSelector(selectMelody);
   const pad = useSelector(selectPad);
 
-  const [board, setBoard] = useState([]);
+  // const [board, setBoard] = useState([]);
 
-  const [{ isOver }, drop] = useDrop(() => ({
-    accept: "sample",
-    drop: (item) => addSampleToBoard(item.id),
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
-    }),
-  }));
+  // const [{ isOver }, drop] = useDrop(() => ({
+  //   accept: "sample",
+  //   drop: (item) => addSampleToBoard(item.id),
+  //   collect: (monitor) => ({
+  //     isOver: !!monitor.isOver(),
+  //   }),
+  // }));
 
-  const addSampleToBoard = (id) => {
-    console.log("id", id);
+  // const addSampleToBoard = (id) => {
+  //   console.log("id", id);
+  // };
+
+  const onRightClick = (sample) => {
+    if (sample) {
+      removeSample(sample);
+    }
   };
 
   return (
-    <div id="display" className="sampler">
+    <div id="sampler" className="channels">
       <div>
         <p
           className="channel-name"
           style={{
             color: "red",
             fontSize: 20,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "black",
-            borderRadius: 20,
+            // display: "flex",
+            // alignItems: "center",
+            // justifyContent: "center",
+            // backgroundColor: "black",
+            // borderRadius: 20,
           }}
         >
           DRUMS
@@ -61,6 +67,7 @@ export const Channels = (props) => {
             key={idx}
             audio={sample ? sample.url : ""}
             className="box"
+            onRightClick={() => onRightClick({ type: "drums", id: 1 })}
           />
         ))}
       </div>
@@ -70,11 +77,11 @@ export const Channels = (props) => {
           style={{
             color: "violet",
             fontSize: 20,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "black",
-            borderRadius: 20,
+            // display: "flex",
+            // alignItems: "center",
+            // justifyContent: "center",
+            // backgroundColor: "black",
+            // borderRadius: 20,
           }}
         >
           BASS
@@ -85,6 +92,7 @@ export const Channels = (props) => {
             key={idx}
             audio={sample ? sample.url : ""}
             className="box"
+            onRightClick={onRightClick}
           />
         ))}
       </div>
@@ -94,11 +102,11 @@ export const Channels = (props) => {
           style={{
             color: "#13D6A7",
             fontSize: 20,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "black",
-            borderRadius: 20,
+            // display: "flex",
+            // alignItems: "center",
+            // justifyContent: "center",
+            // backgroundColor: "black",
+            // borderRadius: 20,
           }}
         >
           MELODY
@@ -109,6 +117,7 @@ export const Channels = (props) => {
             key={idx}
             audio={sample ? sample.url : ""}
             className="box"
+            onRightClick={onRightClick}
           />
         ))}
       </div>
@@ -118,11 +127,11 @@ export const Channels = (props) => {
           style={{
             color: "yellow",
             fontSize: 20,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            backgroundColor: "black",
-            borderRadius: 20,
+            // display: "flex",
+            // alignItems: "center",
+            // justifyContent: "center",
+            // backgroundColor: "black",
+            // borderRadius: 20,
           }}
         >
           PAD
@@ -133,6 +142,7 @@ export const Channels = (props) => {
             key={idx}
             audio={sample ? sample.url : ""}
             className="box"
+            onRightClick={onRightClick}
           />
         ))}
       </div>
