@@ -32,6 +32,7 @@ export function Navigation() {
       <div>
         <Link
           style={{
+            textDecoration: "none",
             color: "violet",
             fontSize: 50,
           }}
@@ -46,6 +47,7 @@ export function Navigation() {
             <Link
               style={{
                 color: "white",
+                textDecoration: "none",
               }}
               to="/sampler"
             >
@@ -58,6 +60,7 @@ export function Navigation() {
             <Link
               style={{
                 color: "white",
+                textDecoration: "none",
               }}
               to="/looper"
             >
@@ -70,6 +73,7 @@ export function Navigation() {
             <Link
               style={{
                 color: "white",
+                textDecoration: "none",
               }}
               to="/tracks"
             >
@@ -81,6 +85,7 @@ export function Navigation() {
             <Link
               style={{
                 color: "white",
+                textDecoration: "none",
               }}
               to="/tutorial"
             >

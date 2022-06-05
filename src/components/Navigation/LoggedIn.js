@@ -13,10 +13,11 @@ export default function LoggedIn() {
       <Nav.Item style={{ padding: ".5rem 1rem" }}>{user?.email}</Nav.Item>
       <Button
         style={{
-          width: 70,
-          height: 25,
-          backgroundColor: "red",
+          width: 100,
+          height: 40,
+          backgroundColor: "#333",
           color: "white",
+          borderColor: "green",
         }}
         onClick={() => dispatch(logOut())}
       >

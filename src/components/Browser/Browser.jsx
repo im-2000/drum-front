@@ -85,11 +85,14 @@ export const Browser = () => {
     <div className="browser">
       <ul>
         <div>
-          <button onClick={() => dispatch(clearSamples())}>
-            Clear channels
+          <button
+            className="button-browser"
+            onClick={() => dispatch(clearSamples())}
+          >
+            Reset channels
           </button>
           &nbsp; &nbsp; &nbsp;
-          <button>Upload sample</button>
+          <button className="button-browser">Upload sample</button>
         </div>
         {/* <h2 style={{ color: "#42f5c8" }}>Browser</h2> */}
         <div className="filters">

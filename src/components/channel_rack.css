@@ -1,19 +1,19 @@
+/* @import url("https://fonts.googleapis.com/css?family=Josefin+Sans"); */
+
 .App {
   background-color: black;
 }
 
 .container {
   display: flex;
-  background-size: 100%;
+  /* background-size: 100%; */
   justify-content: space-between;
   border-radius: 15px;
   border-style: solid;
   border-width: 1px;
   border-color: rgb(37, 196, 162);
-  flex-flow: flex-direction;
-  flex-flow: flex-wrap;
-
-  /* font-family: "Audiowide", monospace; */
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .channels {
@@ -24,19 +24,19 @@
   /* flex-wrap: wrap; */
   /* flex-flow: flex-direction;
   flex-flow: flex-wrap; */
-  height: 600px;
-  width: 600px;
+  height: 700px;
+  width: 700px;
   /* background-color: blueviolet; */
   /* padding: 50px; */
   margin: 0px 0px 0px 0px;
   padding-top: 0px;
   border: 5px solid #333;
-  /* column-gap: 10px; */
+  column-gap: 10px;
   color: "#42f5c8";
 }
 
 .row {
-  color: red;
+  color: rgb(222, 151, 9);
   font-size: 20;
   display: flex;
   align-items: center;
@@ -45,9 +45,11 @@
 }
 
 .looper {
+  /* background-color: grey; */
   display: flex;
-  align-items: center;
-  height: 1000px;
+  align-items: flex-end;
+  width: 65%;
+  height: 820px;
   justify-content: start;
   flex-direction: column;
   padding-top: 40px;
@@ -65,8 +67,8 @@
   align-items: center;
   justify-content: center;
   margin: 25px 5px 5px 5px;
-  height: 50px;
-  width: 50px;
+  height: 70px;
+  width: 70px;
   font-size: 16px;
   color: white;
   background: #000;
@@ -93,8 +95,8 @@
   /* box-shadow: 0px 15px 15px 15px rgba(0, 0, 0, 0.75); */
 
   /* margin: 25px 5px 5px 5px; */
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 10px;
   /* display: flex;
   align-items: center;
   justify-content: center;
@@ -107,7 +109,7 @@
   color: #fff;
   padding: 8px 12px 8px 8px;
 }
-.box2:nth-child(4n + 1) {
+.box2:nth-child(4n-2) {
   background-color: rgb(117, 114, 114);
 }
 .box2.active {
@@ -115,7 +117,7 @@
 }
 
 .sample {
-  /* color: white; */
+  color: white;
   cursor: pointer;
 }
 .sample.hover {
@@ -146,22 +148,23 @@
   border-radius: 15px;
   border-style: solid;
   border-width: 1px;
-  border-color: red;
+  /* border-color: red; */
   box-shadow: 0px 0px 15px rgba(255, 0, 0);
   /* padding-bottom: 40; */
   background-color: "grey";
 }
 
-.login-body {
+.login-box {
   background-color: rgb(255, 255, 255);
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   border-radius: 10%;
   border-width: 1px;
-  border-color: red;
+  border-color: rgb(11, 197, 30);
   box-shadow: 0px 0px 15px rgba(255, 0, 0);
-  padding: 50px 150px 50px 50px;
+  padding: 50px 50px 50px 50px;
 }
 .signup {
   display: flex;
@@ -187,11 +190,14 @@
 }
 
 .intro {
+  /* font-family: "Josefin Sans", cursive; */
+  font-family: "Audiowide", monospace;
+
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 844px;
-  width: 390px;
+  width: 100%;
+  height: 900px;
   border-radius: 15px;
   border-style: solid;
   border-width: 1px;
@@ -205,6 +211,7 @@
 }
 .browser {
   font-family: "Audiowide", monospace;
+
   /* float: right; */
   height: 700px;
   width: 320px;
@@ -217,7 +224,7 @@
 
 .sampleList {
   font-family: "Audiowide", monospace;
-
+  font-size: 20;
   float: right;
   height: 700px;
   width: 260px;
@@ -247,6 +254,9 @@
 }
 
 .navigation {
+  text-decoration: none;
+  width: 1440;
+  height: 80;
   background-color: rgb(9, 8, 8);
   display: flex;
   align-items: center;
@@ -326,4 +336,10 @@
   backdrop-filter: brightness(30%);
   margin: 0px 0px 0px -5px;
   padding: 0px 0px 0px 20px;
+}
+
+.button-browser {
+  background-color: #333;
+  color: white;
+  border-color: green;
 }

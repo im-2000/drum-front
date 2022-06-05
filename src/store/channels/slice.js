@@ -23,12 +23,9 @@ export const channels = createSlice({
         }
       }
     },
-    // removeSample: (state, action) => {
-    //   const { type, id } = action.payload;
-    //   state[type][id] = null;
-    // },
-    removeSample: (state) => {
-      state.drums = [null];
+    removeSample: (state, action) => {
+      const { type, id } = action.payload;
+      state[type][id] = null;
     },
 
     clearSamples: () => initialState,

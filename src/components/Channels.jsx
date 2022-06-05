@@ -87,6 +87,7 @@ export const Channels = (props) => {
           BASS
         </p>
         {bass.map((sample, idx) => (
+          // <drop>
           <Box
             text={sample ? sample.name : ""}
             key={idx}
@@ -94,6 +95,7 @@ export const Channels = (props) => {
             className="box"
             onRightClick={onRightClick}
           />
+          // </drop>
         ))}
       </div>
       <div>

@@ -9,6 +9,7 @@ import { toggleFavorites } from "../store/user/slice";
 import { selectUser } from "../store/user/selectors";
 import IconButton from "@mui/material/IconButton";
 import Tooltip from "@mui/material/Tooltip";
+import { BsStar } from "react-icons/bs";
 
 export const Box = (props) => {
   const [{ isDragging }, drag] = useDrag(() => ({
@@ -61,32 +62,39 @@ export const Box = (props) => {
         }}
       >
         <div>
-          {/* <Tooltip title="Add to favorites">
-            <IconButton> */}
           {className === "sample" && (
-            <AiOutlineStar
+            <BsStar
+              // style={{ blockSize: 18 }}
+              className="playIcon"
               onClick={() => dispatch(toggleFavorites(props.sample.id))}
-            ></AiOutlineStar>
+            ></BsStar>
           )}
-          {/* </IconButton>
-          </Tooltip> */}
         </div>
         &nbsp;
-        {className === "sample" && (
-          <BsPlayCircle className="playIcon" onClick={playStop} />
-        )}
+        <div>
+          {className === "sample" && (
+            <BsPlayCircle
+              className="playIcon"
+              onClick={playStop}
+              // style={{ blockSize: 20 }}
+            />
+          )}
+        </div>
         &nbsp;
-        {className === "sample" && (
-          <CgAdd
-            className="playIcon"
-            id={props.sample.id}
-            onClick={(event) => {
-              dispatch(addSample(props.sample));
-            }}
-          >
-            {" "}
-          </CgAdd>
-        )}
+        <div>
+          {className === "sample" && (
+            <CgAdd
+              // style={{ blockSize: 20 }}
+              className="playIcon"
+              id={props.sample.id}
+              onClick={(event) => {
+                dispatch(addSample(props.sample));
+              }}
+            >
+              {" "}
+            </CgAdd>
+          )}
+        </div>
         &nbsp;
         <div className={className} onClick={playStop}>
           {text}
