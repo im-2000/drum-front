@@ -53,7 +53,7 @@ export const Looper = () => {
       <div>
         <DrumMachine />
       </div>
-      {/* <div id="looper" className="looper">
+      <div id="looper" className="looper">
         <div className="row">
           <p>KICK</p>
           &nbsp; &nbsp;
@@ -131,7 +131,7 @@ export const Looper = () => {
             />
           ))}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import * as Tone from "tone";
+import { useDispatch, useSelector } from "react-redux";
+import { increaseBpm, decreaseBpm } from "../../store/drumMachine/slice";
+import { selectBpm } from "../../store/drumMachine/selectors";
 
 const kick = new Tone.Player(
   "https://audio.jukehost.co.uk/JRVKYWCmgRxpKCI3ijAsm61z29599GmC"
@@ -24,15 +27,21 @@ const crash = new Tone.Player(
 ).toDestination();
 
 export const DrumMachine = () => {
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  const audioContext = new AudioContext();
+
   const [inputs, setInputs] = useState({
-    kick: new Array(16).fill(false),
-    snare: new Array(16).fill(false),
-    clap: new Array(16).fill(false),
-    tom: new Array(16).fill(false),
-    ch: new Array(16).fill(false),
-    oh: new Array(16).fill(false),
-    crash: new Array(16).fill(false),
+    KICK: new Array(16).fill(false),
+    SNARE: new Array(16).fill(false),
+    CLAP: new Array(16).fill(false),
+    TOM: new Array(16).fill(false),
+    CH: new Array(16).fill(false),
+    OH: new Array(16).fill(false),
+    CRASH: new Array(16).fill(false),
   });
+
+  const dispatch = useDispatch();
+  const bpm = useSelector(selectBpm);
 
   const check = (type, idx) => {
     const newInputs = [...inputs[type]];
@@ -44,43 +53,45 @@ export const DrumMachine = () => {
     let step = 0;
     function repeat() {
       let index = step % 16;
-      if (inputs.kick[index]) {
+      if (inputs.KICK[index]) {
         kick.start();
       }
-      if (inputs.snare[index]) {
+      if (inputs.SNARE[index]) {
         snare.start();
       }
-      if (inputs.clap[index]) {
+      if (inputs.CLAP[index]) {
         clap.start();
       }
-      if (inputs.tom[index]) {
+      if (inputs.TOM[index]) {
         tom.start();
       }
-      if (inputs.ch[index]) {
+      if (inputs.CH[index]) {
         ch.start();
       }
-      if (inputs.oh[index]) {
+      if (inputs.OH[index]) {
         oh.start();
       }
-      if (inputs.crash[index]) {
+      if (inputs.CRASH[index]) {
         crash.start();
       }
 
       step++;
     }
     const eventId = Tone.Transport.scheduleRepeat(repeat, "16n");
+    Tone.Transport.bpm.value = bpm;
+
     Tone.Transport.start();
 
     return () => Tone.Transport.clear(eventId);
   }, [inputs]);
 
   return Object.keys(inputs).map((type, key) => (
-    <div key={key}>
-      <p style={{ color: "white" }}>{type}</p>
-      <div className="row">
+    <div key={key} className="drums-container">
+      <div className="drums-type">{type}</div>
+      <div>
         {inputs[type].map((input, index) => (
           <input
-            className="box2"
+            className="checkbox"
             type="checkbox"
             key={index}
             checked={input}
@@ -88,6 +99,21 @@ export const DrumMachine = () => {
           />
         ))}
       </div>
+      <button onClick={() => dispatch(increaseBpm())}>+</button>
     </div>
   ));
+
+  // return (
+  //   <div>
+  //     {inputs.KICK.map((kick, index) => (
+  //       <input
+  //         className="checkbox"
+  //         type="checkbox"
+  //         key={index}
+  //         checked={kick}
+  //         onChange={() => check(index)}
+  //       />
+  //     ))}
+  //   </div>
+  // );
 };

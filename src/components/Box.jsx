@@ -46,8 +46,11 @@ export const Box = (props) => {
   });
   useEffect(() => {
     if (isPlaying) {
+      audioRef.current.loop = true;
+      audioRef.current.currentTime = 0;
       audioRef.current.play();
     } else {
+      audioRef.current.loop = false;
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
     }

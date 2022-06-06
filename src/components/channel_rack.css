@@ -72,7 +72,7 @@
   font-size: 16px;
   color: white;
   background: #000;
-  color: rgb(204, 213, 36);
+  color: rgb(0, 255, 55);
   padding: 12px 12px 12px 12px;
 }
 
@@ -82,7 +82,23 @@
 
 .box:hover {
   /* color: rgba(255, 255, 255, 1); */
-  color: rgb(0, 255, 55);
+  color: rgb(255, 82, 218);
+}
+
+.drums-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  /* background-color: grey; */
+  width: 62%;
+}
+
+.drums-type {
+  color: white;
+  padding: 0px 20px 0px 0px;
+}
+
+.drums-row {
 }
 
 .box2 {
@@ -102,6 +118,7 @@
   flex-direction: column-reverse; */
   font-size: 16px;
   color: white;
+  animation: blink 1s linear infinite;
 
   background: #000;
 
@@ -113,6 +130,48 @@
 }
 .box2.active {
   background-color: rgb(164, 67, 255);
+}
+
+.checkbox {
+  /* -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none; */
+  font-family: "Audiowide", monospace;
+  background-color: rgb(0, 0, 0) !important;
+  cursor: pointer;
+  border: 2px solid rgb(247, 246, 246);
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px 10px rgba(114, 112, 112, 0.75);
+
+  margin: 2px 2px 2px 2px;
+  height: 30px;
+  width: 30px;
+
+  accent-color: rgb(164, 67, 255);
+  outline: none !important;
+
+  background: white;
+  content: "No";
+
+  color: white;
+}
+
+.checkbox:focus {
+  outline: none !important;
+}
+
+.checkbox:nth-child(n + 2) {
+  background-color: rgb(117, 114, 114);
+}
+
+.checkbox:checked.checkmark {
+  text-align: center;
+  color: #41b883;
+  background-color: violet;
+}
+
+.checkbox:active {
+  border: 2px solid #34495e;
 }
 
 .sample {

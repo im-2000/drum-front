@@ -13,6 +13,9 @@ import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
 export const Sampler = () => {
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  const audioContext = new AudioContext();
+
   const token = useSelector(selectToken);
   const navigate = useNavigate();
 
@@ -43,7 +46,7 @@ export const Sampler = () => {
         </div>
         <div>
           {/* <Recorder /> */}
-          <Analyser />
+          <Analyser audioContext={audioContext} />
         </div>
       </div>
     </div>

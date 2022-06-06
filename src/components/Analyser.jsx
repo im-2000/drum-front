@@ -140,7 +140,7 @@ function useAudioSpectrum(options) {
   };
 }
 
-export function Analyser() {
+export function Analyser(props) {
   let { audioRef, canvasRef, drawSpectrum } = useAudioSpectrum({
     capColor: "crimson",
   });

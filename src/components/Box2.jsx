@@ -5,7 +5,6 @@ import { CgAdd } from "react-icons/cg";
 import { addSample } from "../store/channels/slice";
 import { useDispatch } from "react-redux";
 import { useSelect } from "@mui/base";
-import { Tone } from "tone";
 
 export const Box2 = (props) => {
   const audioRef = useRef(null);

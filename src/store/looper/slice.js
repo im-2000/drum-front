@@ -1,49 +1,7 @@
 // src/store/balance/slice.js
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  kick: [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ],
-  snare: [
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-  ],
-  clap: [null],
-  tom: [null],
-  ch: [null],
-  oh: [null],
-  crash: [null],
-};
+const initialState = {};
 
 export const oneShotSamples = createSlice({
   name: "oneShotSamples",
