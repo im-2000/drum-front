@@ -1,7 +1,7 @@
 import { Channels } from "../components/Channels";
 import { Analyser } from "../components/Analyser";
 import { Browser } from "../components/Browser/Browser";
-import Recorder from "../components/Recorder/Recorder";
+// import Recorder from "../components/Recorder/Recorder";
 import { Navigation } from "../components/Navigation";
 import { SliderBpm } from "../components/Slider/Slider";
 import "../components/channel_rack.css";
@@ -42,7 +42,7 @@ export const Sampler = () => {
           <Channels />
         </div>
         <div>
-          <Recorder />
+          {/* <Recorder /> */}
           <Analyser />
         </div>
       </div>

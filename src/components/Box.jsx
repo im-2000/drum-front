@@ -65,8 +65,8 @@ export const Box = (props) => {
           {className === "sample" && (
             <BsStar
               // style={{ blockSize: 18 }}
-              className="playIcon"
               onClick={() => dispatch(toggleFavorites(props.sample.id))}
+              className="playIcon"
             ></BsStar>
           )}
         </div>
@@ -84,7 +84,7 @@ export const Box = (props) => {
         <div>
           {className === "sample" && (
             <CgAdd
-              // style={{ blockSize: 20 }}
+              // style={{ blockSize: 30 }}
               className="playIcon"
               id={props.sample.id}
               onClick={(event) => {

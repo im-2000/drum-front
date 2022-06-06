@@ -50,10 +50,10 @@ export const Looper = () => {
       <div>
         <Navigation />
       </div>
-      <div id="looper" className="looper">
-        {/* <div>
-          <DrumMachine />
-        </div> */}
+      <div>
+        <DrumMachine />
+      </div>
+      {/* <div id="looper" className="looper">
         <div className="row">
           <p>KICK</p>
           &nbsp; &nbsp;
@@ -131,7 +131,7 @@ export const Looper = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

@@ -1,37 +1,59 @@
+import { useEffect, useState } from "react";
 import * as Tone from "tone";
 
+const kick = new Tone.Player(
+  "https://audio.jukehost.co.uk/JRVKYWCmgRxpKCI3ijAsm61z29599GmC"
+).toDestination();
+const snare = new Tone.Player(
+  "https://audio.jukehost.co.uk/nA3BlaP27nLNre0gHihDWhDngWeg5HAk"
+).toDestination();
+
 export const DrumMachine = () => {
-  const kick = new Tone.Player(
-    "https://audio.jukehost.co.uk/JRVKYWCmgRxpKCI3ijAsm61z29599GmC"
-  );
-  const snare = Tone.Player(
-    "https://audio.jukehost.co.uk/nA3BlaP27nLNre0gHihDWhDngWeg5HAk"
-  );
-  let index = 0;
+  const [inputs, setInputs] = useState({
+    kick: new Array(8).fill(false),
+    snare: new Array(8).fill(false),
+    // kick: new Array(8).fill(false),
+    // kick: new Array(8).fill(false),
+    // kick: new Array(8).fill(false),
+    // kick: new Array(8).fill(false),
+    // kick: new Array(8).fill(false),
+  });
 
-  Tone.Transport.scheduleRepeat(repeat, "16n");
-  Tone.Transport.start();
+  const check = (type, idx) => {
+    const newInputs = [...inputs[type]];
+    newInputs[idx] = !newInputs[idx];
+    setInputs({ ...inputs, [type]: newInputs });
+  };
 
-  function repeat() {
-    let step = index % 8;
-    let kickInputs = document.querySelector(
-      `.kick input:nth-child(${step + 1})`
-    );
-    let snareInputs = document.querySelector(
-      `.snare input:nth-child(${step + 1})`
-    );
-    if (kickInputs.checked) {
-      kick.start();
+  useEffect(() => {
+    let step = 0;
+    function repeat() {
+      let index = step % 8;
+      if (inputs.kick[index]) {
+        kick.start();
+      }
+      if (inputs.snare[index]) {
+        snare.start();
+      }
+      step++;
     }
-    if (snareInputs.checked) {
-      snare.start();
-    }
-    index++;
-  }
-  return (
-    <div>
-      <input type="checkbox">KICK</input>
-      <input type="checkbox">SNARE</input>
+    const eventId = Tone.Transport.scheduleRepeat(repeat, "8n");
+    Tone.Transport.start();
+
+    return () => Tone.Transport.clear(eventId);
+  }, [inputs]);
+
+  return Object.keys(inputs).map((type, key) => (
+    <div key={key}>
+      <p>{type}</p>
+      {inputs[type].map((input, index) => (
+        <input
+          type="checkbox"
+          key={index}
+          checked={input}
+          onChange={() => check(type, index)}
+        />
+      ))}
     </div>
-  );
+  ));
 };

@@ -133,11 +133,11 @@
 }
 
 .playIcon.active {
-  color: rgb(3, 154, 46);
+  color: rgb(16, 255, 84);
 }
 
 .playIcon:hover {
-  color: rgb(0, 255, 55);
+  color: rgb(255, 247, 0);
 }
 
 .login {
@@ -262,7 +262,7 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  padding: 40px 160px 40px 50px;
+  padding: 40px 160px 40px 100px;
   border-radius: 15px;
   border-style: solid;
   border-width: 1px;
