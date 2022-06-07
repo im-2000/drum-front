@@ -18,6 +18,7 @@ export default function LoggedIn() {
           backgroundColor: "#333",
           color: "white",
           borderColor: "green",
+          fontFamily: "Audiowide",
         }}
         onClick={() => dispatch(logOut())}
       >

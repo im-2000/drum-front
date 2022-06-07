@@ -6,9 +6,8 @@ import { addSample, removeSample } from "../store/channels/slice";
 import { useDispatch, useSelector } from "react-redux";
 import { useDrag, useDrop } from "react-dnd";
 import { toggleFavorites } from "../store/user/slice";
-import { selectUser } from "../store/user/selectors";
+import { selectUser, selectFavorites } from "../store/user/selectors";
 import IconButton from "@mui/material/IconButton";
-import Tooltip from "@mui/material/Tooltip";
 import { BsStar } from "react-icons/bs";
 
 export const Box = (props) => {
@@ -24,7 +23,7 @@ export const Box = (props) => {
 
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
-
+  const favorites = useSelector(selectFavorites);
   const playStop = (e) => {
     setPlaying(!isPlaying);
     !isPlaying
@@ -39,10 +38,6 @@ export const Box = (props) => {
         audioRef.current.play();
       }
     });
-
-    //   audioRef.current.addEventListener("ended", (e) => {
-    //     audioRef.current.play();
-    //   });
   });
   useEffect(() => {
     if (isPlaying) {
@@ -67,27 +62,25 @@ export const Box = (props) => {
         <div>
           {className === "sample" && (
             <BsStar
-              // style={{ blockSize: 18 }}
               onClick={() => dispatch(toggleFavorites(props.sample.id))}
-              className="playIcon"
+              className={
+                favorites.includes(props.sample.id)
+                  ? "playIcon active"
+                  : "playIcon"
+              }
             ></BsStar>
           )}
         </div>
         &nbsp;
         <div>
           {className === "sample" && (
-            <BsPlayCircle
-              className="playIcon"
-              onClick={playStop}
-              // style={{ blockSize: 20 }}
-            />
+            <BsPlayCircle className="playIcon" onClick={playStop} />
           )}
         </div>
         &nbsp;
         <div>
           {className === "sample" && (
             <CgAdd
-              // style={{ blockSize: 30 }}
               className="playIcon"
               id={props.sample.id}
               onClick={(event) => {
@@ -98,12 +91,12 @@ export const Box = (props) => {
             </CgAdd>
           )}
         </div>
-        &nbsp;
+        &nbsp; &nbsp;
         <div className={className} onClick={playStop}>
           {text}
           <audio ref={audioRef} src={audio} className="clip" id={text} />
         </div>
-        &nbsp;
+        &nbsp; &nbsp;
       </div>
     </>
   );

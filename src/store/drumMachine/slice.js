@@ -10,10 +10,10 @@ export const drumMachine = createSlice({
   initialState,
   reducers: {
     increaseBpm: (state) => {
-      state.bpm = state.bpm + 10;
+      state.bpm = state.bpm + 1;
     },
     decreaseBpm: (state) => {
-      state.bpm = state.bpm - 10;
+      state.bpm = state.bpm - 1;
     },
   },
 });

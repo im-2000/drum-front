@@ -31,10 +31,11 @@ export function Navigation() {
     >
       <div>
         <Link
+          className="label"
           style={{
             textDecoration: "none",
             color: "violet",
-            fontSize: 50,
+            fontSize: 45,
           }}
           to="/sampler"
         >
@@ -64,7 +65,7 @@ export function Navigation() {
               }}
               to="/looper"
             >
-              Drums
+              Drummer
             </Link>
             )
           </div>
@@ -78,18 +79,6 @@ export function Navigation() {
               to="/tracks"
             >
               MyTracks
-            </Link>
-          </div>
-          <div>
-            {" "}
-            <Link
-              style={{
-                color: "white",
-                textDecoration: "none",
-              }}
-              to="/tutorial"
-            >
-              Tutorial
             </Link>
           </div>
         </>

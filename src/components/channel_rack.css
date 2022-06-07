@@ -1,4 +1,8 @@
-/* @import url("https://fonts.googleapis.com/css?family=Josefin+Sans"); */
+/* @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Inspiration&family=Open+Sans:wght@300&family=PT+Sans&family=Palette+Mosaic&family=Permanent+Marker&family=Rubik:wght@300&display=swap"); */
+
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Gloria+Hallelujah&family=Inspiration&family=Open+Sans:wght@300&family=PT+Sans&family=Palette+Mosaic&family=Permanent+Marker&family=Rubik:wght@300&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Gloria+Hallelujah&family=Inspiration&family=Jua&family=Open+Sans:wght@300&family=PT+Sans&family=Palette+Mosaic&family=Permanent+Marker&family=Rubik:wght@300&display=swap");
 
 .App {
   background-color: black;
@@ -6,7 +10,6 @@
 
 .container {
   display: flex;
-  /* background-size: 100%; */
   justify-content: space-between;
   border-radius: 15px;
   border-style: solid;
@@ -21,13 +24,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* flex-wrap: wrap; */
-  /* flex-flow: flex-direction;
-  flex-flow: flex-wrap; */
   height: 700px;
   width: 700px;
-  /* background-color: blueviolet; */
-  /* padding: 50px; */
   margin: 0px 0px 0px 0px;
   padding-top: 0px;
   border: 5px solid #333;
@@ -45,7 +43,6 @@
 }
 
 .looper {
-  /* background-color: grey; */
   display: flex;
   align-items: flex-end;
   width: 65%;
@@ -57,8 +54,6 @@
 
 .box {
   font-family: "Audiowide", monospace;
-
-  /* background-color: rgb(139, 139, 139); */
   cursor: pointer;
   border: 4px solid rgb(255, 255, 255);
   border-radius: 10px;
@@ -81,7 +76,6 @@
 }
 
 .box:hover {
-  /* color: rgba(255, 255, 255, 1); */
   color: rgb(255, 82, 218);
 }
 
@@ -89,16 +83,12 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* background-color: grey; */
   width: 62%;
 }
 
 .drums-type {
   color: white;
   padding: 0px 20px 0px 0px;
-}
-
-.drums-row {
 }
 
 .box2 {
@@ -108,23 +98,17 @@
   border: 4px solid rgb(255, 255, 255);
   border-radius: 10px;
   box-shadow: 0px 15px 15px 15px rgba(0, 0, 0, 0.75);
-
   margin: 25px 5px 5px 5px;
   height: 30px;
   width: 30px;
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column-reverse; */
   font-size: 16px;
   color: white;
   animation: blink 1s linear infinite;
-
   background: #000;
-
   color: #fff;
   padding: 8px 12px 8px 8px;
 }
+
 .box2:nth-child(4n-2) {
   background-color: rgb(117, 114, 114);
 }
@@ -133,26 +117,19 @@
 }
 
 .checkbox {
-  /* -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; */
   font-family: "Audiowide", monospace;
   background-color: rgb(0, 0, 0) !important;
   cursor: pointer;
   border: 2px solid rgb(247, 246, 246);
   border-radius: 5px;
   box-shadow: 0px 10px 10px 10px rgba(114, 112, 112, 0.75);
-
   margin: 2px 2px 2px 2px;
   height: 30px;
   width: 30px;
-
   accent-color: rgb(164, 67, 255);
   outline: none !important;
-
   background: white;
   content: "No";
-
   color: white;
 }
 
@@ -206,9 +183,7 @@
   border-radius: 15px;
   border-style: solid;
   border-width: 1px;
-  /* border-color: red; */
   box-shadow: 0px 0px 15px rgba(255, 0, 0);
-  /* padding-bottom: 40; */
   background-color: "grey";
 }
 
@@ -234,12 +209,10 @@
   border-width: 1px;
   border-color: red;
   box-shadow: 0px 0px 15px rgba(255, 0, 0);
-  /* padding-bottom: 40; */
   background-color: "grey";
 }
 .sigup-body {
   background-color: rgb(255, 255, 255);
-
   border-radius: 10%;
   border-width: 1px;
   border-color: red;
@@ -248,9 +221,8 @@
 }
 
 .intro {
-  /* font-family: "Josefin Sans", cursive; */
-  font-family: "Audiowide", monospace;
-
+  /* font-family: "Audiowide", monospace; */
+  font-family: "Gloria Hallelujah", cursive;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -261,33 +233,28 @@
   border-width: 1px;
   border-color: red;
   box-shadow: 0px 0px 15px rgba(255, 0, 0);
-  /* padding-bottom: 40; */
   background-color: "grey";
 }
-.label {
+/* .label {
   font-family: "Audiowide", monospace;
-}
+} */
 .browser {
   font-family: "Audiowide", monospace;
-
-  /* float: right; */
   height: 700px;
   width: 320px;
-  /* overflow-y: scroll; */
   margin-top: 0px;
-  /* margin-left: 60px; */
   color: white;
   backdrop-filter: brightness(20%);
 }
 
 .sampleList {
-  font-family: "Audiowide", monospace;
-  font-size: 20;
+  font-family: "Jua", sans-serif;
+  font-size: 15;
   float: right;
   height: 700px;
   width: 260px;
   overflow-y: scroll;
-  margin-top: 40px;
+  margin-top: 20px;
   padding-left: 40px;
   margin-left: 50px;
   color: white;
@@ -307,8 +274,6 @@
 
 .filters {
   display: flex;
-  /* align-items: flex-start; */
-  /* justify-content: space-around; */
 }
 
 .navigation {
@@ -320,59 +285,17 @@
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  padding: 40px 160px 40px 100px;
+  padding: 20px 100px 20px 80px;
   border-radius: 15px;
   border-style: solid;
   border-width: 1px;
   border-color: rgb(37, 196, 162);
   font-family: "Audiowide", monospace;
-  /* position: fixed; */
-  /* z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: auto; */
-}
-/* .navigation .header {
-  min-height: 8vh;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-.navigation .nav-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  height: 100%;
-  max-width: 1300px;
-  padding: 0 10px;
 }
 
-.navigation .nav-list ul {
-  list-style: none;
-  position: absolute;
-  background-color: rgb(31, 30, 30);
-  width: 100vw;
-  height: 100vh;
-  left: 0;
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1;
-  overflow-x: hidden;
+.label {
+  font-family: "Gloria Hallelujah", cursive;
 }
-
-.navigation .nav-list ul a {
-  font-size: 2.5rem;
-  font-weight: 500;
-  letter-spacing: 0.2rem;
-  text-decoration: none;
-  color: white;
-  text-transform: uppercase;
-  padding: 20px;
-  display: block;
-} */
 
 .navButton {
   padding: 10px 10px 10px 10px;

@@ -16,6 +16,7 @@ import {
 } from "../../store/looper/selectors";
 import Loading from "../../components/Loading";
 import { DrumMachine } from "./DrumMachine";
+import { SliderBpm } from "../../components/Slider/Slider";
 
 export const Looper = () => {
   const kick = useSelector(selectKick);
@@ -51,9 +52,12 @@ export const Looper = () => {
         <Navigation />
       </div>
       <div>
+        <SliderBpm />
+      </div>
+      <div>
         <DrumMachine />
       </div>
-      <div id="looper" className="looper">
+      {/* <div id="looper" className="looper">
         <div className="row">
           <p>KICK</p>
           &nbsp; &nbsp;
@@ -131,7 +135,7 @@ export const Looper = () => {
             />
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

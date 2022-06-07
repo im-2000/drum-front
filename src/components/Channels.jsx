@@ -9,7 +9,6 @@ import { removeSample, toggleDrums } from "../store/channels/slice";
 import { Box } from "./Box";
 import { BsPlayCircle, BsPauseCircle } from "react-icons/bs";
 import { useDrag, useDrop } from "react-dnd";
-import { Recorder } from "./Recorder/Recorder";
 import {
   selectDrums,
   selectMelody,
@@ -52,11 +51,6 @@ export const Channels = (props) => {
           style={{
             color: "red",
             fontSize: 20,
-            // display: "flex",
-            // alignItems: "center",
-            // justifyContent: "center",
-            // backgroundColor: "black",
-            // borderRadius: 20,
           }}
         >
           DRUMS
@@ -77,17 +71,11 @@ export const Channels = (props) => {
           style={{
             color: "violet",
             fontSize: 20,
-            // display: "flex",
-            // alignItems: "center",
-            // justifyContent: "center",
-            // backgroundColor: "black",
-            // borderRadius: 20,
           }}
         >
           BASS
         </p>
         {bass.map((sample, idx) => (
-          // <drop>
           <Box
             text={sample ? sample.name : ""}
             key={idx}
@@ -95,7 +83,6 @@ export const Channels = (props) => {
             className="box"
             onRightClick={onRightClick}
           />
-          // </drop>
         ))}
       </div>
       <div>
@@ -104,11 +91,6 @@ export const Channels = (props) => {
           style={{
             color: "#13D6A7",
             fontSize: 20,
-            // display: "flex",
-            // alignItems: "center",
-            // justifyContent: "center",
-            // backgroundColor: "black",
-            // borderRadius: 20,
           }}
         >
           MELODY
@@ -129,11 +111,6 @@ export const Channels = (props) => {
           style={{
             color: "yellow",
             fontSize: 20,
-            // display: "flex",
-            // alignItems: "center",
-            // justifyContent: "center",
-            // backgroundColor: "black",
-            // borderRadius: 20,
           }}
         >
           PAD
@@ -148,11 +125,6 @@ export const Channels = (props) => {
           />
         ))}
       </div>
-      {/* <div id="display" className="display">
-        {props.bass.map((b, idx) => (
-          <Box text={b.name} key={idx} audio={b.url} />
-        ))}
-      </div> */}
     </div>
   );
 };

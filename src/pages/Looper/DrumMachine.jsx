@@ -3,6 +3,8 @@ import * as Tone from "tone";
 import { useDispatch, useSelector } from "react-redux";
 import { increaseBpm, decreaseBpm } from "../../store/drumMachine/slice";
 import { selectBpm } from "../../store/drumMachine/selectors";
+import { BsPinMap } from "react-icons/bs";
+import { SliderBpm } from "../../components/Slider/Slider";
 
 const kick = new Tone.Player(
   "https://audio.jukehost.co.uk/JRVKYWCmgRxpKCI3ijAsm61z29599GmC"
@@ -27,9 +29,6 @@ const crash = new Tone.Player(
 ).toDestination();
 
 export const DrumMachine = () => {
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-  const audioContext = new AudioContext();
-
   const [inputs, setInputs] = useState({
     KICK: new Array(16).fill(false),
     SNARE: new Array(16).fill(false),
@@ -50,6 +49,7 @@ export const DrumMachine = () => {
   };
 
   useEffect(() => {
+    Tone.Transport.stop();
     let step = 0;
     function repeat() {
       let index = step % 16;
@@ -83,37 +83,35 @@ export const DrumMachine = () => {
     Tone.Transport.start();
 
     return () => Tone.Transport.clear(eventId);
-  }, [inputs]);
+  }, [inputs, bpm]);
 
-  return Object.keys(inputs).map((type, key) => (
-    <div key={key} className="drums-container">
-      <div className="drums-type">{type}</div>
+  return (
+    <div>
       <div>
-        {inputs[type].map((input, index) => (
-          <input
-            className="checkbox"
-            type="checkbox"
-            key={index}
-            checked={input}
-            onChange={() => check(type, index)}
-          />
+        <button onClick={() => dispatch(increaseBpm())}>+</button>
+      </div>
+      <div>
+        <button onClick={() => dispatch(decreaseBpm())}>-</button>
+      </div>
+
+      <div>
+        {Object.keys(inputs).map((type, key) => (
+          <div key={key} className="drums-container">
+            <div className="drums-type">{type}</div>
+            <div>
+              {inputs[type].map((input, index) => (
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  key={index}
+                  checked={input}
+                  onChange={() => check(type, index)}
+                />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
-      <button onClick={() => dispatch(increaseBpm())}>+</button>
     </div>
-  ));
-
-  // return (
-  //   <div>
-  //     {inputs.KICK.map((kick, index) => (
-  //       <input
-  //         className="checkbox"
-  //         type="checkbox"
-  //         key={index}
-  //         checked={kick}
-  //         onChange={() => check(index)}
-  //       />
-  //     ))}
-  //   </div>
-  // );
+  );
 };
