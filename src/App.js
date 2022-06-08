@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { Sampler } from "./pages/Sampler";
-import { Looper } from "./pages/Looper/Looper";
+import { Drummer } from "./pages/Drummer/Drummer";
 import { Navigation } from "./components/Navigation/index";
 import background from "../src/image/circle.jpeg";
 
@@ -12,6 +12,7 @@ import MessageBox from "./components/MessageBox";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import Intro from "./pages/Intro/Intro";
+import { MyTracks } from "./pages/MyTracks/MyTracks";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
@@ -60,10 +61,10 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Intro />} />
           <Route exact path="/login" element={<Login />} />
-          {<Route exact path="/sampler" element={<Sampler />} />}
-          <Route exact path="/looper" element={<Looper />} />
-
           <Route path="/signup" element={<SignUp />} />
+          {<Route exact path="/sampler" element={<Sampler />} />}
+          <Route exact path="/drummer" element={<Drummer />} />
+          <Route path="/tracks" element={<MyTracks />} />
         </Routes>
       </div>
     </DndProvider>

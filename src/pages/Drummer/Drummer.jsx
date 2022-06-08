@@ -18,7 +18,7 @@ import Loading from "../../components/Loading";
 import { DrumMachine } from "./DrumMachine";
 import { SliderBpm } from "../../components/Slider/Slider";
 
-export const Looper = () => {
+export const Drummer = () => {
   const kick = useSelector(selectKick);
   const snare = useSelector(selectSnare);
   const clap = useSelector(selectClap);
@@ -40,24 +40,23 @@ export const Looper = () => {
     return <Loading />;
   }
   return (
-    <div
-      style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}
-    >
+    <div>
       <div>
         <Navigation />
       </div>
-      <div>
-        <SliderBpm />
-      </div>
-      <div>
-        <DrumMachine />
-      </div>
-      {/* <div id="looper" className="looper">
+      <div
+        className="drummer"
+        style={{
+          backgroundImage: `url(${background})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      >
+        <div>
+          <DrumMachine />
+        </div>
+        {/* <div id="looper" className="looper">
         <div className="row">
           <p>KICK</p>
           &nbsp; &nbsp;
@@ -136,6 +135,7 @@ export const Looper = () => {
           ))}
         </div>
       </div> */}
+      </div>
     </div>
   );
 };

@@ -83,18 +83,7 @@ export default function SignIn() {
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs" className="login-body">
           <CssBaseline />
-          <Box
-            className="login-box"
-            // style={{
-            //   marginTop: 8,
-            //   display: "flex",
-            //   flexDirection: "column",
-            //   alignItems: "center",
-            //   justifyContent: "center",
-            //   paddingLeft: 50,
-            //   backgroundColor: "grey",
-            // }}
-          >
+          <Box className="login-box">
             {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar> */}

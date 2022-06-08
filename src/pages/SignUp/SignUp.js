@@ -88,18 +88,7 @@ export default function SignUp() {
       <ThemeProvider theme={theme}>
         <Container component="main" maxWidth="xs">
           <CssBaseline />
-          <Box
-            className="signup-body"
-            sx={{
-              backgroundColor: "white",
-              borderRadius: 7,
-              padding: 5,
-              marginTop: 8,
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-            }}
-          >
+          <Box className="signup-box">
             {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar> */}
@@ -122,7 +111,7 @@ export default function SignUp() {
                 value={name}
                 onChange={(event) => setName(event.target.value)}
                 type="email"
-                placeholder="Enter email"
+                placeholder="Enter name"
               />
               <TextField
                 margin="normal"
@@ -163,7 +152,7 @@ export default function SignUp() {
                 value={age}
                 onChange={(event) => setAge(event.target.value)}
                 type="email"
-                placeholder="Enter email"
+                placeholder="Enter age"
               />
               <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}

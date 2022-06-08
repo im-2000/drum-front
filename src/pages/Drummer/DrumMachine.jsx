@@ -1,14 +1,6 @@
 import { useEffect, useState } from "react";
 import * as Tone from "tone";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  increaseBpm,
-  decreaseBpm,
-  setBpm,
-} from "../../store/drumMachine/slice";
-import { selectBpm } from "../../store/drumMachine/selectors";
-import { BsPinMap } from "react-icons/bs";
-import { SliderBpm } from "../../components/Slider/Slider";
 
 const kick = new Tone.Player(
   "https://audio.jukehost.co.uk/JRVKYWCmgRxpKCI3ijAsm61z29599GmC"
@@ -101,9 +93,9 @@ export const DrumMachine = () => {
       <div className="bpm-value">
         <form onSubmit={handleSubmit}>
           <label className="drums-type">
-            BPM:
+            BPM: &nbsp;
             <input
-              style={{ width: 50 }}
+              style={{ width: 45, height: 30, fontSize: 25 }}
               type="text"
               value={bpm}
               onChange={(e) => setBpm(e.target.value)}
@@ -111,7 +103,7 @@ export const DrumMachine = () => {
           </label>
         </form>
       </div>
-
+      &nbsp;
       <div>
         {Object.keys(inputs).map((type, key) => (
           <div key={key} className="drums-container">

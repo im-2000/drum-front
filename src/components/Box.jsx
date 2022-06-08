@@ -24,6 +24,7 @@ export const Box = (props) => {
   const dispatch = useDispatch();
   const user = useSelector(selectUser);
   const favorites = useSelector(selectFavorites);
+
   const playStop = (e) => {
     setPlaying(!isPlaying);
     !isPlaying

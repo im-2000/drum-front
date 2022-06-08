@@ -15,20 +15,7 @@ export function Navigation() {
   const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
 
   return (
-    <div
-      className="navigation"
-      style={
-        {
-          // backgroundColor: "grey",
-          // width: 1375,
-          // color: "white",
-          // display: "flex",
-          // alignItems: "center",
-          // justifyContent: "center",
-          // flexDirection: "row",
-        }
-      }
-    >
+    <div className="navigation">
       <div>
         <Link
           className="label"
@@ -63,7 +50,7 @@ export function Navigation() {
                 color: "white",
                 textDecoration: "none",
               }}
-              to="/looper"
+              to="/drummer"
             >
               Drummer
             </Link>
