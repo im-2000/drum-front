@@ -91,17 +91,33 @@ export const DrumMachine = () => {
   return (
     <div>
       <div className="bpm-value">
-        <form onSubmit={handleSubmit}>
-          <label className="drums-type">
-            BPM: &nbsp;
-            <input
-              style={{ width: 45, height: 30, fontSize: 25 }}
-              type="text"
-              value={bpm}
-              onChange={(e) => setBpm(e.target.value)}
-            />
-          </label>
-        </form>
+        <div className="drummer-transport">
+          <div>
+            <button>Play/Pause</button>
+          </div>
+          <div>
+            <button>Stop</button>
+          </div>
+          <div>
+            <button>Record</button>
+          </div>
+          <div>
+            <button>Reset</button>
+          </div>
+        </div>
+        <div>
+          <form onSubmit={handleSubmit}>
+            <label className="drums-type">
+              BPM: &nbsp;
+              <input
+                style={{ width: 45, height: 30, fontSize: 23 }}
+                type="text"
+                value={bpm}
+                onChange={(e) => setBpm(e.target.value)}
+              />
+            </label>
+          </form>
+        </div>
       </div>
       &nbsp;
       <div>

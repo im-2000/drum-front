@@ -55,10 +55,26 @@
   width: 73%;
 }
 
+.bpm-value {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 73%;
+  margin-left: 100px;
+
+  background-color: grey;
+}
+
 .drums-type {
   font-family: "Audiowide", monospace;
   color: white;
   padding: 0px 20px 0px 0px;
+}
+
+.drummer-transport {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
 }
 
 .row {
@@ -82,7 +98,7 @@
   margin: 25px 5px 5px 5px;
   height: 70px;
   width: 70px;
-  font-size: 16px;
+  font-size: 13px;
   color: white;
   background: #000;
   color: rgb(0, 255, 55);
@@ -276,7 +292,7 @@
 
 .browser {
   font-family: "Audiowide", monospace;
-  height: 700px;
+  height: 900px;
   width: 320px;
   margin-top: 0px;
   color: white;
@@ -359,13 +375,6 @@
   background-color: #333;
   color: white;
   border-color: green;
-}
-
-.bpm-value {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  /* background-color: grey; */
 }
 
 .mytracks {
