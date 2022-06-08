@@ -87,6 +87,7 @@
 }
 
 .drums-type {
+  font-family: "Audiowide", monospace;
   color: white;
   padding: 0px 20px 0px 0px;
 }
@@ -323,4 +324,11 @@
   background-color: #333;
   color: white;
   border-color: green;
+}
+
+.bpm-value {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: grey;
 }

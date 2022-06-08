@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import * as Tone from "tone";
 import { useDispatch, useSelector } from "react-redux";
-import { increaseBpm, decreaseBpm } from "../../store/drumMachine/slice";
+import {
+  increaseBpm,
+  decreaseBpm,
+  setBpm,
+} from "../../store/drumMachine/slice";
 import { selectBpm } from "../../store/drumMachine/selectors";
 import { BsPinMap } from "react-icons/bs";
 import { SliderBpm } from "../../components/Slider/Slider";
@@ -39,8 +43,10 @@ export const DrumMachine = () => {
     CRASH: new Array(16).fill(false),
   });
 
+  const [bpm, setBpm] = useState(80);
+
   const dispatch = useDispatch();
-  const bpm = useSelector(selectBpm);
+  // const bpm = useSelector(selectBpm);
 
   const check = (type, idx) => {
     const newInputs = [...inputs[type]];
@@ -85,13 +91,25 @@ export const DrumMachine = () => {
     return () => Tone.Transport.clear(eventId);
   }, [inputs, bpm]);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`The name you entered was: ${bpm}`);
+  };
+
   return (
     <div>
-      <div>
-        <button onClick={() => dispatch(increaseBpm())}>+</button>
-      </div>
-      <div>
-        <button onClick={() => dispatch(decreaseBpm())}>-</button>
+      <div className="bpm-value">
+        <form onSubmit={handleSubmit}>
+          <label className="drums-type">
+            BPM:
+            <input
+              style={{ width: 50 }}
+              type="text"
+              value={bpm}
+              onChange={(e) => setBpm(e.target.value)}
+            />
+          </label>
+        </form>
       </div>
 
       <div>
