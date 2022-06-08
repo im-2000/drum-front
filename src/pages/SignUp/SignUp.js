@@ -154,10 +154,10 @@ export default function SignUp() {
                 type="email"
                 placeholder="Enter age"
               />
-              <FormControlLabel
+              {/* <FormControlLabel
                 control={<Checkbox value="remember" color="primary" />}
                 label="Remember me"
-              />
+              /> */}
               <Button
                 onClick={submitForm}
                 type="submit"
@@ -168,11 +168,11 @@ export default function SignUp() {
                 Sign Up
               </Button>
               <Grid container>
-                <Grid item xs>
+                {/* <Grid item xs>
                   <Link href="#" variant="body2">
                     Forgot password?
                   </Link>
-                </Grid>
+                </Grid> */}
                 <Grid item>
                   <Link href="/signup" variant="body2"></Link>
                 </Grid>

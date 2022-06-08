@@ -89,25 +89,29 @@ export const DrumMachine = () => {
   };
 
   return (
-    <div>
+    <div className="drum-machine">
       <div className="bpm-value">
         <div className="drummer-transport">
           <div>
-            <button>Play/Pause</button>
+            <button className="button-browser">Play/Pause</button>
           </div>
           <div>
-            <button>Stop</button>
+            <button className="button-browser">Stop</button>
           </div>
           <div>
-            <button>Record</button>
+            <button className="button-browser">Reset</button>
           </div>
+          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
           <div>
-            <button>Reset</button>
+            <button className="button-browser" style={{ color: "red" }}>
+              REC
+            </button>
           </div>
         </div>
-        <div>
+        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        <div className="drums-type">
           <form onSubmit={handleSubmit}>
-            <label className="drums-type">
+            <label style={{ color: "orange" }}>
               BPM: &nbsp;
               <input
                 style={{ width: 45, height: 30, fontSize: 23 }}

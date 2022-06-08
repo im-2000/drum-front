@@ -16,9 +16,17 @@ import {
 } from "../../store/looper/selectors";
 import Loading from "../../components/Loading";
 import { DrumMachine } from "./DrumMachine";
-import { SliderBpm } from "../../components/Slider/Slider";
+import { selectToken } from "../../store/user/selectors";
+import { useNavigate } from "react-router-dom";
 
 export const Drummer = () => {
+  const token = useSelector(selectToken);
+  const navigate = useNavigate();
+
+  if (token === null) {
+    navigate("/");
+  }
+
   const kick = useSelector(selectKick);
   const snare = useSelector(selectSnare);
   const clap = useSelector(selectClap);
@@ -44,13 +52,15 @@ export const Drummer = () => {
       <div>
         <Navigation />
       </div>
+
       <div
         className="drummer"
         style={{
           backgroundImage: `url(${background})`,
           backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
+          // backgroundRepeat: "space",
+
+          backgroundPosition: "round",
         }}
       >
         <div>
