@@ -120,6 +120,7 @@ export const Channels = (props) => {
             text={sample ? sample.name : ""}
             key={idx}
             audio={sample ? sample.url : ""}
+            preload="auto"
             className="box"
             onRightClick={onRightClick}
           />

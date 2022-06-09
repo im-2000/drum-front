@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import * as Tone from "tone";
 import { useDispatch, useSelector } from "react-redux";
+import { GrPlay } from "react-icons/gr";
+import { IoMdPause } from "react-icons/io";
+import { VscDebugStop } from "react-icons/vsc";
 
 const kick = new Tone.Player(
   "https://audio.jukehost.co.uk/JRVKYWCmgRxpKCI3ijAsm61z29599GmC"
@@ -37,7 +40,7 @@ export const DrumMachine = () => {
 
   const [bpm, setBpm] = useState(80);
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   // const bpm = useSelector(selectBpm);
 
   const check = (type, idx) => {
@@ -78,39 +81,97 @@ export const DrumMachine = () => {
     const eventId = Tone.Transport.scheduleRepeat(repeat, "16n");
     Tone.Transport.bpm.value = bpm;
 
-    Tone.Transport.start();
+    // Tone.Transport.start();
 
     return () => Tone.Transport.clear(eventId);
   }, [inputs, bpm]);
 
-  const handleSubmit = (event) => {
+  const handleBpm = (event) => {
     event.preventDefault();
     alert(`The name you entered was: ${bpm}`);
   };
+
+  const play = () => {
+    !Tone.Transport.start() ? Tone.Transport.stop() : Tone.Transport.start();
+  };
+
+  const pause = () => {
+    Tone.Transport.start() ? Tone.Transport.pause() : Tone.Transport.start();
+  };
+
+  const stop = () => {
+    Tone.Transport.start() ? Tone.Transport.stop() : Tone.Transport.start();
+  };
+
+  const handleDrums = () => {
+    setInputs({
+      KICK: new Array(16).fill(false),
+      SNARE: new Array(16).fill(false),
+      CLAP: new Array(16).fill(false),
+      TOM: new Array(16).fill(false),
+      CH: new Array(16).fill(false),
+      OH: new Array(16).fill(false),
+      CRASH: new Array(16).fill(false),
+    });
+  };
+
+  // const playStop = (e) => {
+  //   setPlaying(!isPlaying);
+  //   !isPlaying
+  //     ? e.target.classList.add("active")
+  //     : e.target.classList.remove("active");
+  // };
 
   return (
     <div className="drum-machine">
       <div className="bpm-value">
         <div className="drummer-transport">
           <div>
-            <button className="button-browser">Play/Pause</button>
+            <button
+              className="button-browser"
+              onClick={play}
+              style={{ color: "orange" }}
+            >
+              <GrPlay />
+            </button>
           </div>
           <div>
-            <button className="button-browser">Stop</button>
+            <button
+              className="button-browser"
+              onClick={pause}
+              style={{ color: "orange" }}
+            >
+              <IoMdPause />
+            </button>
           </div>
           <div>
-            <button className="button-browser">Reset</button>
+            <button
+              className="button-browser"
+              onClick={stop}
+              style={{ color: "orange" }}
+            >
+              <VscDebugStop />
+            </button>
           </div>
-          &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <div>
+            <button
+              className="button-browser"
+              onClick={handleDrums}
+              style={{ color: "orange" }}
+            >
+              Reset
+            </button>
+          </div>
+
           <div>
             <button className="button-browser" style={{ color: "red" }}>
               REC
             </button>
           </div>
         </div>
-        &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+        &nbsp; &nbsp; &nbsp; &nbsp;
         <div className="drums-type">
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleBpm}>
             <label style={{ color: "orange" }}>
               BPM: &nbsp;
               <input

@@ -9,6 +9,7 @@ import { toggleFavorites } from "../store/user/slice";
 import { selectUser, selectFavorites } from "../store/user/selectors";
 import IconButton from "@mui/material/IconButton";
 import { BsStar } from "react-icons/bs";
+import * as Tone from "tone";
 
 export const Box = (props) => {
   const [{ isDragging }, drag] = useDrag(() => ({
@@ -31,15 +32,16 @@ export const Box = (props) => {
       ? e.target.classList.add("active")
       : e.target.classList.remove("active");
   };
-  useEffect(() => {
-    audioRef.current.addEventListener("timeupdate", function () {
-      let buffer = 0.01;
-      if (audioRef.current.currentTime > audioRef.current.duration - buffer) {
-        audioRef.current.currentTime = 0;
-        audioRef.current.play();
-      }
-    });
-  });
+  // useEffect(() => {
+  //   audioRef.current.addEventListener("timeupdate", function () {
+  //     let buffer = 0.2;
+  //     if (audioRef.current.currentTime > audioRef.current.duration - buffer) {
+  //       audioRef.current.currentTime = 0;
+  //       audioRef.current.play();
+  //     }
+  //   });
+  // });
+
   useEffect(() => {
     if (isPlaying) {
       audioRef.current.loop = true;
@@ -47,10 +49,11 @@ export const Box = (props) => {
       audioRef.current.play();
     } else {
       audioRef.current.loop = false;
-      audioRef.current.pause();
       audioRef.current.currentTime = 0;
+      audioRef.current.pause();
     }
   }, [isPlaying]);
+
   const { text, audio, className } = props;
 
   return (
@@ -95,7 +98,13 @@ export const Box = (props) => {
         &nbsp; &nbsp;
         <div className={className} onClick={playStop}>
           {text}
-          <audio ref={audioRef} src={audio} className="clip" id={text} />
+          <audio
+            ref={audioRef}
+            preload="auto"
+            src={audio}
+            className="clip"
+            id={text}
+          />
         </div>
         &nbsp; &nbsp;
       </div>
