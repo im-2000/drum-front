@@ -6,7 +6,7 @@ import {
 
 import axios from "axios";
 
-const API_URL = `http://localhost:4000`;
+const API_URL = `https://tweak-peak.herokuapp.com`;
 
 export async function fetchAllSamples(dispatch, getState) {
   try {

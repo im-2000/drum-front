@@ -18,6 +18,7 @@ import Loading from "../../components/Loading";
 import { DrumMachine } from "./DrumMachine";
 import { selectToken } from "../../store/user/selectors";
 import { useNavigate } from "react-router-dom";
+import Hamburger from "../../components/Navigation/Hamburger";
 
 export const Drummer = () => {
   const token = useSelector(selectToken);

@@ -1,13 +1,13 @@
 import React from "react";
 import "./Sidebar.css";
 // import { slide as Menu } from "react-burger-menu";
-// import { bubble as Menu } from "react-burger-menu";
-import { reveal as Menu } from "react-burger-menu";
+import { bubble as Menu } from "react-burger-menu";
+// import { reveal as Menu } from "react-burger-menu";
 
 export default (props) => {
   return (
     <Menu>
-      {/* <a className="menu-item" href="/">
+      <a className="menu-item" href="/">
         Home
       </a>
       <a className="menu-item" href="/salads">
@@ -18,7 +18,7 @@ export default (props) => {
       </a>
       <a className="menu-item" href="/desserts">
         Desserts
-      </a> */}
+      </a>
     </Menu>
   );
 };

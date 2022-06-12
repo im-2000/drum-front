@@ -38,17 +38,17 @@ export const Sampler = () => {
           backgroundPosition: "center",
         }}
       >
-        <div>
-          <Browser />
-        </div>
         {/* <div>
           <Hamburger />
         </div> */}
         <div>
+          <Browser />
+        </div>
+        <div>
           <Channels />
         </div>
         <div>
-          <Analyser audioContext={audioContext} />
+          <Analyser />
         </div>
       </div>
     </div>

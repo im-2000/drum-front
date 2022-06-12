@@ -50,7 +50,7 @@ export const Channels = (props) => {
           className="channel-name"
           style={{
             color: "red",
-            fontSize: 25,
+            // fontSize: 25,
           }}
         >
           DRUMS
@@ -70,7 +70,7 @@ export const Channels = (props) => {
           className="channel-name"
           style={{
             color: "violet",
-            fontSize: 25,
+            // fontSize: 25,
           }}
         >
           BASS
@@ -90,7 +90,7 @@ export const Channels = (props) => {
           className="channel-name"
           style={{
             color: "#13D6A7",
-            fontSize: 25,
+            // fontSize: 25,
           }}
         >
           MELODY
@@ -110,7 +110,7 @@ export const Channels = (props) => {
           className="channel-name"
           style={{
             color: "yellow",
-            fontSize: 25,
+            // fontSize: 25,
           }}
         >
           PAD

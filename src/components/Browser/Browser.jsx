@@ -9,7 +9,7 @@ import { addSample } from "../../store/channels/slice";
 import { CgAdd } from "react-icons/cg";
 import { Channels } from "../Channels";
 import { clearSamples } from "../../store/channels/slice";
-import "./Sidebar.css";
+// import "./Sidebar.css";
 // import { slide as Menu } from "react-burger-menu";
 // import { bubble as Menu } from "react-burger-menu";
 import { reveal as Menu } from "react-burger-menu";

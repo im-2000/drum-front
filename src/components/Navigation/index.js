@@ -36,11 +36,11 @@ export function Navigation() {
         <div>
           <Link
             className="label"
-            style={{
-              textDecoration: "none",
-              color: "violet",
-              fontSize: 40,
-            }}
+            // style={{
+            //   textDecoration: "none",
+            //   color: "violet",
+            //   fontSize: 40,
+            // }}
             to="/sampler"
           >
             TWEAK PEAK
@@ -52,11 +52,11 @@ export function Navigation() {
       <div>
         <Link
           className="navigation-item"
-          style={{
-            color: "white",
-            textDecoration: "none",
-            fontSize: 18,
-          }}
+          // style={{
+          //   color: "white",
+          //   textDecoration: "none",
+          //   fontSize: 18,
+          // }}
           to="/sampler"
         >
           Sampler
@@ -66,11 +66,12 @@ export function Navigation() {
         {" "}
         (
         <Link
-          style={{
-            color: "white",
-            textDecoration: "none",
-            fontSize: 18,
-          }}
+          className="navigation-item"
+          // style={{
+          //   color: "white",
+          //   textDecoration: "none",
+          //   fontSize: 18,
+          // }}
           to="/drummer"
         >
           Drummer
@@ -80,11 +81,12 @@ export function Navigation() {
       <div>
         {" "}
         <Link
-          style={{
-            color: "white",
-            textDecoration: "none",
-            fontSize: 18,
-          }}
+          className="navigation-item"
+          // style={{
+          //   color: "white",
+          //   textDecoration: "none",
+          //   fontSize: 18,
+          // }}
           to="/tracks"
         >
           MyTracks
