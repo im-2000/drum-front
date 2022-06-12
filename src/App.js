@@ -38,21 +38,15 @@ function App() {
   }, [dispatch]);
 
   return (
-    <DndProvider backend={HTML5Backend}>
-      <div
-        className="App"
-        style={{
-          // backgroundImage: `url(${background})`,
-          backgroundSize: 2000,
-        }}
-      >
+    <div className="App">
+      <DndProvider backend={HTML5Backend}>
         {/* <div>{token && <Navigation token={token} />}</div> */}
         <div
-          style={{
-            display: "flex",
-            alignIems: "center",
-            justifyContent: "center",
-          }}
+        // style={{
+        //   display: "flex",
+        //   alignIems: "center",
+        //   justifyContent: "center",
+        // }}
         ></div>
         <MessageBox />
         {isLoading ? <Loading /> : null}
@@ -66,8 +60,8 @@ function App() {
           <Route exact path="/drummer" element={<Drummer />} />
           <Route path="/tracks" element={<MyTracks />} />
         </Routes>
-      </div>
-    </DndProvider>
+      </DndProvider>
+    </div>
   );
 }
 

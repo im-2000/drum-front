@@ -57,10 +57,11 @@ export const Drummer = () => {
         className="drummer"
         style={{
           backgroundImage: `url(${background})`,
+          backgroundAttachment: "fixed",
           backgroundSize: "cover",
           // backgroundRepeat: "space",
 
-          backgroundPosition: "round",
+          backgroundPosition: "center",
         }}
       >
         <div>

@@ -1,5 +1,5 @@
 import React from "react";
-import sample from "../sample/dmth2_drum_loop_drawer_full_120.wav";
+import sample from "../audio/Melody.mp3";
 import "./analyser.css";
 
 const defaultProps = {

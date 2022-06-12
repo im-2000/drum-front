@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
 import * as Tone from "tone";
 import { useDispatch, useSelector } from "react-redux";
-import { GrPlay } from "react-icons/gr";
+import { FaPlay } from "react-icons/fa";
 import { IoMdPause } from "react-icons/io";
-import { VscDebugStop } from "react-icons/vsc";
+import { FaStop } from "react-icons/fa";
 
 const kick = new Tone.Player(
-  "https://audio.jukehost.co.uk/JRVKYWCmgRxpKCI3ijAsm61z29599GmC"
+  "https://audio.jukehost.co.uk/blbhMsutbiTUGy10c43Abs3nS0byRe8S"
 ).toDestination();
 const snare = new Tone.Player(
-  "https://audio.jukehost.co.uk/nA3BlaP27nLNre0gHihDWhDngWeg5HAk"
+  "https://audio.jukehost.co.uk/Bk2jccXQ8TlF64Hxp7oXeWN9k1zlgDzF"
 ).toDestination();
 const clap = new Tone.Player(
   "https://audio.jukehost.co.uk/ovksH6BwP0eyhnMMITe8cijRDP8cmPQR"
@@ -18,14 +18,14 @@ const tom = new Tone.Player(
   "https://audio.jukehost.co.uk/ruoGZEOmXLugBKDsFhwWoS43Va1U6GOk"
 ).toDestination();
 const ch = new Tone.Player(
-  "https://audio.jukehost.co.uk/xQyC8nIW7CxX6O7L9y68NDFuNI9bBKIA"
+  "https://audio.jukehost.co.uk/awUGU9sCcqe4VSe1UJOgtm31awwaNw4v"
 ).toDestination();
 const oh = new Tone.Player(
   "https://audio.jukehost.co.uk/MLaQPc07Eg9RYDtj19Y708ZWHMf4ZWyu"
 ).toDestination();
-const crash = new Tone.Player(
-  "https://audio.jukehost.co.uk/J3XUUjWl7nb9qK69HO8rgbri1c7YC3GM"
-).toDestination();
+// const crash = new Tone.Player(
+//   "https://audio.jukehost.co.uk/J3XUUjWl7nb9qK69HO8rgbri1c7YC3GM"
+// ).toDestination();
 
 export const DrumMachine = () => {
   const [inputs, setInputs] = useState({
@@ -35,7 +35,7 @@ export const DrumMachine = () => {
     TOM: new Array(16).fill(false),
     CH: new Array(16).fill(false),
     OH: new Array(16).fill(false),
-    CRASH: new Array(16).fill(false),
+    // CRASH: new Array(16).fill(false),
   });
 
   const [bpm, setBpm] = useState(80);
@@ -72,9 +72,9 @@ export const DrumMachine = () => {
       if (inputs.OH[index]) {
         oh.start();
       }
-      if (inputs.CRASH[index]) {
-        crash.start();
-      }
+      // if (inputs.CRASH[index]) {
+      //   crash.start();
+      // }
 
       step++;
     }
@@ -88,7 +88,7 @@ export const DrumMachine = () => {
 
   const handleBpm = (event) => {
     event.preventDefault();
-    alert(`The name you entered was: ${bpm}`);
+    alert(`Your bpm: ${bpm}`);
   };
 
   const play = () => {
@@ -103,7 +103,7 @@ export const DrumMachine = () => {
     Tone.Transport.start() ? Tone.Transport.stop() : Tone.Transport.start();
   };
 
-  const handleDrums = () => {
+  const reset = () => {
     setInputs({
       KICK: new Array(16).fill(false),
       SNARE: new Array(16).fill(false),
@@ -111,7 +111,7 @@ export const DrumMachine = () => {
       TOM: new Array(16).fill(false),
       CH: new Array(16).fill(false),
       OH: new Array(16).fill(false),
-      CRASH: new Array(16).fill(false),
+      // CRASH: new Array(16).fill(false),
     });
   };
 
@@ -130,16 +130,16 @@ export const DrumMachine = () => {
             <button
               className="button-browser"
               onClick={play}
-              style={{ color: "orange" }}
+              style={{ color: "#10DD2D" }}
             >
-              <GrPlay />
+              <FaPlay />
             </button>
           </div>
           <div>
             <button
               className="button-browser"
               onClick={pause}
-              style={{ color: "orange" }}
+              style={{ color: "#FFBB00" }}
             >
               <IoMdPause />
             </button>
@@ -148,15 +148,15 @@ export const DrumMachine = () => {
             <button
               className="button-browser"
               onClick={stop}
-              style={{ color: "orange" }}
+              style={{ color: "red" }}
             >
-              <VscDebugStop />
+              <FaStop />
             </button>
           </div>
           <div>
             <button
               className="button-browser"
-              onClick={handleDrums}
+              onClick={reset}
               style={{ color: "orange" }}
             >
               Reset
@@ -170,7 +170,7 @@ export const DrumMachine = () => {
           </div>
         </div>
         &nbsp; &nbsp; &nbsp; &nbsp;
-        <div className="drums-type">
+        <div className="bpm">
           <form onSubmit={handleBpm}>
             <label style={{ color: "orange" }}>
               BPM: &nbsp;

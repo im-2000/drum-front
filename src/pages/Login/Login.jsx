@@ -17,6 +17,7 @@ import { selectToken } from "../../store/user/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import logo from "../../image/logo3_3.png";
 
 // function Copyright(props) {
 //   return (

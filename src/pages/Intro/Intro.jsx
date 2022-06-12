@@ -2,6 +2,7 @@ import * as React from "react";
 import { Label } from "../../components/Label/Label";
 import background from "../../image/Animation.gif";
 import { Link } from "react-router-dom";
+import logo from "../../image/logo3_5.png";
 
 export default function Intro(props) {
   return (
@@ -19,12 +20,20 @@ export default function Intro(props) {
         flexDirection: "column",
       }}
     >
-      <div>
-        <Label />
+      <div className="logo">
+        <Link to="/login">
+          <img
+            src={logo}
+            alt="logo"
+            style={{
+              maxWidth: 200,
+            }}
+          />
+          {/* <Label /> */}
+        </Link>
       </div>
       &nbsp;
-      <div>
-        {" "}
+      {/* <div>
         <Link
           to="/login"
           style={{
@@ -33,7 +42,7 @@ export default function Intro(props) {
         >
           LOGIN
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 }

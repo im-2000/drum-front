@@ -34,7 +34,7 @@ export const Box = (props) => {
   };
   // useEffect(() => {
   //   audioRef.current.addEventListener("timeupdate", function () {
-  //     let buffer = 0.2;
+  //     let buffer = 0.14;
   //     if (audioRef.current.currentTime > audioRef.current.duration - buffer) {
   //       audioRef.current.currentTime = 0;
   //       audioRef.current.play();
@@ -102,7 +102,7 @@ export const Box = (props) => {
             ref={audioRef}
             preload="auto"
             src={audio}
-            className="clip"
+            // className="clip"
             id={text}
           />
         </div>
