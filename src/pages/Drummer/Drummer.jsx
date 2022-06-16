@@ -31,7 +31,7 @@ export const Drummer = () => {
 
   useEffect(() => {
     dispatch(fetchOneShotSamples);
-  }, []);
+  }, [dispatch]);
 
   console.log("oneShotSamples", oneShotSamples);
 

@@ -18,7 +18,7 @@ export const Browser = () => {
   useEffect(() => {
     dispatch(fetchAllStyles);
     dispatch(fetchAllSamples);
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     const filterSamples = (style, type) => {
