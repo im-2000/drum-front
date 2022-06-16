@@ -1,7 +1,7 @@
 import "./channel_rack.css";
 import { useSelector } from "react-redux";
 import { removeSample } from "../store/channels/slice";
-import { Box } from "./Box3";
+import { Box } from "./Box";
 import {
   selectDrums,
   selectMelody,

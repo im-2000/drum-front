@@ -4,15 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchOneShotSamples } from "../../store/feed/actions";
 import { selectOneShotSamples } from "../../store/feed/selectors";
 import { Navigation } from "../../components/Navigation";
-import {
-  selectCh,
-  selectClap,
-  selectCrash,
-  selectKick,
-  selectOh,
-  selectSnare,
-  selectTom,
-} from "../../store/looper/selectors";
+// import {
+//   selectCh,
+//   selectClap,
+//   selectCrash,
+//   selectKick,
+//   selectOh,
+//   selectSnare,
+//   selectTom,
+// } from "../../store/looper/selectors";
 import Loading from "../../components/Loading";
 import { DrumMachine } from "./DrumMachine";
 import { selectToken } from "../../store/user/selectors";

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import * as Tone from "tone";
-import { useDispatch, useSelector } from "react-redux";
 import { FaPlay } from "react-icons/fa";
 import { IoMdPause } from "react-icons/io";
 import { FaStop } from "react-icons/fa";

@@ -4,7 +4,6 @@ import { selectToken } from "../../store/user/selectors";
 import LoggedIn from "./LoggedIn";
 import LoggedOut from "./LoggedOut";
 import { Link } from "react-router-dom";
-import "./Sidebar.css";
 
 export function Navigation() {
   const token = useSelector(selectToken);

@@ -8,11 +8,10 @@ import background from "../image/circle.jpeg";
 import { selectToken } from "../store/user/selectors";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import "../components/Navigation/Sidebar.css";
 
 export const Sampler = () => {
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-  const audioContext = new AudioContext();
+  // const AudioContext = window.AudioContext || window.webkitAudioContext;
+  // const audioContext = new AudioContext();
 
   const token = useSelector(selectToken);
   const navigate = useNavigate();

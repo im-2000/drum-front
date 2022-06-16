@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAllSamples, selectAllStyles } from "../../store/feed/selectors";
 import { fetchAllSamples, fetchAllStyles } from "../../store/feed/actions";
@@ -22,7 +22,6 @@ export const Browser = () => {
 
   useEffect(() => {
     const filterSamples = (style, type) => {
-      console.log(style, type);
       return samplesState.filter(
         (sample) =>
           (sample.styleId === style || style === 0) &&

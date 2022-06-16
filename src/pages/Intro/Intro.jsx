@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Label } from "../../components/Label/Label";
 import background from "../../image/Animation.gif";
 import { Link } from "react-router-dom";
 import logo from "../../image/logo3_5.png";

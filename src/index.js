@@ -6,18 +6,18 @@ import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import store from "./store";
 import { BrowserRouter as Router } from "react-router-dom";
-import { StyledEngineProvider } from "@mui/material/styles";
+// import { StyledEngineProvider } from "@mui/material/styles";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <StyledEngineProvider injectFirst>
-      <Router>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </Router>
-    </StyledEngineProvider>
+    {/* <StyledEngineProvider injectFirst> */}
+    <Router>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    </Router>
+    {/* </StyledEngineProvider> */}
   </React.StrictMode>
 );
 

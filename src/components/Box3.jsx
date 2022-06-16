@@ -9,12 +9,12 @@ import { BsStar } from "react-icons/bs";
 import * as Tone from "tone";
 
 export const Box = (props) => {
-  // const player = useRef(null);
+  const player = useRef(null);
   const [isPlaying, setPlaying] = useState(false);
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
 
-  const player = new Tone.Player(props.audio).toDestination();
+  // const player = new Tone.Player(props.audio).toDestination();
   // const buffer = new Tone.ToneAudioBuffer(props.audio, () => {
   //   console.log("loaded");
   // });
