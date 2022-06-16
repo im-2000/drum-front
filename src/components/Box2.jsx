@@ -1,10 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import Recorder from "mic-recorder-to-mp3";
-import { BsPlayCircle } from "react-icons/bs";
-import { CgAdd } from "react-icons/cg";
-import { addSample } from "../store/channels/slice";
-import { useDispatch } from "react-redux";
-import { useSelect } from "@mui/base";
 
 export const Box2 = (props) => {
   const audioRef = useRef(null);

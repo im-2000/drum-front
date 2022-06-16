@@ -123,7 +123,7 @@ export const DrumMachine = () => {
   // };
 
   return (
-    <div className="drum-machine">
+    <div>
       <div className="bpm-value">
         <div className="drummer-transport">
           <div>
@@ -185,7 +185,7 @@ export const DrumMachine = () => {
         </div>
       </div>
       &nbsp;
-      <div>
+      <div className="drums-outer">
         {Object.keys(inputs).map((type, key) => (
           <div key={key} className="drums-container">
             <div className="drums-type">{type}</div>

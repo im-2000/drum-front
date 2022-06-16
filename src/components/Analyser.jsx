@@ -1,6 +1,5 @@
 import React from "react";
 import sample from "../audio/Melody.mp3";
-import "./analyser.css";
 
 const defaultProps = {
   barColor: [

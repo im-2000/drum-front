@@ -1,7 +1,6 @@
 import { Channels } from "../components/Channels";
 import { Analyser } from "../components/Analyser";
 import { Browser } from "../components/Browser/Browser";
-// import Recorder from "../components/Recorder/Recorder";
 import { Navigation } from "../components/Navigation";
 import "../components/channel_rack.css";
 import background from "../image/circle.jpeg";
@@ -9,9 +8,7 @@ import background from "../image/circle.jpeg";
 import { selectToken } from "../store/user/selectors";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Hamburger from "./../components/Navigation/Hamburger";
 import "../components/Navigation/Sidebar.css";
-import { slide as Menu } from "react-burger-menu";
 
 export const Sampler = () => {
   const AudioContext = window.AudioContext || window.webkitAudioContext;
@@ -38,9 +35,6 @@ export const Sampler = () => {
           backgroundPosition: "center",
         }}
       >
-        {/* <div>
-          <Hamburger />
-        </div> */}
         <div>
           <Browser />
         </div>

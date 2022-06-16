@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import background from "../../image/drums.jpeg";
 import { useDispatch, useSelector } from "react-redux";
-import { Box2 } from "../../components/Box2";
 import { fetchOneShotSamples } from "../../store/feed/actions";
 import { selectOneShotSamples } from "../../store/feed/selectors";
 import { Navigation } from "../../components/Navigation";
@@ -18,7 +17,6 @@ import Loading from "../../components/Loading";
 import { DrumMachine } from "./DrumMachine";
 import { selectToken } from "../../store/user/selectors";
 import { useNavigate } from "react-router-dom";
-import Hamburger from "../../components/Navigation/Hamburger";
 
 export const Drummer = () => {
   const token = useSelector(selectToken);
@@ -27,14 +25,6 @@ export const Drummer = () => {
   if (token === null) {
     navigate("/");
   }
-
-  const kick = useSelector(selectKick);
-  const snare = useSelector(selectSnare);
-  const clap = useSelector(selectClap);
-  const tom = useSelector(selectTom);
-  const ch = useSelector(selectCh);
-  const oh = useSelector(selectOh);
-  const crash = useSelector(selectCrash);
 
   const dispatch = useDispatch();
   const oneShotSamples = useSelector(selectOneShotSamples);
@@ -53,100 +43,16 @@ export const Drummer = () => {
       <div>
         <Navigation />
       </div>
-
       <div
         className="drummer"
         style={{
           backgroundImage: `url(${background})`,
           backgroundAttachment: "fixed",
           backgroundSize: "cover",
-          // backgroundRepeat: "space",
-
           backgroundPosition: "center",
         }}
       >
-        <div>
-          <DrumMachine />
-        </div>
-        {/* <div id="looper" className="looper">
-        <div className="row">
-          <p>KICK</p>
-          &nbsp; &nbsp;
-          {new Array(16).fill().map((_, idx) => (
-            <Box2
-              // text={oneShotSamples[0].name}
-              key={idx}
-              audio={oneShotSamples[0].url}
-            />
-          ))}
-        </div>
-        <div className="row">
-          <p>SNARE</p>
-          &nbsp; &nbsp;
-          {new Array(16).fill().map((_, idx) => (
-            <Box2
-              // text={oneShotSamples[1].name}
-              key={idx}
-              audio={oneShotSamples[1].url}
-            />
-          ))}
-        </div>
-        <div className="row">
-          <p>CLAP</p>
-          &nbsp; &nbsp;
-          {new Array(16).fill().map((_, idx) => (
-            <Box2
-              // text={oneShotSamples[2].name}
-              key={idx}
-              audio={oneShotSamples[2].url}
-            />
-          ))}
-        </div>
-        <div className="row">
-          <p>TOM</p>
-          &nbsp; &nbsp;
-          {new Array(16).fill().map((_, idx) => (
-            <Box2
-              // text={oneShotSamples[3].name}
-              key={idx}
-              audio={oneShotSamples[3].url}
-            />
-          ))}
-        </div>
-        <div className="row">
-          <p>CH</p>
-          &nbsp; &nbsp;
-          {new Array(16).fill().map((_, idx) => (
-            <Box2
-              // text={oneShotSamples[4].name}
-              key={idx}
-              audio={oneShotSamples[4].url}
-            />
-          ))}
-        </div>
-        <div className="row">
-          <p>OH</p>
-          &nbsp; &nbsp;
-          {new Array(16).fill().map((_, idx) => (
-            <Box2
-              // text={oneShotSamples[5].name}
-              key={idx}
-              audio={oneShotSamples[5].url}
-            />
-          ))}
-        </div>
-        <div className="row">
-          <p>CRASH</p>
-          &nbsp; &nbsp;
-          {new Array(16).fill().map((_, idx) => (
-            <Box2
-              // text={oneShotSamples[6].name}
-              key={idx}
-              audio={oneShotSamples[6].url}
-            />
-          ))}
-        </div>
-      </div> */}
+        <DrumMachine />
       </div>
     </div>
   );

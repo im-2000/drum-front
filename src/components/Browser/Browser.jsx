@@ -1,78 +1,25 @@
 import React, { useEffect, useState, useRef } from "react";
-import { useDrag, useDrop } from "react-dnd";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAllSamples, selectAllStyles } from "../../store/feed/selectors";
 import { fetchAllSamples, fetchAllStyles } from "../../store/feed/actions";
 import { Box } from "../Box";
 import { Form } from "react-bootstrap";
-import { addSample } from "../../store/channels/slice";
-import { CgAdd } from "react-icons/cg";
-import { Channels } from "../Channels";
 import { clearSamples } from "../../store/channels/slice";
-// import "./Sidebar.css";
-// import { slide as Menu } from "react-burger-menu";
-// import { bubble as Menu } from "react-burger-menu";
-import { reveal as Menu } from "react-burger-menu";
 
 export const Browser = () => {
   const dispatch = useDispatch();
-  const samplesState = useSelector(selectAllSamples);
-  const stylesState = useSelector(selectAllStyles);
+
   const [style, setStyle] = useState(0);
   const [type, setType] = useState("");
+  const samplesState = useSelector(selectAllSamples);
+  const stylesState = useSelector(selectAllStyles);
   const [filteredSamples, setFilteredSamples] = useState(samplesState);
-
-  // const [{ isDragging }, drag] = useDrag(() => ({
-  //   type: "sample",
-  //   item: { id: filteredSamples.sample.id },
-  //   collect: (monitor) => ({
-  //     isDragging: !!monitor.isDragging(),
-  //   }),
-  // }));
-
-  const [board, setBoard] = useState([]);
-
-  const [{ isOver }, drop] = useDrop(() => ({
-    accept: "sample",
-    drop: (item) => addSampleToBoard(item.id),
-    collect: (monitor) => ({
-      isOver: !!monitor.isOver(),
-    }),
-  }));
-
-  const addSampleToBoard = (id) => {
-    console.log(id);
-  };
-
-  console.log("samples", filteredSamples);
-
-  // const dragItem = useRef();
-  // const dragOverItem = useRef();
-
-  // const dragStart = (e, position) => {
-  //   dragItem.current = position;
-  //   console.log(e.target.innerHTML);
-  // };
-
-  // const dragEnter = (e, position) => {
-  //   dragOverItem.current = position;
-  //   console.log(e.target.innerHTML);
-  // };
-
-  // const drop = (e) => {
-  //   const copyListItems = [...filteredSamples];
-  //   const dragItemContent = copyListItems[dragItem.current];
-  //   copyListItems.splice(dragItem.current, 1);
-  //   copyListItems.splice(dragOverItem.current, 0, dragItemContent);
-  //   dragItem.current = null;
-  //   dragOverItem.current = null;
-  //   setFilteredSamples(copyListItems);
-  // };
 
   useEffect(() => {
     dispatch(fetchAllStyles);
     dispatch(fetchAllSamples);
   }, []);
+
   useEffect(() => {
     const filterSamples = (style, type) => {
       console.log(style, type);
@@ -98,7 +45,6 @@ export const Browser = () => {
           &nbsp; &nbsp; &nbsp;
           <button className="button-browser">Upload sample</button>
         </div>
-        {/* <h2 style={{ color: "#42f5c8" }}>Browser</h2> */}
         <div className="filters">
           <div>
             <p style={{ color: "#42f5c8" }}>Style</p>
@@ -115,14 +61,7 @@ export const Browser = () => {
             </Form.Select>
           </div>
           &nbsp; &nbsp; &nbsp;
-          <div
-            style={
-              {
-                // display: "flex",
-                // justifyContent: "row",
-              }
-            }
-          >
+          <div>
             <p style={{ color: "#42f5c8" }}>Type</p>
             <Form.Select
               aria-label="Default select example"
@@ -140,20 +79,8 @@ export const Browser = () => {
         <div className="sampleList">
           {filteredSamples.map((sample, idx) => {
             return (
-              <div
-                key={idx}
-
-                // style={{ border: isDragging ? "5px solid pink" : "0px" }}
-                // onDragStart={(e) => dragStart(e, idx)}
-                // onDragEnter={(e) => dragEnter(e, idx)}
-                // onDragEnd={drop}
-                // onDragOver={(e) => e.preventDefault()}
-                // key={idx}
-                // draggable
-              >
-                {/* {sample} */}
+              <div key={idx}>
                 <Box
-                  // ref={drop}
                   text={sample.name}
                   key={idx}
                   audio={sample.url}

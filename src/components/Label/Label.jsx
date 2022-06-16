@@ -5,7 +5,6 @@ export const Label = () => {
       style={{
         color: "violet",
         fontSize: 22,
-        // fontFamily: "Audiowide",
       }}
     >
       <h1>TWEAK PEAK</h1>
