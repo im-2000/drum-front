@@ -40,7 +40,7 @@ export function Navigation() {
           MyTracks
         </Link>
       </div>
-      <div>{loginLogoutControls}</div>
+      {loginLogoutControls}
     </div>
   );
 }

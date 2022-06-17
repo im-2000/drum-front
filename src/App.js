@@ -4,7 +4,7 @@ import { Sampler } from "./pages/Sampler";
 import { Drummer } from "./pages/Drummer/Drummer";
 import { Routes, Route } from "react-router-dom";
 import Loading from "./components/Loading/index";
-import MessageBox from "./components/MessageBox";
+// import MessageBox from "./components/MessageBox";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import Intro from "./pages/Intro/Intro";
