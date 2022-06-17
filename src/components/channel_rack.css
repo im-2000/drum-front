@@ -482,12 +482,6 @@ body {
     display: none;
   }
 
-  .checkbox {
-    width: 25px;
-  }
-  .checkbox:before {
-    width: 25px;
-  }
   .drums-container {
     display: flow-root;
     align-items: center;
@@ -540,26 +534,6 @@ body {
     width: 100%;
   }
 
-  .checkbox {
-    width: 10px;
-  }
-  .checkbox:before {
-    width: 10px;
-  }
-  .drums-container {
-    /* display: flow-root; */
-    /* align-items: center; */
-    justify-content: center;
-    width: 90%;
-  }
-
-  .bpm-value {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: 100%;
-    padding-top: 0%;
-  }
   .channels {
     column-gap: normal;
     margin: 0px 0px 0px 0px;
@@ -624,7 +598,7 @@ body {
     font-size: 8px;
   }
   .button-browser {
-    width: 90px;
+    width: 60px;
     height: 20px;
     background-color: rgb(43, 43, 43);
     color: white;
@@ -634,5 +608,35 @@ body {
   .filters {
     display: flex;
     font-size: 15px;
+  }
+  .drums-type {
+    font-family: "Audiowide", monospace;
+    font-size: 25px;
+    color: orangered;
+    padding: 0px 20px 0px 0px;
+    -webkit-text-stroke: 1px black;
+  }
+
+  .drums-outer {
+    width: 100%;
+  }
+
+  .drums-container {
+    justify-content: center;
+    width: 90%;
+  }
+
+  .bpm-value {
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: flex-end; */
+    width: 100%;
+    padding: 0px 0px 0px 15px;
+  }
+  .checkbox {
+    width: 14px;
+  }
+  .checkbox:before {
+    width: 14px;
   }
 }
