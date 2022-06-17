@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="App">
       {/* <DndProvider backend={HTML5Backend}> */}
-      <MessageBox />
+      {/* <MessageBox /> */}
       {isLoading ? <Loading /> : null}
 
       <Routes>

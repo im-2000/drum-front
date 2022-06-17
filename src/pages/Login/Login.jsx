@@ -87,7 +87,15 @@ export default function SignIn() {
             {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar> */}
-            <Typography>Login</Typography>
+            <Typography
+              style={{
+                fontSize: 30,
+                color: "orange",
+                fontFamily: "Gloria Hallelujah",
+              }}
+            >
+              LOGIN
+            </Typography>
             <Box
               component="form"
               onSubmit={handleSubmit}
@@ -105,6 +113,8 @@ export default function SignIn() {
                 autoFocus
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
+                variant="filled"
+                style={{ color: "white", backgroundColor: "white" }}
                 type="email"
                 placeholder="Enter email"
               />
@@ -116,6 +126,8 @@ export default function SignIn() {
                 label="Password"
                 type="password"
                 id="password"
+                variant="filled"
+                style={{ color: "white", backgroundColor: "white" }}
                 autoComplete="current-password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
@@ -130,7 +142,12 @@ export default function SignIn() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{
+                  mt: 3,
+                  mb: 2,
+                  backgroundColor: "purple",
+                  fontFamily: "Audiowide",
+                }}
               >
                 Login
               </Button>
@@ -141,7 +158,11 @@ export default function SignIn() {
                   </Link>
                 </Grid> */}
                 <Grid item>
-                  <Link href="/signup" variant="body2">
+                  <Link
+                    href="/signup"
+                    variant="body2"
+                    style={{ color: "orange" }}
+                  >
                     {"Don't have an account? Sign Up"}
                   </Link>
                 </Grid>

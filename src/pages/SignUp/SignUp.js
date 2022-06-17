@@ -92,7 +92,15 @@ export default function SignUp() {
             {/* <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
             <LockOutlinedIcon />
           </Avatar> */}
-            <Typography>Sign up</Typography>
+            <Typography
+              style={{
+                fontSize: 30,
+                color: "orange",
+                fontFamily: "Gloria Hallelujah",
+              }}
+            >
+              SIGN UP
+            </Typography>
             <Box
               component="form"
               onSubmit={submitForm}
@@ -110,6 +118,8 @@ export default function SignUp() {
                 autoFocus
                 value={name}
                 onChange={(event) => setName(event.target.value)}
+                variant="filled"
+                style={{ color: "white", backgroundColor: "white" }}
                 type="email"
                 placeholder="Enter name"
               />
@@ -124,6 +134,8 @@ export default function SignUp() {
                 autoFocus
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
+                variant="filled"
+                style={{ color: "white", backgroundColor: "white" }}
                 type="email"
                 placeholder="Enter email"
               />
@@ -138,6 +150,8 @@ export default function SignUp() {
                 autoComplete="current-password"
                 value={password}
                 onChange={(event) => setPassword(event.target.value)}
+                variant="filled"
+                style={{ color: "white", backgroundColor: "white" }}
                 placeholder="Password"
               />
               <TextField
@@ -151,6 +165,8 @@ export default function SignUp() {
                 autoFocus
                 value={age}
                 onChange={(event) => setAge(event.target.value)}
+                variant="filled"
+                style={{ color: "white", backgroundColor: "white" }}
                 type="email"
                 placeholder="Enter age"
               />
@@ -163,7 +179,12 @@ export default function SignUp() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                sx={{ mt: 3, mb: 2 }}
+                sx={{
+                  mt: 3,
+                  mb: 2,
+                  backgroundColor: "purple",
+                  fontFamily: "Audiowide",
+                }}
               >
                 Sign Up
               </Button>
