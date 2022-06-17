@@ -2,20 +2,25 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&family=Gloria+Hallelujah&family=Inspiration&family=Jua&family=Open+Sans:wght@300&family=PT+Sans&family=Palette+Mosaic&family=Permanent+Marker&family=Rubik:wght@300&display=swap");
 
-/* html {
+html {
+  width: 100%;
   height: 100%;
 }
 
 body {
+  width: 100%;
   height: 100%;
 }
 
 #root {
+  width: 100%;
   height: 100%;
-} */
+}
 
 .App {
   background-color: black;
+  width: 100%;
+  height: 100%;
 }
 
 .sampler {
@@ -35,7 +40,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 80%;
+  height: 90%;
   width: 100%;
   margin: 0px 0px 0px 0px;
   padding-top: 0px;
@@ -54,7 +59,7 @@ body {
   position: fixed;
   align-items: flex-end;
   width: 100%;
-  height: 590px;
+  height: 100%;
   justify-content: start;
   border-radius: 10px;
   border-style: solid;
@@ -71,13 +76,13 @@ body {
 }
 
 .drums-outer {
-  background-color: #34495e;
+  /* background-color: #34495e; */
   display: flex;
   align-items: center;
   justify-content: centre;
   flex-direction: column;
-  border: 5px solid #333;
-  padding: 0px 0px 0px -200px;
+  /* border: 5px solid #333; */
+  padding: 100px 0px 0px -200px;
   width: 82%;
 }
 
@@ -255,7 +260,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 900px;
+  height: 100%;
 }
 
 .login-box {
@@ -275,7 +280,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 900px;
+  height: 100%;
 }
 .signup-box {
   background-color: rgb(247, 247, 247);
@@ -296,7 +301,7 @@ body {
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 900px;
+  height: 100%;
   border-radius: 15px;
   border-style: solid;
 }
@@ -397,6 +402,15 @@ body {
   background-color: rgb(143, 143, 143);
 }
 
+.button-logout {
+  width: 100px;
+  height: 40px;
+  background-color: #333;
+  color: white;
+  border-color: green;
+  font-family: "Audiowide";
+}
+
 .mytracks {
   display: flex;
   width: 1920px;
@@ -444,6 +458,16 @@ body {
   }
   .bpm-value {
     width: 76%;
+  }
+  .intro {
+    font-family: "Gloria Hallelujah", cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border-style: solid;
   }
 }
 
@@ -512,6 +536,14 @@ body {
   .box {
     font-size: 10px;
   }
+  .button-logout {
+    width: 80px;
+    height: 20px;
+    background-color: #333;
+    color: white;
+    border-color: green;
+    font-family: "Audiowide";
+  }
 }
 
 @media (max-width: 640px) {
@@ -545,5 +577,83 @@ body {
     color: white;
     border-color: green;
     font-size: 10px;
+  }
+}
+@media (max-width: 640px) {
+  .App {
+    width: 100%;
+  }
+  .browser {
+    display: none;
+  }
+  .analyser {
+    display: none;
+  }
+
+  .checkbox {
+    width: 10px;
+  }
+  .checkbox:before {
+    width: 10px;
+  }
+  .drums-container {
+    /* display: flow-root; */
+    /* align-items: center; */
+    justify-content: center;
+    width: 90%;
+  }
+
+  .bpm-value {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    padding-top: 0%;
+  }
+  .channels {
+    height: 80%;
+    width: 10%;
+  }
+  .sampler {
+    height: 800px;
+  }
+  .navigation-item {
+    font-size: 12px;
+  }
+  .label {
+    font-size: 25px;
+  }
+  .channel-name {
+    font-size: 20px;
+  }
+  .box {
+    font-family: "Audiowide", monospace;
+    cursor: pointer;
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 10px;
+    box-shadow: 0px 15px 15px 15px rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin: 25px 5px 5px 5px; */
+    height: 25px;
+    width: 25px;
+    font-size: 10px;
+    color: white;
+    background: #000;
+    color: rgb(0, 255, 55);
+    /* padding: 12px 12px 12px 12px; */
+  }
+  .navigation-item {
+    font-size: 8px;
+  }
+  .button-logout {
+    width: 50px;
+    height: 20px;
+    background-color: #333;
+    color: white;
+    border-color: green;
+    font-family: "Audiowide";
+    font-size: 8px;
   }
 }

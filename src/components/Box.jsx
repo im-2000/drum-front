@@ -66,12 +66,6 @@ export const Box = (props) => {
         &nbsp;
         <div>
           {className === "sample" && (
-            <BsPlayCircle className="playIcon" onClick={playStop} />
-          )}
-        </div>
-        &nbsp;
-        <div>
-          {className === "sample" && (
             <CgAdd
               className="playIcon"
               id={props.sample.id}
@@ -81,6 +75,12 @@ export const Box = (props) => {
             >
               {" "}
             </CgAdd>
+          )}
+        </div>
+        &nbsp;
+        <div>
+          {className === "sample" && (
+            <BsPlayCircle className="playIcon" onClick={playStop} />
           )}
         </div>
         &nbsp; &nbsp;
