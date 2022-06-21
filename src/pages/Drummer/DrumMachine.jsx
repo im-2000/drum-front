@@ -80,7 +80,7 @@ export const DrumMachine = () => {
     const eventId = Tone.Transport.scheduleRepeat(repeat, "16n");
     Tone.Transport.bpm.value = bpm;
 
-    Tone.Transport.start();
+    // Tone.Transport.start();
 
     return () => Tone.Transport.clear(eventId);
   }, [inputs, bpm]);
