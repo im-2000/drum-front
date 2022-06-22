@@ -7,8 +7,8 @@ export const Recorder1 = (props) => {
   const [isActive, setIsActive] = useState(false);
   const [counter, setCounter] = useState(0);
 
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-  const audioCtx = new AudioContext();
+  // const AudioContext = window.AudioContext || window.webkitAudioContext;
+  // const audioCtx = new AudioContext();
 
   useEffect(() => {
     let intervalId;
