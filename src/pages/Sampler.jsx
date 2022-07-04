@@ -10,8 +10,8 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 export const Sampler = () => {
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-  const audioContext = new AudioContext();
+  // const AudioContext = window.AudioContext || window.webkitAudioContext;
+  // const audioContext = new AudioContext();
 
   const token = useSelector(selectToken);
   const navigate = useNavigate();
