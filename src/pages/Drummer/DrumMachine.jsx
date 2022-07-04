@@ -171,7 +171,13 @@ export const DrumMachine = () => {
         &nbsp; &nbsp; &nbsp; &nbsp;
         <div className="bpm">
           <form onSubmit={handleBpm}>
-            <label style={{ color: "orange" }}>
+            <label
+              style={{
+                color: "orange",
+                webkitTextStroke: " 1px black",
+                fontSize: 29,
+              }}
+            >
               BPM: &nbsp;
               <input
                 style={{ width: 45, height: 30, fontSize: 23 }}
