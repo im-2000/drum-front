@@ -3,6 +3,7 @@ import * as Tone from "tone";
 import { FaPlay } from "react-icons/fa";
 import { IoMdPause } from "react-icons/io";
 import { FaStop } from "react-icons/fa";
+import { ImLoop } from "react-icons/im";
 
 const kick = new Tone.Player(
   "https://audio.jukehost.co.uk/blbhMsutbiTUGy10c43Abs3nS0byRe8S"
@@ -39,6 +40,7 @@ export const DrumMachine = () => {
 
   const [bpm, setBpm] = useState(80);
   const [started, setStarted] = useState(false);
+  const [loop, setLoop] = useState(false);
 
   // const dispatch = useDispatch();
   // const bpm = useSelector(selectBpm);
@@ -50,7 +52,9 @@ export const DrumMachine = () => {
   };
 
   useEffect(() => {
-    Tone.Transport.stop();
+    if (!loop) {
+      Tone.Transport.stop();
+    }
     let step = 0;
     function repeat() {
       let index = step % 16;
@@ -84,11 +88,15 @@ export const DrumMachine = () => {
     // Tone.Transport.start();
 
     return () => Tone.Transport.clear(eventId);
-  }, [inputs, bpm]);
+  }, [inputs, bpm, loop]);
 
   const handleBpm = (event) => {
     event.preventDefault();
     alert(`Your bpm: ${bpm}`);
+  };
+
+  const loopHandle = () => {
+    setLoop(!loop);
   };
 
   const play = () => {
@@ -106,6 +114,7 @@ export const DrumMachine = () => {
 
   const stop = () => {
     Tone.Transport.stop();
+    setStarted(false);
   };
 
   const reset = () => {
@@ -168,9 +177,18 @@ export const DrumMachine = () => {
             </button>
           </div>
 
-          <div>
+          {/* <div>
             <button className="button-browser" style={{ color: "red" }}>
               REC
+            </button>
+          </div> */}
+          <div>
+            <button
+              className="button-browser"
+              onClick={loopHandle}
+              style={{ color: "orange" }}
+            >
+              <ImLoop />
             </button>
           </div>
         </div>

@@ -24,7 +24,7 @@ body {
 }
 
 .sampler {
-  position: fixed;
+  /* position: fixed; */
   display: flex;
   width: 100%;
   height: 100%;
@@ -84,7 +84,7 @@ body {
   flex-direction: column;
   /* border: 5px solid #333; */
   padding: 100px 0px 0px -200px;
-  width: 82%;
+  /* width: 82%; */
 }
 
 .bpm-value {
@@ -444,7 +444,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 80%;
+    height: 65%;
     width: 100%;
     margin: 0px 0px 0px 0px;
     padding-top: 0;
