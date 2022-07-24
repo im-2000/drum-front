@@ -38,6 +38,7 @@ export const DrumMachine = () => {
   });
 
   const [bpm, setBpm] = useState(80);
+  const [started, setStarted] = useState(false);
 
   // const dispatch = useDispatch();
   // const bpm = useSelector(selectBpm);
@@ -91,15 +92,19 @@ export const DrumMachine = () => {
   };
 
   const play = () => {
-    !Tone.Transport.start() ? Tone.Transport.stop() : Tone.Transport.start();
+    // !Tone.Transport.start() ? Tone.Transport.stop() : Tone.Transport.start();
+    if (!started) {
+      Tone.start();
+    }
+    Tone.Transport.start();
   };
 
   const pause = () => {
-    Tone.Transport.start() ? Tone.Transport.pause() : Tone.Transport.start();
+    Tone.Transport.pause();
   };
 
   const stop = () => {
-    Tone.Transport.start() ? Tone.Transport.stop() : Tone.Transport.start();
+    Tone.Transport.stop();
   };
 
   const reset = () => {
