@@ -95,6 +95,7 @@ export const DrumMachine = () => {
     // !Tone.Transport.start() ? Tone.Transport.stop() : Tone.Transport.start();
     if (!started) {
       Tone.start();
+      setStarted(true);
     }
     Tone.Transport.start();
   };
