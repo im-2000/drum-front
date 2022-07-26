@@ -57,7 +57,7 @@ body {
 }
 
 .drummer {
-  position: fixed;
+  /* position: fixed; */
   align-items: flex-end;
   width: 100%;
   height: 100%;
@@ -84,7 +84,7 @@ body {
   flex-direction: column;
   /* border: 5px solid #333; */
   padding: 100px 0px 0px -200px;
-  /* width: 82%; */
+  width: 82%;
 }
 
 .bpm-value {
@@ -458,7 +458,7 @@ body {
     font-size: 12px;
   }
   .drums-container {
-    width: 75%;
+    width: 80%;
   }
   .bpm-value {
     width: 76%;
@@ -530,7 +530,7 @@ body {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 800px) {
   .App {
     width: 100%;
   }
@@ -599,8 +599,8 @@ body {
     font-size: 8px;
   }
   .button-browser {
-    width: 60px;
-    height: 20px;
+    width: 70px;
+    height: 30px;
     background-color: rgb(43, 43, 43);
     color: white;
     border-color: green;
@@ -610,6 +610,19 @@ body {
     display: flex;
     font-size: 15px;
   }
+
+  .drummer {
+    align-items: flex-end;
+    width: 100%;
+    height: 100%;
+    justify-content: start;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(37, 196, 162);
+    padding-top: 8%;
+  }
+
   .drums-type {
     font-family: "Audiowide", monospace;
     font-size: 25px;
@@ -624,15 +637,16 @@ body {
 
   .drums-container {
     justify-content: center;
-    width: 90%;
+    width: 70%;
   }
 
   .bpm-value {
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: flex-end; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     width: 100%;
-    padding: 0px 0px 0px 15px;
+    padding: 0px 0px 0px 0px;
   }
   .checkbox {
     width: 14px;
