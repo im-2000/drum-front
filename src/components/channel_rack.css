@@ -306,6 +306,10 @@ body {
   border-style: solid;
 }
 
+/* .logo {
+  max-width: 10px;
+} */
+
 .sampleList {
   font-family: "Jua", sans-serif;
   font-size: 15;
@@ -637,7 +641,7 @@ body {
 
   .drums-container {
     justify-content: center;
-    width: 70%;
+    width: 94%;
   }
 
   .bpm-value {
