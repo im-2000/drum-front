@@ -479,7 +479,7 @@ body {
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1350px) {
   .browser {
     display: none;
   }
@@ -488,9 +488,9 @@ body {
   }
 
   .drums-container {
-    display: flow-root;
+    /* display: flow-root;
     align-items: center;
-    justify-content: center-end;
+    justify-content: center-end; */
     width: 76%;
   }
 
@@ -531,6 +531,21 @@ body {
     border-color: green;
     font-family: "Audiowide";
     font-size: 12px;
+  }
+  .checkbox {
+    width: 21px;
+  }
+  .checkbox:before {
+    width: 21px;
+  }
+}
+
+@media (max-width: 940px) {
+  .checkbox {
+    width: 18px;
+  }
+  .checkbox:before {
+    width: 18px;
   }
 }
 
@@ -652,10 +667,26 @@ body {
     width: 100%;
     padding: 0px 0px 0px 0px;
   }
+
   .checkbox {
     width: 14px;
   }
   .checkbox:before {
     width: 14px;
+  }
+  .drums-container {
+    display: flow-root;
+    align-items: center;
+    justify-content: center;
+    width: 76%;
+  }
+}
+
+@media (max-width: 800px) {
+  .checkbox {
+    width: 10px;
+  }
+  .checkbox:before {
+    width: 10px;
   }
 }
