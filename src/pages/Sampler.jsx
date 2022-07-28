@@ -5,9 +5,9 @@ import { Navigation } from "../components/Navigation";
 import "../components/channel_rack.css";
 import background from "../image/circle.jpeg";
 
-import { selectToken } from "../store/user/selectors";
-import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { selectToken } from "../store/user/selectors";
+// import { useSelector } from "react-redux";
+// import { useNavigate } from "react-router-dom";
 
 export const Sampler = () => {
   // const AudioContext = window.AudioContext || window.webkitAudioContext;

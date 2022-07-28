@@ -20,7 +20,7 @@ export function Navigation() {
           flexDirection: "column",
         }}
       >
-        <Link className="label" to="/sampler">
+        <Link className="label" to="/">
           TWEAK PEAK
         </Link>
       </div>
