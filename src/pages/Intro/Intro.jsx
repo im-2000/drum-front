@@ -20,7 +20,7 @@ export default function Intro(props) {
       }}
     >
       <div className="logo">
-        <Link to="/login">
+        <Link to="/sampler">
           <img
             src={logo}
             alt="logo"

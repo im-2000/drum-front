@@ -15,16 +15,16 @@ import { Navigation } from "../../components/Navigation";
 // } from "../../store/looper/selectors";
 import Loading from "../../components/Loading";
 import { DrumMachine } from "./DrumMachine";
-import { selectToken } from "../../store/user/selectors";
-import { useNavigate } from "react-router-dom";
+// import { selectToken } from "../../store/user/selectors";
+// import { useNavigate } from "react-router-dom";
 
 export const Drummer = () => {
-  const token = useSelector(selectToken);
-  const navigate = useNavigate();
+  // const token = useSelector(selectToken);
+  // const navigate = useNavigate();
 
-  if (token === null) {
-    navigate("/");
-  }
+  // if (token === null) {
+  //   navigate("/");
+  // }
 
   const dispatch = useDispatch();
   const oneShotSamples = useSelector(selectOneShotSamples);

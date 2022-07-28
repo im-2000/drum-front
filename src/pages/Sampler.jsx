@@ -13,12 +13,12 @@ export const Sampler = () => {
   // const AudioContext = window.AudioContext || window.webkitAudioContext;
   // const audioContext = new AudioContext();
 
-  const token = useSelector(selectToken);
-  const navigate = useNavigate();
+  // const token = useSelector(selectToken);
+  // const navigate = useNavigate();
 
-  if (token === null) {
-    navigate("/");
-  }
+  // if (token === null) {
+  //   navigate("/");
+  // }
 
   return (
     <div>
