@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
-import "./App.css";
+// import "./App.css";
+import "./Style.css";
+
 import { Sampler } from "./pages/Sampler";
 import { Drummer } from "./pages/Drummer/Drummer";
 import { Routes, Route } from "react-router-dom";

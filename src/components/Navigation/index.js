@@ -35,11 +35,11 @@ export function Navigation() {
           Drummer
         </Link>
       </div>
-      <div>
+      {/* <div>
         <Link className="navigation-item" to="/tracks">
           MyTracks
         </Link>
-      </div>
+      </div> */}
       {loginLogoutControls}
     </div>
   );

@@ -1,4 +1,4 @@
-import "./channel_rack.css";
+import "./../Style.css";
 import { useSelector } from "react-redux";
 import { removeSample } from "../store/channels/slice";
 import { Box } from "./Box";
