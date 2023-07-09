@@ -13,8 +13,8 @@ import { Navigation } from "../../components/Navigation";
 //   selectSnare,
 //   selectTom,
 // } from "../../store/looper/selectors";
-import Loading from "../../components/Loading";
 import { DrumMachine } from "./DrumMachine";
+// import Loading from "../../components/Loading";
 // import { selectToken } from "../../store/user/selectors";
 // import { useNavigate } from "react-router-dom";
 
@@ -26,18 +26,16 @@ export const Drummer = () => {
   //   navigate("/");
   // }
 
-  const dispatch = useDispatch();
-  const oneShotSamples = useSelector(selectOneShotSamples);
+  // const dispatch = useDispatch();
+  // const oneShotSamples = useSelector(selectOneShotSamples);
 
-  useEffect(() => {
-    dispatch(fetchOneShotSamples);
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch(fetchOneShotSamples);
+  // }, [dispatch]);
 
-  console.log("oneShotSamples", oneShotSamples);
-
-  if (oneShotSamples.length === 0) {
-    return <Loading />;
-  }
+  // if (oneShotSamples.length === 0) {
+  //   return <Loading />;
+  // }
   return (
     <div>
       <div>
