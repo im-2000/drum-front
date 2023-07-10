@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import background from "../../image/drums.jpeg";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchOneShotSamples } from "../../store/feed/actions";
-import { selectOneShotSamples } from "../../store/feed/selectors";
+// import { useDispatch, useSelector } from "react-redux";
+// import { fetchOneShotSamples } from "../../store/feed/actions";
+// import { selectOneShotSamples } from "../../store/feed/selectors";
 import { Navigation } from "../../components/Navigation";
 // import {
 //   selectCh,
