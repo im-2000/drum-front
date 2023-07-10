@@ -6,12 +6,12 @@ import { Box } from "../Box";
 import { Form } from "react-bootstrap";
 import { clearSamples } from "../../store/channels/slice";
 import { samples } from "./../../sample/samples";
-import { styles } from "./../../sample/styles";
+// import { styles } from "./../../sample/styles";
 
 export const Browser = () => {
   const dispatch = useDispatch();
 
-  const [style, setStyle] = useState(0);
+  // const [style, setStyle] = useState(0);
   const [type, setType] = useState("");
   const samplesState = useSelector(selectAllSamples);
   // const stylesState = useSelector(selectAllStyles);
@@ -23,15 +23,15 @@ export const Browser = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    const filterSamples = (style, type) => {
+    const filterSamples = (type) => {
       return samples.filter(
         (sample) =>
-          (sample.styleId === style || style === 0) &&
-          (sample.type === type || type === "")
+          // (sample.styleId === style || style === 0) &&
+          sample.type === type || type === ""
       );
     };
-    setFilteredSamples(filterSamples(style, type));
-  }, [style, type, samplesState]);
+    setFilteredSamples(filterSamples(type));
+  }, [type, samplesState]);
 
   return (
     <div className="browser">
@@ -43,11 +43,11 @@ export const Browser = () => {
           >
             Reset channels
           </button>
-          &nbsp; &nbsp; &nbsp;
-          <button className="button-browser">Upload sample</button>
+          {/* &nbsp; &nbsp; &nbsp;
+          <button className="button-browser">Upload sample</button> */}
         </div>
         <div className="filters">
-          <div>
+          {/* <div>
             <p style={{ color: "#42f5c8" }}>Style</p>
             <Form.Select
               aria-label="Default select example"
@@ -61,7 +61,7 @@ export const Browser = () => {
               ))}
             </Form.Select>
           </div>
-          &nbsp; &nbsp; &nbsp;
+          &nbsp; &nbsp; &nbsp; */}
           <div>
             <p style={{ color: "#42f5c8" }}>Type</p>
             <Form.Select
