@@ -3,7 +3,7 @@ import background from "../../image/drums.jpeg";
 // import { useDispatch, useSelector } from "react-redux";
 // import { fetchOneShotSamples } from "../../store/feed/actions";
 // import { selectOneShotSamples } from "../../store/feed/selectors";
-import { Navigation } from "../../components/Navigation";
+import { Navigation } from "../../components/Navigation/NavigationHeader";
 // import {
 //   selectCh,
 //   selectClap,

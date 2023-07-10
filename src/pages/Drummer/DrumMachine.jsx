@@ -198,7 +198,7 @@ export const DrumMachine = () => {
             <label
               style={{
                 color: "orange",
-                webkitTextStroke: " 1px black",
+                WebkitTextStroke: " 1px black",
                 fontSize: 29,
               }}
             >

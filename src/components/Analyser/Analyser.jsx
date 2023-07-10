@@ -1,5 +1,5 @@
 import React from "react";
-import sample from "../audio/Melody.mp3";
+import sample from "../../audio/Melody.mp3";
 
 const defaultProps = {
   barColor: [

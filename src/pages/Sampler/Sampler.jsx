@@ -1,9 +1,9 @@
-import { Channels } from "../components/Channels";
-import { Analyser } from "../components/Analyser";
-import { Browser } from "../components/Browser/Browser";
-import { Navigation } from "../components/Navigation";
-import "./../Style.css";
-import background from "../image/circle.jpeg";
+import { Channels } from "../../components/Channels";
+import { Analyser } from "../../components/Analyser/Analyser";
+import { Browser } from "../../components/Browser/Browser";
+import { Navigation } from "../../components/Navigation/NavigationHeader";
+import "./../../Style.css";
+import background from "../../image/circle.jpeg";
 
 // import { selectToken } from "../store/user/selectors";
 // import { useSelector } from "react-redux";

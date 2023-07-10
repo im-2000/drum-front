@@ -1,14 +1,14 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectToken } from "../../store/user/selectors";
-import LoggedIn from "./LoggedIn";
-import LoggedOut from "./LoggedOut";
+// import { useSelector } from "react-redux";
+// import { selectToken } from "../../store/user/selectors";
+// import LoggedIn from "./LoggedIn";
+// import LoggedOut from "./LoggedOut";
 import { Link } from "react-router-dom";
 
-export function Navigation() {
-  const token = useSelector(selectToken);
+export const Navigation = () => {
+  // const token = useSelector(selectToken);
 
-  const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
+  // const loginLogoutControls = token ? <LoggedIn /> : <LoggedOut />;
 
   return (
     <div className="navigation">
@@ -35,12 +35,8 @@ export function Navigation() {
           Drummer
         </Link>
       </div>
-      {/* <div>
-        <Link className="navigation-item" to="/tracks">
-          MyTracks
-        </Link>
-      </div> */}
-      {loginLogoutControls}
+
+      {/* {loginLogoutControls} */}
     </div>
   );
-}
+};
