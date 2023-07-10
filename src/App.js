@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 // import "./App.css";
 import "./Style.css";
 
-import { Sampler } from "./pages/Sampler";
+import { Sampler } from "./pages/Sampler/Sampler";
 import { Drummer } from "./pages/Drummer/Drummer";
 import { Routes, Route } from "react-router-dom";
 import Loading from "./components/Loading/index";
@@ -10,7 +10,6 @@ import Loading from "./components/Loading/index";
 import SignUp from "./pages/SignUp/SignUp";
 import Login from "./pages/Login/Login";
 import Intro from "./pages/Intro/Intro";
-import { MyTracks } from "./pages/MyTracks/MyTracks";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
@@ -33,11 +32,10 @@ function App() {
 
       <Routes>
         <Route exact path="/" element={<Intro />} />
-        <Route exact path="/login" element={<Login />} />
-        <Route path="/signup" element={<SignUp />} />
+        {/* <Route exact path="/login" element={<Login />} /> */}
+        {/* <Route path="/signup" element={<SignUp />} /> */}
         {<Route exact path="/sampler" element={<Sampler />} />}
         <Route exact path="/drummer" element={<Drummer />} />
-        <Route path="/tracks" element={<MyTracks />} />
       </Routes>
       {/* </DndProvider> */}
     </div>

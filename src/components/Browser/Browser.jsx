@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { selectAllSamples, selectAllStyles } from "../../store/feed/selectors";
+import { selectAllSamples } from "../../store/feed/selectors";
 import { fetchAllSamples, fetchAllStyles } from "../../store/feed/actions";
 import { Box } from "../Box";
 import { Form } from "react-bootstrap";
 import { clearSamples } from "../../store/channels/slice";
+import { samples } from "./../../sample/samples";
+import { styles } from "./../../sample/styles";
 
 export const Browser = () => {
   const dispatch = useDispatch();
@@ -12,8 +14,8 @@ export const Browser = () => {
   const [style, setStyle] = useState(0);
   const [type, setType] = useState("");
   const samplesState = useSelector(selectAllSamples);
-  const stylesState = useSelector(selectAllStyles);
-  const [filteredSamples, setFilteredSamples] = useState(samplesState);
+  // const stylesState = useSelector(selectAllStyles);
+  const [filteredSamples, setFilteredSamples] = useState(samples);
 
   useEffect(() => {
     dispatch(fetchAllStyles);
@@ -22,7 +24,7 @@ export const Browser = () => {
 
   useEffect(() => {
     const filterSamples = (style, type) => {
-      return samplesState.filter(
+      return samples.filter(
         (sample) =>
           (sample.styleId === style || style === 0) &&
           (sample.type === type || type === "")
@@ -52,7 +54,7 @@ export const Browser = () => {
               onChange={(event) => setStyle(parseInt(event.target.value))}
             >
               <option value="0">All</option>
-              {stylesState.map((style, idx) => (
+              {styles.map((style, idx) => (
                 <option key={idx} value={style.id}>
                   {style.name}
                 </option>
