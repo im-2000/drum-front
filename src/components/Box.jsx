@@ -2,17 +2,17 @@ import React, { useState, useEffect, useRef } from "react";
 import { BsPlayCircle } from "react-icons/bs";
 import { CgAdd } from "react-icons/cg";
 import { addSample } from "../store/channels/slice";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleFavorites } from "../store/user/slice";
-import { selectFavorites } from "../store/user/selectors";
-import { BsStar } from "react-icons/bs";
+import { useDispatch } from "react-redux";
+// import { toggleFavorites } from "../store/user/slice";
+// import { selectFavorites } from "../store/user/selectors";
+// import { BsStar } from "react-icons/bs";
 
 export const Box = (props) => {
   const audioRef = useRef(null);
   const [isPlaying, setPlaying] = useState(false);
 
   const dispatch = useDispatch();
-  const favorites = useSelector(selectFavorites);
+  // const favorites = useSelector(selectFavorites);
 
   const playStop = (e) => {
     setPlaying(!isPlaying);
@@ -51,7 +51,7 @@ export const Box = (props) => {
           display: "flex",
         }}
       >
-        <div>
+        {/* <div>
           {className === "sample" && (
             <BsStar
               onClick={() => dispatch(toggleFavorites(props.sample.id))}
@@ -63,24 +63,23 @@ export const Box = (props) => {
             ></BsStar>
           )}
         </div>
-        &nbsp;
+        &nbsp; */}
         <div>
           {className === "sample" && (
             <CgAdd
               className="playIcon"
               id={props.sample.id}
+              size={25}
               onClick={(event) => {
                 dispatch(addSample(props.sample));
               }}
-            >
-              {" "}
-            </CgAdd>
+            />
           )}
         </div>
         &nbsp;
         <div>
           {className === "sample" && (
-            <BsPlayCircle className="playIcon" onClick={playStop} />
+            <BsPlayCircle className="playIcon" size={25} onClick={playStop} />
           )}
         </div>
         &nbsp; &nbsp;

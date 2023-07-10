@@ -11,7 +11,7 @@ import { samples } from "./../../sample/samples";
 export const Browser = () => {
   const dispatch = useDispatch();
 
-  const [style, setStyle] = useState(0);
+  // const [style, setStyle] = useState(0);
   const [type, setType] = useState("");
   const samplesState = useSelector(selectAllSamples);
   // const stylesState = useSelector(selectAllStyles);
@@ -23,15 +23,15 @@ export const Browser = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    const filterSamples = (style, type) => {
+    const filterSamples = (type) => {
       return samples.filter(
         (sample) =>
-          (sample.styleId === style || style === 0) &&
-          (sample.type === type || type === "")
+          // (sample.styleId === style || style === 0) &&
+          sample.type === type || type === ""
       );
     };
-    setFilteredSamples(filterSamples(style, type));
-  }, [style, type, samplesState]);
+    setFilteredSamples(filterSamples(type));
+  }, [type, samplesState]);
 
   return (
     <div className="browser">
@@ -43,8 +43,8 @@ export const Browser = () => {
           >
             Reset channels
           </button>
-          &nbsp; &nbsp; &nbsp;
-          <button className="button-browser">Upload sample</button>
+          {/* &nbsp; &nbsp; &nbsp;
+          <button className="button-browser">Upload sample</button> */}
         </div>
         <div className="filters">
           {/* <div>
